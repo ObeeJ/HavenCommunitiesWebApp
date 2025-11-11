@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Connection Test - Haven Communities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .test-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .test-section h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .test-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .status.loading {
+            background: #ffc107;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .status.success {
+            background: #28a745;
+        }
+        
+        .status.error {
+            background: #dc3545;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .test-label {
+            flex: 1;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .test-result {
+            color: #666;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        button {
+            background: #155eef;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background: #1250d4;
+            transform: translateY(-1px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #155eef;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Haven Communities</h1>
+        <p class="subtitle">Supabase Backend Connection Test</p>
+        
+        <div class="test-section">
+            <h2>📡 Connection Status</h2>
+            <div class="test-item">
+                <div class="status loading" id="status-health"></div>
+                <div class="test-label">Server Health Check</div>
+                <div class="test-result" id="result-health">Testing...</div>
+            </div>
+            <div class="test-item">
+                <div class="status loading" id="status-config"></div>
+                <div class="test-label">Supabase Configuration</div>
+                <div class="test-result" id="result-config">Testing...</div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📧 Test Newsletter Subscription</h2>
+            <form id="newsletter-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="test@example.com" required>
+                </div>
+                <button type="submit" id="subscribe-btn">Subscribe to Newsletter</button>
+            </form>
+            <div id="newsletter-message"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📝 Test Contact Form</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <input type="text" id="message" placeholder="I'm interested in your properties" required>
+                </div>
+                <button type="submit" id="contact-btn">Submit Contact Form</button>
+            </form>
+            <div id="contact-message"></div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE_URL = 'https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089';
+        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxpd3ljZWNlb3F0aXZndWp5amt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3OTQ2NDMsImV4cCI6MjA3ODM3MDY0M30._rBCuiu7paleE7C9Bw2o0zKJFnQR5LNfjFEnPDqQzRI';
+        
+        // Test health check
+        async function testHealth() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health`, {
+                    headers: {
+                        'Authorization': `Bearer ${ANON_KEY}`
+                    }
+                });
+                const data = await response.json();
+                
+                document.getElementById('status-health').className = 'status success';
+                document.getElementById('result-health').textContent = `✅ ${data.status}`;
+            } catch (error) {
+                document.getElementById('status-health').className = 'status error';
+                document.getElementById('result-health').textContent = `❌ ${error.message}`;
+            }
+        }
+        
+        // Test configuration
+        async function testConfig() {
+            try {
+                const projectId = 'liwyceceoqtivgujyjkz';
+                document.getElementById('status-config').className = 'status success';
+                document.getElementById('result-config').textContent = `✅ Connected to ${projectId}`;
+            } catch (error) {
+                document.getElementById('status-config').className = 'status error';
+                document.getElementById('result-config').textContent = `❌ ${error.message}`;
+            }
+        }
+        
+        // Newsletter subscription
+        document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('subscribe-btn');
+            const messageDiv = document.getElementById('newsletter-message');
+            const email = document.getElementById('email').value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.innerHTML = '';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/newsletter/subscribe`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${ANON_KEY}`
+                    },
+                    body: JSON.stringify({ email })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.innerHTML = `<div class="success-message">✅ ${data.message}</div>`;
+                    document.getElementById('email').value = '';
+                } else {
+                    messageDiv.innerHTML = `<div class="error-message">❌ ${data.message}</div>`;
+                }
+            } catch (error) {
+                messageDiv.innerHTML = `<div class="error-message">❌ Error: ${error.message}</div>`;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe to Newsletter';
+            }
+        });
+        
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('contact-btn');
+            const messageDiv = document.getElementById('contact-message');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('message').value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+            messageDiv.innerHTML = '';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${ANON_KEY}`
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.innerHTML = `<div class="success-message">✅ ${data.message}</div>`;
+                    document.getElementById('name').value = '';
+                    document.getElementById('contact-email').value = '';
+                    document.getElementById('message').value = '';
+                } else {
+                    messageDiv.innerHTML = `<div class="error-message">❌ ${data.message}</div>`;
+                }
+            } catch (error) {
+                messageDiv.innerHTML = `<div class="error-message">❌ Error: ${error.message}</div>`;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Submit Contact Form';
+            }
+        });
+        
+        // Run tests on load
+        testHealth();
+        testConfig();
+    </script>
+</body>
+</html>
