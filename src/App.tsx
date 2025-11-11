@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Desktop from './imports/Desktop-34-7755';
 import { MobileWithMenu } from './components/MobileWithMenu';
 import { EmailModal } from './components/EmailModal';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
-import { Projects } from './components/Projects';
-import { ProjectDetail } from './components/ProjectDetail';
-import { Blog } from './components/Blog';
-import { BlogDetail } from './components/BlogDetail';
-import { PrivacyPolicy } from './components/PrivacyPolicy';
-import { TermsOfService } from './components/TermsOfService';
-import { CookiesPolicy } from './components/CookiesPolicy';
-import AdminApp from './admin/AdminApp';
+
+// Lazy load heavy components
+const About = lazy(() => import('./components/About').then(m => ({ default: m.About })));
+const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
+const Projects = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
+const ProjectDetail = lazy(() => import('./components/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
+const Blog = lazy(() => import('./components/Blog').then(m => ({ default: m.Blog })));
+const BlogDetail = lazy(() => import('./components/BlogDetail').then(m => ({ default: m.BlogDetail })));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
+const TermsOfService = lazy(() => import('./components/TermsOfService').then(m => ({ default: m.TermsOfService })));
+const CookiesPolicy = lazy(() => import('./components/CookiesPolicy').then(m => ({ default: m.CookiesPolicy })));
+const AdminApp = lazy(() => import('./admin/AdminApp'));
 import type { NavigationPage } from './types/navigation';
 import { Toaster } from './components/ui/sonner';
 import { Shield, Home } from 'lucide-react';
@@ -67,15 +69,17 @@ export default function App() {
           {currentPage === 'home' && (
             isMobile ? <MobileWithMenu onNavigate={navigateTo} /> : <Desktop onNavigate={navigateTo} />
           )}
-          {currentPage === 'about' && <About onNavigate={navigateTo} />}
-          {currentPage === 'contact' && <Contact onNavigate={navigateTo} />}
-          {currentPage === 'projects' && <Projects onNavigate={navigateTo} />}
-          {currentPage === 'projectDetail' && <ProjectDetail onNavigate={navigateTo} />}
-          {currentPage === 'blog' && <Blog onNavigate={navigateTo} />}
-          {currentPage === 'blogDetail' && <BlogDetail onNavigate={navigateTo} />}
-          {currentPage === 'privacyPolicy' && <PrivacyPolicy onNavigate={navigateTo} />}
-          {currentPage === 'termsOfService' && <TermsOfService onNavigate={navigateTo} />}
-          {currentPage === 'cookiesPolicy' && <CookiesPolicy onNavigate={navigateTo} />}
+          <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-4 border-[#155eef] border-t-transparent rounded-full animate-spin" /></div>}>
+            {currentPage === 'about' && <About onNavigate={navigateTo} />}
+            {currentPage === 'contact' && <Contact onNavigate={navigateTo} />}
+            {currentPage === 'projects' && <Projects onNavigate={navigateTo} />}
+            {currentPage === 'projectDetail' && <ProjectDetail onNavigate={navigateTo} />}
+            {currentPage === 'blog' && <Blog onNavigate={navigateTo} />}
+            {currentPage === 'blogDetail' && <BlogDetail onNavigate={navigateTo} />}
+            {currentPage === 'privacyPolicy' && <PrivacyPolicy onNavigate={navigateTo} />}
+            {currentPage === 'termsOfService' && <TermsOfService onNavigate={navigateTo} />}
+            {currentPage === 'cookiesPolicy' && <CookiesPolicy onNavigate={navigateTo} />}
+          </Suspense>
           <EmailModal isOpen={showModal} onClose={handleCloseModal} onNavigate={navigateTo} />
           
           {/* Floating Admin Button */}
@@ -90,7 +94,9 @@ export default function App() {
         </>
       ) : (
         <>
-          <AdminApp />
+          <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-4 border-[#155eef] border-t-transparent rounded-full animate-spin" /></div>}>
+            <AdminApp />
+          </Suspense>
           
           {/* Floating Home Button */}
           <button

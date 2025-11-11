@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: havencommunities
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./build
+    # Environment variables will be set in Render dashboard
+    # VITE_SUPABASE_PROJECT_ID
+    # VITE_SUPABASE_ANON_KEY
