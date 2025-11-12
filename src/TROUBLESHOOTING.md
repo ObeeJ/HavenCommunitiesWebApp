@@ -40,15 +40,15 @@ VITE_SUPABASE_ANON_KEY=your_actual_anon_key
 
 **Example (CORRECT):**
 ```env
-VITE_SUPABASE_URL=https://abcdefghijk.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiY2RlZmdoaWprIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODk3MzY3NjIsImV4cCI6MjAwNTMxMjc2Mn0.xxxxxxxxxxxxxxxxxxxxx
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...<your-actual-key>
 ```
 
 **Example (WRONG):**
 ```env
-VITE_SUPABASE_URL="https://abcdefghijk.supabase.co"  # ❌ No quotes!
-SUPABASE_URL=https://abcdefghijk.supabase.co         # ❌ Missing VITE_ prefix!
-VITE_SUPABASE_URL = https://abcdefghijk.supabase.co  # ❌ No spaces around =
+VITE_SUPABASE_URL="https://your-project.supabase.co"  # ❌ No quotes!
+SUPABASE_URL=https://your-project.supabase.co         # ❌ Missing VITE_ prefix!
+VITE_SUPABASE_URL = https://your-project.supabase.co  # ❌ No spaces around =
 ```
 
 ---

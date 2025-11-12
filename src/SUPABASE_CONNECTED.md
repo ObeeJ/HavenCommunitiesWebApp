@@ -64,12 +64,12 @@ You can create an admin user in two ways:
 #### Option 1: Using the API Directly
 
 ```bash
-curl -X POST https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089/auth/signup \
+curl -X POST ${VITE_SUPABASE_URL}/functions/v1/make-server-59b4d089/auth/signup \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "admin@havencommunities.com",
-    "password": "YourSecurePassword123!",
-    "name": "Admin User"
+    "email": "<your-admin-email>",
+    "password": "<your-secure-password>",
+    "name": "<admin-name>"
   }'
 ```
 
@@ -139,14 +139,14 @@ Consider adding:
 
 ### Test Health Check
 ```bash
-curl https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089/health
+curl ${VITE_SUPABASE_URL}/functions/v1/make-server-59b4d089/health
 ```
 
 ### Test Newsletter Subscription
 ```bash
-curl -X POST https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089/newsletter/subscribe \
+curl -X POST ${VITE_SUPABASE_URL}/functions/v1/make-server-59b4d089/newsletter/subscribe \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxpd3ljZWNlb3F0aXZndWp5amt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3OTQ2NDMsImV4cCI6MjA3ODM3MDY0M30._rBCuiu7paleE7C9Bw2o0zKJFnQR5LNfjFEnPDqQzRI" \
+  -H "Authorization: Bearer ${VITE_SUPABASE_ANON_KEY}" \
   -d '{"email": "test@example.com"}'
 ```
 

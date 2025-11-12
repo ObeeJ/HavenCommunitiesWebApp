@@ -814,7 +814,7 @@ Frontend refreshes list
 
 ### Base URL
 ```
-https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089
+${VITE_SUPABASE_URL}/functions/v1/make-server-59b4d089
 ```
 
 ### Public Endpoints
@@ -1004,9 +1004,9 @@ https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089
 #### Test 1: Health Check
 ```bash
 # Open browser console and run:
-fetch('https://liwyceceoqtivgujyjkz.supabase.co/functions/v1/make-server-59b4d089/health', {
+fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/make-server-59b4d089/health`, {
   headers: {
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxpd3ljZWNlb3F0aXZndWp5amt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3OTQ2NDMsImV4cCI6MjA3ODM3MDY0M30._rBCuiu7paleE7C9Bw2o0zKJFnQR5LNfjFEnPDqQzRI'
+    'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
   }
 })
 .then(r => r.json())
