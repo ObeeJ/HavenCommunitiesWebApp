@@ -1,9 +1,13 @@
 
 # Haven Communities
 
+<<<<<<< HEAD
 A modern real estate platform for land sales and property management in Nigeria. Haven Communities provides a comprehensive solution for browsing available properties, reading informative blog content, and connecting with our sales team.
 
 ## Features
+=======
+  ## Running the code
+>>>>>>> bf3b19f65e5443aff7eee6560ec3b9e7b9992e3b
 
 - Property listings with detailed information and pricing in Nigerian Naira
 - Blog section with articles about land investment and community development
@@ -12,6 +16,7 @@ A modern real estate platform for land sales and property management in Nigeria.
 - Admin panel for content management
 - Responsive design for desktop and mobile devices
 
+<<<<<<< HEAD
 ## Technology Stack
 
 - **Frontend**: React 18 with TypeScript
@@ -109,3 +114,7 @@ This is a private project for Haven Communities. For any issues or feature reque
 
 This project is proprietary software owned by Haven Communities.
   
+=======
+  Run `npm run dev` to start the development server.
+  Backend built with Hono.Js on Supabase edge function  
+>>>>>>> bf3b19f65e5443aff7eee6560ec3b9e7b9992e3b
