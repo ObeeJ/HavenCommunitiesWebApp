@@ -81,9 +81,13 @@
     </div>
 
     <script>
-        const PROJECT_ID = 'liwyceceoqtivgujyjkz';
-        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxpd3ljZWNlb3F0aXZndWp5amt6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3OTQ2NDMsImV4cCI6MjA3ODM3MDY0M30._rBCuiu7paleE7C9Bw2o0zKJFnQR5LNfjFEnPDqQzRI';
-        const API_URL = `https://${PROJECT_ID}.supabase.co/functions/v1/make-server-59b4d089`;
+        // Get credentials from environment or prompt user
+        const SUPABASE_URL = prompt('Enter your VITE_SUPABASE_URL:') || 'https://your-project.supabase.co';
+        const ANON_KEY = prompt('Enter your VITE_SUPABASE_ANON_KEY:') || 'your-anon-key';
+        const API_URL = `${SUPABASE_URL}/functions/v1/make-server-59b4d089`;
+        
+        // Extract project ID from URL for display
+        const PROJECT_ID = SUPABASE_URL.split('//')[1]?.split('.')[0] || 'unknown';
         
         let testResults = {
             credentials: false,
