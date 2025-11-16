@@ -16,7 +16,7 @@ const CookiesPolicy = lazy(() => import('./components/CookiesPolicy').then(m => 
 const AdminApp = lazy(() => import('./admin/AdminApp'));
 import type { NavigationPage } from './types/navigation';
 import { Toaster } from './components/ui/sonner';
-import { Shield, Home } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 export default function App() {
   const [showModal, setShowModal] = useState(false);
@@ -81,16 +81,16 @@ export default function App() {
             {currentPage === 'cookiesPolicy' && <CookiesPolicy onNavigate={navigateTo} />}
           </Suspense>
           <EmailModal isOpen={showModal} onClose={handleCloseModal} onNavigate={navigateTo} />
-          
-          {/* Floating Admin Button */}
-          <button
+
+          {/* Floating Admin Button - Disabled: Use direct login through AdminApp instead */}
+          {/* <button
             onClick={() => setShowAdmin(true)}
             className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 group"
             title="Go to Admin Panel"
           >
             <Shield className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             <span className="hidden sm:inline">Admin</span>
-          </button>
+          </button> */}
         </>
       ) : (
         <>
