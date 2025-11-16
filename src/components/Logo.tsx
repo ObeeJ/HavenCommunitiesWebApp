@@ -1,5 +1,5 @@
-import logoImage from "figma:asset/3eada838a8a55b948f7379c648ac717c0e7f47c9.png";
-import blueLogoImage from "figma:asset/6471c1f8549722e1f3ee00892541594dfcccc113.png";
+import logoImage from "../assets/3eada838a8a55b948f7379c648ac717c0e7f47c9.png";
+import blueLogoImage from "../assets/6471c1f8549722e1f3ee00892541594dfcccc113.png";
 
 interface LogoProps {
   onClick?: () => void;

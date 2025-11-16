@@ -1,9 +1,9 @@
 // API Service for Haven Communities
 // All API calls go through the Supabase Edge Function server
 
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { projectId, publicAnonKey, functionName } from '../utils/supabase/info';
 
-const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/make-server-59b4d089`;
+const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/${functionName}`;
 
 // Helper to get auth token from session
 let authToken: string | null = null;
@@ -18,13 +18,12 @@ export function getAuthToken(): string | null {
 
 // Helper to make authenticated requests
 async function apiRequest(
-  endpoint: string, 
+  endpoint: string,
   options: RequestInit = {},
   requireAuth: boolean = false
 ) {
-  const headers: HeadersInit = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...options.headers,
   };
 
   // Add auth token if available or required
@@ -39,7 +38,10 @@ async function apiRequest(
 
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...options,
-    headers,
+    headers: {
+      ...headers,
+      ...options.headers,
+    },
   });
 
   const data = await response.json();

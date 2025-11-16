@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import svgPaths from "../imports/svg-9gqd1xhwdw";
-import imgImage from "figma:asset/4f1ed71a8e5456f8b8cf9bc696ca9afe262f2ec0.png";
-import imgImageMobile from "figma:asset/944300956d68a2c588e5fa327cca344e00b046d7.png";
+import imgImage from "../assets/4f1ed71a8e5456f8b8cf9bc696ca9afe262f2ec0.png";
+import imgImageMobile from "../assets/944300956d68a2c588e5fa327cca344e00b046d7.png";
 import { motion } from "motion/react";
 import { subscribeToNewsletter } from '../lib/api';
 import { toast } from 'sonner';

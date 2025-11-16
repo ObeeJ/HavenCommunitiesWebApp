@@ -402,7 +402,7 @@ export async function uploadPropertyImage(file: File, path?: string) {
   const filePath = `properties/${fileName}`;
 
   const { data, error } = await supabase.storage
-    .from('property-images')
+    .from('HC storage')
     .upload(filePath, file, {
       cacheControl: '3600',
       upsert: false,
@@ -412,7 +412,7 @@ export async function uploadPropertyImage(file: File, path?: string) {
 
   // Get public URL
   const { data: { publicUrl } } = supabase.storage
-    .from('property-images')
+    .from('HC storage')
     .getPublicUrl(filePath);
 
   return { path: data.path, url: publicUrl };
@@ -423,7 +423,7 @@ export async function uploadBlogImage(file: File, path?: string) {
   const filePath = `blog/${fileName}`;
 
   const { data, error } = await supabase.storage
-    .from('blog-images')
+    .from('HC storage')
     .upload(filePath, file, {
       cacheControl: '3600',
       upsert: false,
@@ -433,13 +433,13 @@ export async function uploadBlogImage(file: File, path?: string) {
 
   // Get public URL
   const { data: { publicUrl } } = supabase.storage
-    .from('blog-images')
+    .from('HC storage')
     .getPublicUrl(filePath);
 
   return { path: data.path, url: publicUrl };
 }
 
-export async function deleteImage(bucket: 'property-images' | 'blog-images', path: string) {
+export async function deleteImage(bucket: string, path: string) {
   const { error } = await supabase.storage
     .from(bucket)
     .remove([path]);
