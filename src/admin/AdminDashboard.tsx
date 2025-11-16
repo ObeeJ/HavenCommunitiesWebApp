@@ -73,31 +73,98 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // Mock data - replace with API calls
-  const [newsletterData] = useState<NewsletterData[]>([
-    { id: '1', email: 'Johndoe@gmail.com' },
-    { id: '2', email: 'Johndoe@gmail.com' },
-    { id: '3', email: 'Johndoe@gmail.com' },
-    { id: '4', email: 'Johndoe@gmail.com' },
-    { id: '5', email: 'Johndoe@gmail.com' },
-    { id: '6', email: 'Johndoe@gmail.com' },
-    { id: '7', email: 'Johndoe@gmail.com' },
-  ]);
+  // Fetch data from backend API
+  const [newsletterData, setNewsletterData] = useState<NewsletterData[]>([]);
+  const [contactData, setContactData] = useState<ContactData[]>([]);
+  const [newsletterCount, setNewsletterCount] = useState(0);
+  const [contactCount, setContactCount] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
 
-  const [contactData] = useState<ContactData[]>([
-    { id: '1', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-    { id: '2', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-    { id: '3', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-    { id: '4', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-    { id: '5', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-    { id: '6', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-    { id: '7', firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', phone: '08036271937', description: 'Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.' },
-  ]);
+  // Fetch newsletter data
+  useEffect(() => {
+    const fetchNewsletterData = async () => {
+      if (activeTab !== 'newsletter') return;
 
-  const newsletterCount = 2420;
-  const contactCount = 2420;
-  const totalPages = 10;
+      setIsLoading(true);
+      setError(null);
+      try {
+        const token = localStorage.getItem('adminToken');
+        const response = await fetch(
+          `/make-server-59b4d089/admin/newsletter?page=${currentPage}&limit=10`,
+          {
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch newsletter data: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        if (data.success) {
+          setNewsletterData(data.data);
+          setNewsletterCount(data.pagination?.total || 0);
+          setTotalPages(data.pagination?.totalPages || 1);
+        } else {
+          setError(data.message || 'Failed to load newsletter data');
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred while fetching newsletter data');
+        console.error('Error fetching newsletter data:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchNewsletterData();
+  }, [activeTab, currentPage]);
+
+  // Fetch contact data
+  useEffect(() => {
+    const fetchContactData = async () => {
+      if (activeTab !== 'contact') return;
+
+      setIsLoading(true);
+      setError(null);
+      try {
+        const token = localStorage.getItem('adminToken');
+        const response = await fetch(
+          `/make-server-59b4d089/admin/contact?page=${currentPage}&limit=10`,
+          {
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch contact data: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        if (data.success) {
+          setContactData(data.data);
+          setContactCount(data.pagination?.total || 0);
+          setTotalPages(data.pagination?.totalPages || 1);
+        } else {
+          setError(data.message || 'Failed to load contact data');
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred while fetching contact data');
+        console.error('Error fetching contact data:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchContactData();
+  }, [activeTab, currentPage]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
