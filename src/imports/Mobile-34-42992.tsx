@@ -281,8 +281,8 @@ function TextAndParagraph() {
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 text-[16px] w-full" data-name="Text and paragraph">
       <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] relative shrink-0 text-[#181d27] w-full">Description</p>
       <div className="font-['Avenir:Regular',_sans-serif] leading-[24px] relative shrink-0 text-[#535862] w-full">
-        <p className="mb-[16px]">Lorem ipsum dolor sit amet consectetur. Sed at interdum pellentesque egestas viverra. Gravida auctor eget mattis enim mi. Quis volutpat adipiscing quis ullamcorper tincidunt ac euismod consectetur aenean. Est dui natoque sed viverra at. Integer id gravida nascetur ut quis. Ut dapibus purus eget sagittis convallis. Leo quam scelerisque ligula lectus a. In sed sem ut at tellus at id. Accumsan mollis aliquet ipsum risus eu eu. Volutpat purus dignissim quis purus metus. Platea ipsum dis sit et phasellus in volutpat tempor.</p>
-        <p>Nunc scelerisque tincidunt est nunc eu integer feugiat viverra. Non diam sed quisque justo.</p>
+        <p className="mb-[16px]">Eden Court represents a premium investment opportunity in one of the region's most sought-after neighborhoods. This carefully maintained property showcases elegant architecture, contemporary finishes, and strategic positioning within a thriving community. The home's thoughtful design maximizes usable space while maintaining exceptional outdoor areas perfect for entertaining or relaxation.</p>
+        <p>Located in an area with strong appreciation history and high rental demand, Eden Court offers investors both immediate appeal and long-term value growth potential. The surrounding community features excellent schools, retail amenities, and convenient access to major employment centers, contributing to consistent property appreciation.</p>
       </div>
     </div>
   );

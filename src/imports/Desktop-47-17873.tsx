@@ -184,7 +184,7 @@ function HeadingAndBadge() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Heading and badge">
       <BadgeGroup />
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[60px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-[min-content]">Lorem ipsum dolor sit amet</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[60px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-[min-content]">Transform Your Real Estate Investment Strategy Today</p>
     </div>
   );
 }
@@ -193,7 +193,7 @@ function TextAndSupportingText() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start max-w-[768px] relative shrink-0 w-full" data-name="Text and supporting text">
       <HeadingAndBadge />
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[30px] not-italic relative shrink-0 text-[#535862] text-[20px] w-full">Lorem ipsum dolor sit amet consectetur. Quam placerat sed vitae etiam adipiscing leo dignissim. Morbi quam aliquet rhoncus donec. Leo ultrices orci metus magnis.</p>
+      <p className="font-['Avenir:Regular',_sans-serif] leading-[30px] not-italic relative shrink-0 text-[#535862] text-[20px] w-full">Discover how modern real estate investment strategies can help you build wealth and secure your financial future. Learn proven techniques from industry experts and start your journey to property success today.</p>
     </div>
   );
 }
@@ -490,7 +490,7 @@ function ContentItem2() {
 function ContentItem3() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
+      <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">Real estate has long been considered one of the most reliable and profitable investments. Whether you're looking for steady rental income, long-term appreciation, or a quick flip, understanding the fundamentals is essential for success in today's dynamic market.</p>
     </div>
   );
 }
@@ -499,9 +499,9 @@ function ContentItem4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
       <div className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-        <p className="mb-[18px]">Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla.</p>
-        <p className="mb-[18px]">Elit nisi in eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.</p>
-        <p>Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
+        <p className="mb-[18px]">Understanding market dynamics is crucial to identifying high-potential investment opportunities. Real estate professionals evaluate factors including property appreciation trends, rental demand forecasts, neighborhood development plans, and economic indicators. These insights help investors make data-driven decisions that position their portfolios for long-term growth and sustainable returns.</p>
+        <p className="mb-[18px]">The real estate market offers multiple pathways to financial success. From residential properties that provide stable rental income to commercial spaces that generate significant returns, each investment type has unique advantages. Smart investors analyze market trends, location fundamentals, and property potential before committing their capital. With proper research and due diligence, you can identify opportunities that align with your financial goals.</p>
+        <p>Market conditions and timing play crucial roles in real estate success. Understanding supply and demand dynamics in your target area, recognizing growth trends, and positioning yourself ahead of the curve can significantly boost your returns. Whether interest rates are rising or falling, multiple investment opportunities exist for informed investors who know where to look.</p>
       </div>
     </div>
   );
@@ -547,7 +547,7 @@ function ContentItem8() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
       <div className="font-['Avenir:Regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-        <p className="leading-[28px] mb-[18px]">Sagittis et eu at elementum, quis in. Proin praesent volutpat egestas sociis sit lorem nunc nunc sit. Eget diam curabitur mi ac. Auctor rutrum lacus malesuada massa ornare et. Vulputate consectetur ac ultrices at diam dui eget fringilla tincidunt. Arcu sit dignissim massa erat cursus vulputate gravida id. Sed quis auctor vulputate hac elementum gravida cursus dis.</p>
+        <p className="leading-[28px] mb-[18px]">Building a diversified real estate portfolio requires strategic planning and patience. Start with properties that match your risk tolerance and investment timeline. Consider factors like location appreciation potential, tenant demand, maintenance costs, and tax implications. Many successful investors begin with single-family homes before expanding to multi-unit buildings or commercial properties. Your real estate journey is unique—tailor your strategy to your personal financial situation and long-term objectives.</p>
         <ol className="list-decimal" start="1">
           <li className="mb-0 ms-[27px]">
             <span className="leading-[28px]">Lectus id duis vitae porttitor enim gravida morbi.</span>
@@ -893,8 +893,8 @@ function Image2() {
 function HeadingAndText() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Eu tincidunt habitant dolor.</p>
-      <p className="-webkit-box css-2gg9ad font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Id diam dignissim vel tempor scelerisque.</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Master Location Analysis and Market Trends</p>
+      <p className="-webkit-box css-2gg9ad font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Learn how to evaluate neighborhoods and predict growth patterns for profitable investments.</p>
     </div>
   );
 }
@@ -993,8 +993,8 @@ function Image3() {
 function HeadingAndText1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Urna sagittis euismod nisi.</p>
-      <p className="-webkit-box css-2gg9ad font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Cursus gravida ipsum suspendisse auctor. Donec ultrices vestibulum vestibulum quam odio scelerisque neque dui. In urna.</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Financing Strategies That Maximize Returns</p>
+      <p className="-webkit-box css-2gg9ad font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Explore mortgage options, leverage techniques, and tax advantages for intelligent property investors.</p>
     </div>
   );
 }

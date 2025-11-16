@@ -121,7 +121,7 @@ function HeadingAndSubheading() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Heading and subheading">
       <BadgeGroup />
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[44px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[36px] tracking-[-0.72px] w-[min-content]">Lorem ipsum dolor sit amet consectetur.</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[44px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[36px] tracking-[-0.72px] w-[min-content]">Transform Your Real Estate Investment Strategy Today</p>
     </div>
   );
 }
@@ -130,7 +130,7 @@ function HeadingAndSupportingText() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Heading and supporting text">
       <HeadingAndSubheading />
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Id aliquam eros vel ac volutpat potenti. Ut mattis odio condimentum gravida quisque. Non risus mattis turpis nisi tellus.</p>
+      <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">Discover how modern real estate investment strategies can help you build wealth and secure your financial future through strategic property selection and market expertise.</p>
     </div>
   );
 }
@@ -282,9 +282,9 @@ function ContentItem4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
       <div className="font-['Avenir:Regular',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">
-        <p className="mb-[16px]">Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla.</p>
-        <p className="mb-[16px]">Elit nisi in eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.</p>
-        <p>Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
+        <p className="mb-[16px]">Real estate has long been considered one of the most reliable and profitable investments for building generational wealth. Whether you're a first-time investor or an experienced portfolio manager, understanding the fundamentals of property selection, financing strategies, and market analysis is essential to achieving your financial goals.</p>
+        <p className="mb-[16px]">Building a diversified real estate portfolio requires strategic planning and patience. The best investors recognize that each property tells a story of potential—location fundamentals, growth trends, community amenities, and long-term economic drivers all play crucial roles in identifying tomorrow's most sought-after neighborhoods. By combining data-driven analysis with market intuition, you can position your investments ahead of appreciation cycles.</p>
+        <p>Market conditions and timing play crucial roles in real estate success. Understanding supply and demand dynamics in your target area, recognizing growth trends, and positioning yourself ahead of the curve can significantly boost your returns. Whether interest rates are rising or falling, multiple investment opportunities exist for informed investors who know where to look.</p>
       </div>
     </div>
   );
