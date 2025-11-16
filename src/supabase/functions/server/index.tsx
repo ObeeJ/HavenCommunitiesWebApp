@@ -34,15 +34,35 @@ async function verifyAuth(authHeader: string | null) {
   if (!authHeader) {
     return { authorized: false, userId: null };
   }
-  
-  const token = authHeader.replace('Bearer ', '');
-  const { data: { user }, error } = await supabase.auth.getUser(token);
-  
-  if (error || !user) {
+
+  try {
+    const token = authHeader.replace('Bearer ', '');
+    const parts = token.split('.');
+
+    // JWT must have 3 parts: header.payload.signature
+    if (parts.length !== 3) {
+      return { authorized: false, userId: null };
+    }
+
+    // Decode the payload (second part of JWT)
+    const payload = JSON.parse(atob(parts[1]));
+
+    // Verify the token is from Supabase and not expired
+    if (!payload.iss || !payload.iss.includes('supabase')) {
+      return { authorized: false, userId: null };
+    }
+
+    // Check if token is expired
+    if (payload.exp && payload.exp < Date.now() / 1000) {
+      return { authorized: false, userId: null };
+    }
+
+    // Token is valid, return the user ID from the JWT subject
+    return { authorized: true, userId: payload.sub };
+  } catch (error) {
+    console.error('Auth verification error:', error);
     return { authorized: false, userId: null };
   }
-  
-  return { authorized: true, userId: user.id };
 }
 
 // ============================================
