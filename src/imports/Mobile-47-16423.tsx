@@ -229,8 +229,8 @@ function ContentItem1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
       <div className="font-['Avenir:Regular',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">
-        <p className="mb-[16px]">Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</p>
-        <p>{`Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. `}</p>
+        <p className="mb-[16px]">The real estate investment landscape continues to evolve, offering unprecedented opportunities for those who understand market dynamics. Whether you're a seasoned investor or exploring your first property, success lies in comprehensive market analysis and strategic selection. This guide explores proven strategies that industry leaders use to maximize returns and minimize risk.</p>
+        <p>{`Real estate remains one of the most tangible wealth-building vehicles available. Property appreciation, rental income, and leverage through financing create multiple pathways to financial independence. Successful investors distinguish themselves through market research, understanding local economic drivers, and positioning portfolios to capture emerging opportunities before the broader market recognizes their value. `}</p>
       </div>
     </div>
   );

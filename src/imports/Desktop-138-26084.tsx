@@ -141,7 +141,7 @@ function HeadingAndBadge() {
         </div>
         <Content2 />
       </div>
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[60px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-[min-content]">Lorem ipsum dolor sit amet</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[60px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-[min-content]">Build Wealth Through Strategic Real Estate Investing</p>
     </div>
   );
 }
@@ -150,7 +150,7 @@ function TextAndSupportingText() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start max-w-[768px] relative shrink-0 w-full" data-name="Text and supporting text">
       <HeadingAndBadge />
-      <p className="font-['Avenir:Regular',sans-serif] leading-[30px] not-italic relative shrink-0 text-[#535862] text-[20px] w-full">Lorem ipsum dolor sit amet consectetur. Quam placerat sed vitae etiam adipiscing leo dignissim. Morbi quam aliquet rhoncus donec. Leo ultrices orci metus magnis.</p>
+      <p className="font-['Avenir:Regular',sans-serif] leading-[30px] not-italic relative shrink-0 text-[#535862] text-[20px] w-full">Discover how to identify high-potential properties, navigate financing strategies, and build a diversified real estate portfolio that generates sustainable income and long-term wealth creation for your family.</p>
     </div>
   );
 }
@@ -417,8 +417,8 @@ function RichText() {
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
         <div className="font-['Avenir:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-          <p className="mb-[18px]">Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</p>
-          <p>{`Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. `}</p>
+          <p className="mb-[18px]">At Haven Communities, we believe real estate is more than just property—it's the foundation of lasting wealth and stable communities. Our mission is to empower investors with the knowledge, resources, and market insights needed to make confident decisions in today's dynamic real estate landscape. Whether you're seeking steady rental income, long-term appreciation, or portfolio diversification, we're here to guide you through every step of your real estate journey.</p>
+          <p>{`With decades of combined industry expertise, our team understands the nuances of market cycles, neighborhood dynamics, and value creation strategies. We're committed to transparent communication, thorough market analysis, and personalized investment strategies tailored to your unique financial goals. Real estate success isn't about luck—it's about informed decision-making, strategic timing, and access to quality opportunities. That's exactly what we deliver. `}</p>
         </div>
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
@@ -427,13 +427,13 @@ function RichText() {
         <PaddingBottom1 />
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-        <p className="font-['Avenir:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
+        <p className="font-['Avenir:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">Our platform connects investors with exceptional properties, market insights, and expert guidance. From market analysis tools to property listings and financing resources, we provide the comprehensive support necessary for informed real estate investment decisions that align with your financial objectives and risk tolerance.</p>
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
         <div className="font-['Avenir:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-          <p className="mb-[18px]">Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla.</p>
-          <p className="mb-[18px]">Elit nisi in eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.</p>
-          <p>Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
+          <p className="mb-[18px]">Every successful real estate investment begins with thorough market research and careful property analysis. Our experts evaluate key metrics including comparable sales, market trends, rental potential, and community growth indicators. We identify properties positioned for appreciation and strong returns, ensuring you invest with confidence and clarity about your financial projections.</p>
+          <p className="mb-[18px]">Smart financing is essential to maximizing real estate returns. We guide you through mortgage options, down payment strategies, and leverage techniques that optimize your investment returns while maintaining prudent risk management. Understanding the financing landscape helps you acquire more properties, accelerate wealth accumulation, and achieve your long-term financial goals through strategic real estate investing.</p>
+          <p>Our commitment extends beyond individual transactions. We build lasting relationships with our clients, providing ongoing market intelligence, portfolio optimization advice, and access to exclusive investment opportunities. Whether you're managing a single property or a diversified real estate portfolio, we're your trusted partner in creating sustainable wealth through real estate excellence.</p>
         </div>
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
@@ -443,8 +443,8 @@ function RichText() {
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
         <div className="font-['Avenir:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-          <p className="mb-[18px]">Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</p>
-          <p>{`Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. `}</p>
+          <p className="mb-[18px]">At Haven Communities, we believe real estate is more than just property—it's the foundation of lasting wealth and stable communities. Our mission is to empower investors with the knowledge, resources, and market insights needed to make confident decisions in today's dynamic real estate landscape. Whether you're seeking steady rental income, long-term appreciation, or portfolio diversification, we're here to guide you through every step of your real estate journey.</p>
+          <p>{`With decades of combined industry expertise, our team understands the nuances of market cycles, neighborhood dynamics, and value creation strategies. We're committed to transparent communication, thorough market analysis, and personalized investment strategies tailored to your unique financial goals. Real estate success isn't about luck—it's about informed decision-making, strategic timing, and access to quality opportunities. That's exactly what we deliver. `}</p>
         </div>
       </div>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
