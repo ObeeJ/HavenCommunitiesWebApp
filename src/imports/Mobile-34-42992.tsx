@@ -520,8 +520,19 @@ function TextPadding1() {
 }
 
 function ButtonsButton7() {
+  const handleDownload = () => {
+    const brochureUrl = 'https://liwyceceoqtivgujyjkz.supabase.co/storage/v1/object/public/HC%20storage/brochures/Haven-Communities-Brochure.pdf';
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = 'Haven-Communities-Brochure.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="h-[48px] relative rounded-[234px] shrink-0 w-full" data-name="Buttons/Button">
+    <div className="h-[48px] relative rounded-[234px] shrink-0 w-full cursor-pointer hover:opacity-90 transition-opacity" data-name="Buttons/Button" onClick={handleDownload}>
       <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[6px] h-[48px] items-center justify-center px-[18px] py-[12px] relative w-full">
           <TextPadding1 />

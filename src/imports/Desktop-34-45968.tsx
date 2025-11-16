@@ -569,14 +569,19 @@ function TextPadding8() {
 
 function ButtonsButton13() {
   const handleDownload = () => {
-    alert('Brochure download will be available soon!');
-    // In production, this would trigger a PDF download
-    // window.open('/brochures/eden-court.pdf', '_blank');
+    const brochureUrl = 'https://liwyceceoqtivgujyjkz.supabase.co/storage/v1/object/public/HC%20storage/brochures/Haven-Communities-Brochure.pdf';
+    const link = document.createElement('a');
+    link.href = brochureUrl;
+    link.download = 'Haven-Communities-Brochure.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
-    <div 
-      className="h-[48px] relative rounded-[234px] shrink-0 w-[224px] cursor-pointer hover:opacity-90 transition-opacity" 
+    <div
+      className="h-[48px] relative rounded-[234px] shrink-0 w-[224px] cursor-pointer hover:opacity-90 transition-opacity"
       data-name="Buttons/Button"
       onClick={handleDownload}
     >
