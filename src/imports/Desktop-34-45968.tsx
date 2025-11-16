@@ -569,10 +569,10 @@ function TextPadding8() {
 
 function ButtonsButton13() {
   const handleDownload = () => {
-    const brochureUrl = 'https://liwyceceoqtivgujyjkz.supabase.co/storage/v1/object/public/HC%20storage/brochures/Haven-Communities-Brochure.pdf';
+    const brochureUrl = 'https://liwyceceoqtivgujyjkz.supabase.co/storage/v1/object/public/HC%20storage/brochures/EDEN%20BROCHURE_251116_083227-compressed.pdf';
     const link = document.createElement('a');
     link.href = brochureUrl;
-    link.download = 'Haven-Communities-Brochure.pdf';
+    link.download = 'EDEN-Brochure.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
