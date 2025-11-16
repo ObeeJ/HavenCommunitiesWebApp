@@ -2,6 +2,7 @@ import { Hono } from "npm:hono";
 import { cors } from "npm:hono/cors";
 import { logger } from "npm:hono/logger";
 import { createClient } from "npm:@supabase/supabase-js";
+import { decode } from "https://deno.land/std@0.208.0/encoding/base64.ts";
 import * as kv from "./kv_store.tsx";
 
 const app = new Hono();
@@ -44,20 +45,26 @@ async function verifyAuth(authHeader: string | null) {
       return { authorized: false, userId: null };
     }
 
-    // Decode the payload (second part of JWT)
-    const payload = JSON.parse(atob(parts[1]));
+    // Decode the payload (second part of JWT) using Deno's base64 decoder
+    const payloadBytes = decode(parts[1]);
+    const payloadString = new TextDecoder().decode(payloadBytes);
+    const payload = JSON.parse(payloadString);
 
     // Verify the token is from Supabase and not expired
     if (!payload.iss || !payload.iss.includes('supabase')) {
+      console.error('Invalid issuer:', payload.iss);
       return { authorized: false, userId: null };
     }
 
-    // Check if token is expired
-    if (payload.exp && payload.exp < Date.now() / 1000) {
+    // Check if token is expired (exp is in seconds, Date.now() is in milliseconds)
+    const now = Math.floor(Date.now() / 1000);
+    if (payload.exp && payload.exp < now) {
+      console.error('Token expired:', payload.exp, 'vs', now);
       return { authorized: false, userId: null };
     }
 
     // Token is valid, return the user ID from the JWT subject
+    console.log('Auth successful for user:', payload.sub);
     return { authorized: true, userId: payload.sub };
   } catch (error) {
     console.error('Auth verification error:', error);
