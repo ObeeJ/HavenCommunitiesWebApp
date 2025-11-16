@@ -1,10 +1,10 @@
 import svgPaths from "./svg-16jlx6s1lj";
-import imgHeroHeaderSection from "figma:asset/e3d1019dbfdb098d8c7bbbde56133652b3f42017.png";
-import imgAvatar from "figma:asset/98445bc012cdfdd831846828cb4c4f887f38925d.png";
-import imgAvatar1 from "figma:asset/208f27328cc76b16a5f2b9566cc87af5adcf3983.png";
-import imgAvatar2 from "figma:asset/f616bdf74826655ce23dd443ed3b5dc09aec80d7.png";
-import imgContent1 from "figma:asset/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
-import logoImage from "figma:asset/3eada838a8a55b948f7379c648ac717c0e7f47c9.png";
+import imgHeroHeaderSection from "../assets/e3d1019dbfdb098d8c7bbbde56133652b3f42017.png";
+import imgAvatar from "../assets/98445bc012cdfdd831846828cb4c4f887f38925d.png";
+import imgAvatar1 from "../assets/208f27328cc76b16a5f2b9566cc87af5adcf3983.png";
+import imgAvatar2 from "../assets/f616bdf74826655ce23dd443ed3b5dc09aec80d7.png";
+import imgContent1 from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
+import logoImage from "../assets/3eada838a8a55b948f7379c648ac717c0e7f47c9.png";
 import TestimonialSectionImport from "./TestimonialSection-34-5442";
 import FeaturesSectionImport from "./FeaturesSection";
 

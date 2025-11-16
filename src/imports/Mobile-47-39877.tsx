@@ -1,5 +1,5 @@
 import svgPaths from "./svg-ufhxqsfxiq";
-import imgHeroHeaderSection from "figma:asset/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
+import imgHeroHeaderSection from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
 import Logo from "../components/Logo";
 import type { NavigationProps } from '../types/navigation';
 

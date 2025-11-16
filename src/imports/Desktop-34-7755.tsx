@@ -1,16 +1,16 @@
 import { useState } from "react";
 import svgPaths from "./svg-nfww7tfte7";
-import imgHeroHeaderSection from "figma:asset/5ff434dbd2b3c4e81ad3e56d77f72e84d934d3b9.png";
-import imgCard from "figma:asset/273e54c9def086e2a9e14d6a9216fe2ba58fcf02.png";
-import imgCard1 from "figma:asset/05693c11afbf0b379d5b90d3bfa4c05a01ac5baf.png";
-import imgCard2 from "figma:asset/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
-import imgCard3 from "figma:asset/c8c3910b0bde189c685f51c99681f3fd68c8b6ba.png";
-import imgContent from "figma:asset/f6b4715d70b2289442ef3b2028fb01f038be2a92.png";
-import imgAvatar from "figma:asset/98445bc012cdfdd831846828cb4c4f887f38925d.png";
-import imgAvatar1 from "figma:asset/208f27328cc76b16a5f2b9566cc87af5adcf3983.png";
-import imgAvatar2 from "figma:asset/f616bdf74826655ce23dd443ed3b5dc09aec80d7.png";
-import imgContent1 from "figma:asset/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
-import logoImage from "figma:asset/3eada838a8a55b948f7379c648ac717c0e7f47c9.png";
+import imgHeroHeaderSection from "../assets/5ff434dbd2b3c4e81ad3e56d77f72e84d934d3b9.png";
+import imgCard from "../assets/273e54c9def086e2a9e14d6a9216fe2ba58fcf02.png";
+import imgCard1 from "../assets/05693c11afbf0b379d5b90d3bfa4c05a01ac5baf.png";
+import imgCard2 from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
+import imgCard3 from "../assets/c8c3910b0bde189c685f51c99681f3fd68c8b6ba.png";
+import imgContent from "../assets/f6b4715d70b2289442ef3b2028fb01f038be2a92.png";
+import imgAvatar from "../assets/98445bc012cdfdd831846828cb4c4f887f38925d.png";
+import imgAvatar1 from "../assets/208f27328cc76b16a5f2b9566cc87af5adcf3983.png";
+import imgAvatar2 from "../assets/f616bdf74826655ce23dd443ed3b5dc09aec80d7.png";
+import imgContent1 from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
+import logoImage from "../assets/3eada838a8a55b948f7379c648ac717c0e7f47c9.png";
 import Logo from "../components/Logo";
 
 function Frame1000003793({ onClick }: { onClick?: () => void }) {

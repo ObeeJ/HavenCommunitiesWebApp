@@ -1,5 +1,5 @@
 import svgPaths from "./svg-62715jazvz";
-import imgContent from "figma:asset/944300956d68a2c588e5fa327cca344e00b046d7.png";
+import imgContent from "../assets/944300956d68a2c588e5fa327cca344e00b046d7.png";
 
 function BackgroundOverlay() {
   return <div className="absolute bg-[rgba(21,94,239,0.2)] inset-0 opacity-70" data-name="Background overlay" />;

@@ -1,8 +1,8 @@
 import svgPaths from "./svg-hg4rvefa5p";
-import imgHeroHeaderSection from "figma:asset/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
-import imgImage from "figma:asset/0164ba3b1976ad1ab82d20102d9f32730fc8c6fb.png";
-import imgImage1 from "figma:asset/6a0f78d573110e8831ecfb44ca95157a1cf2d390.png";
-import imgContent from "figma:asset/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
+import imgHeroHeaderSection from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
+import imgImage from "../assets/0164ba3b1976ad1ab82d20102d9f32730fc8c6fb.png";
+import imgImage1 from "../assets/6a0f78d573110e8831ecfb44ca95157a1cf2d390.png";
+import imgContent from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
 import Logo from "../components/Logo";
 
 function Group1000003696() {

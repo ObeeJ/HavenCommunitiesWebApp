@@ -1,6 +1,6 @@
 import svgPaths from "./svg-osgqemuqyh";
-import imgImage from "figma:asset/b2a4d4d2696958d3a420b3897c4c42bf3d9c784f.png";
-import img from "figma:asset/7cea1cc7a63d49724f662dc4ca77ec22ed421454.png";
+import imgImage from "../assets/b2a4d4d2696958d3a420b3897c4c42bf3d9c784f.png";
+import img from "../assets/7cea1cc7a63d49724f662dc4ca77ec22ed421454.png";
 
 function Group1() {
   return (

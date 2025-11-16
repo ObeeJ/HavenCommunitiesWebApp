@@ -1,14 +1,14 @@
 import { useState } from "react";
 import svgPaths from "./svg-r49qxjoou4";
-import imgHeroHeaderSection from "figma:asset/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
-import imgImage from "figma:asset/69c2d48ba81567d28893e15cd0baf517c39f52ee.png";
-import imgImage1 from "figma:asset/12e57dc8c26ffbd65d754a3814aa245e717c32a7.png";
-import imgImage2 from "figma:asset/e2d07def1dbd591c5182a37dfedc9ff110ae94d9.png";
-import imgImage3 from "figma:asset/0f4f2fcb6049962790ac0a2810925489622b792c.png";
-import imgImage4 from "figma:asset/9f4ea61beb99ae8c2da093d59eccf06f640e117f.png";
-import imgImage5 from "figma:asset/ec3b79fff1564d645f4f2bda89407b5d61d9afd9.png";
-import imgImage6 from "figma:asset/54e0943ca661c94f801320e0a56b7ad7c9f5f2c3.png";
-import imgImage7 from "figma:asset/ba1ddf4cdff400161fdff3d4a651265bb53152a4.png";
+import imgHeroHeaderSection from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
+import imgImage from "../assets/69c2d48ba81567d28893e15cd0baf517c39f52ee.png";
+import imgImage1 from "../assets/12e57dc8c26ffbd65d754a3814aa245e717c32a7.png";
+import imgImage2 from "../assets/e2d07def1dbd591c5182a37dfedc9ff110ae94d9.png";
+import imgImage3 from "../assets/0f4f2fcb6049962790ac0a2810925489622b792c.png";
+import imgImage4 from "../assets/9f4ea61beb99ae8c2da093d59eccf06f640e117f.png";
+import imgImage5 from "../assets/ec3b79fff1564d645f4f2bda89407b5d61d9afd9.png";
+import imgImage6 from "../assets/54e0943ca661c94f801320e0a56b7ad7c9f5f2c3.png";
+import imgImage7 from "../assets/ba1ddf4cdff400161fdff3d4a651265bb53152a4.png";
 import Logo from "../components/Logo";
 
 type BlogCategory = 'all' | 'land' | 'homes' | 'construction' | 'investment';

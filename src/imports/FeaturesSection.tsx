@@ -1,5 +1,5 @@
 import svgPaths from "./svg-9uiwjksku4";
-import imgContent from "figma:asset/57a875cbf43f15352e91851211914a72f3de3820.png";
+import imgContent from "../assets/57a875cbf43f15352e91851211914a72f3de3820.png";
 
 function HeadingAndSubheading() {
   return (

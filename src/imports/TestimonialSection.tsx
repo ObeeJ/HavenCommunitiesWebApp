@@ -1,9 +1,9 @@
 import { useState } from "react";
 import svgPaths from "./svg-1rqecusg73";
-import imgCard from "figma:asset/273e54c9def086e2a9e14d6a9216fe2ba58fcf02.png";
-import imgCard1 from "figma:asset/05693c11afbf0b379d5b90d3bfa4c05a01ac5baf.png";
-import imgCard2 from "figma:asset/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
-import imgCard3 from "figma:asset/c8c3910b0bde189c685f51c99681f3fd68c8b6ba.png";
+import imgCard from "../assets/273e54c9def086e2a9e14d6a9216fe2ba58fcf02.png";
+import imgCard1 from "../assets/05693c11afbf0b379d5b90d3bfa4c05a01ac5baf.png";
+import imgCard2 from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
+import imgCard3 from "../assets/c8c3910b0bde189c685f51c99681f3fd68c8b6ba.png";
 
 function HeadingAndSupportingText() {
   return (

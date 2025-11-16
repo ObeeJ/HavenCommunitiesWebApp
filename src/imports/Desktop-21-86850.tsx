@@ -1,14 +1,14 @@
 import svgPaths from "./svg-fcin6jpxpr";
-import imgHeroHeaderSection from "figma:asset/e3d1019dbfdb098d8c7bbbde56133652b3f42017.png";
-import imgCard from "figma:asset/273e54c9def086e2a9e14d6a9216fe2ba58fcf02.png";
-import imgCard1 from "figma:asset/05693c11afbf0b379d5b90d3bfa4c05a01ac5baf.png";
-import imgCard2 from "figma:asset/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
-import imgCard3 from "figma:asset/c8c3910b0bde189c685f51c99681f3fd68c8b6ba.png";
-import imgContent from "figma:asset/57a875cbf43f15352e91851211914a72f3de3820.png";
-import imgAvatar from "figma:asset/98445bc012cdfdd831846828cb4c4f887f38925d.png";
-import imgAvatar1 from "figma:asset/208f27328cc76b16a5f2b9566cc87af5adcf3983.png";
-import imgAvatar2 from "figma:asset/f616bdf74826655ce23dd443ed3b5dc09aec80d7.png";
-import imgContent1 from "figma:asset/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
+import imgHeroHeaderSection from "../assets/e3d1019dbfdb098d8c7bbbde56133652b3f42017.png";
+import imgCard from "../assets/273e54c9def086e2a9e14d6a9216fe2ba58fcf02.png";
+import imgCard1 from "../assets/05693c11afbf0b379d5b90d3bfa4c05a01ac5baf.png";
+import imgCard2 from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
+import imgCard3 from "../assets/c8c3910b0bde189c685f51c99681f3fd68c8b6ba.png";
+import imgContent from "../assets/57a875cbf43f15352e91851211914a72f3de3820.png";
+import imgAvatar from "../assets/98445bc012cdfdd831846828cb4c4f887f38925d.png";
+import imgAvatar1 from "../assets/208f27328cc76b16a5f2b9566cc87af5adcf3983.png";
+import imgAvatar2 from "../assets/f616bdf74826655ce23dd443ed3b5dc09aec80d7.png";
+import imgContent1 from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
 
 function Group1000003696() {
   return (

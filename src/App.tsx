@@ -29,11 +29,30 @@ export default function App() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
+    // Check if admin panel should be shown via URL parameter
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('admin') === 'true') {
+      setShowAdmin(true);
+    }
+
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Keyboard shortcut for admin access: Ctrl+Shift+A
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+        e.preventDefault();
+        setShowAdmin(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   useEffect(() => {
@@ -81,16 +100,6 @@ export default function App() {
             {currentPage === 'cookiesPolicy' && <CookiesPolicy onNavigate={navigateTo} />}
           </Suspense>
           <EmailModal isOpen={showModal} onClose={handleCloseModal} onNavigate={navigateTo} />
-
-          {/* Floating Admin Button - Disabled: Use direct login through AdminApp instead */}
-          {/* <button
-            onClick={() => setShowAdmin(true)}
-            className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 group"
-            title="Go to Admin Panel"
-          >
-            <Shield className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-            <span className="hidden sm:inline">Admin</span>
-          </button> */}
         </>
       ) : (
         <>

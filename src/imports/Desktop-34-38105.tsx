@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import svgPaths from "./svg-dbvk7wn66u";
-import imgHeroHeaderSection from "figma:asset/c9b700eb89f009ae9d6e97eb3600221d82209851.png";
-import imgImage from "figma:asset/1df45d321d94faf7238fbcae0c4f616df9019203.png";
+import imgHeroHeaderSection from "../assets/c9b700eb89f009ae9d6e97eb3600221d82209851.png";
+import imgImage from "../assets/1df45d321d94faf7238fbcae0c4f616df9019203.png";
 import Logo from "../components/Logo";
 
 function Group1000003696() {
