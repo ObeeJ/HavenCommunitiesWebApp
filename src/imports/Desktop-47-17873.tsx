@@ -550,13 +550,13 @@ function ContentItem8() {
         <p className="leading-[28px] mb-[18px]">Building a diversified real estate portfolio requires strategic planning and patience. Start with properties that match your risk tolerance and investment timeline. Consider factors like location appreciation potential, tenant demand, maintenance costs, and tax implications. Many successful investors begin with single-family homes before expanding to multi-unit buildings or commercial properties. Your real estate journey is unique—tailor your strategy to your personal financial situation and long-term objectives.</p>
         <ol className="list-decimal" start="1">
           <li className="mb-0 ms-[27px]">
-            <span className="leading-[28px]">Lectus id duis vitae porttitor enim gravida morbi.</span>
+            <span className="leading-[28px]">Conduct thorough market research and property analysis before making any investment decisions.</span>
           </li>
           <li className="mb-0 ms-[27px]">
-            <span className="leading-[28px]">Eu turpis posuere semper feugiat volutpat elit, ultrices suspendisse. Auctor vel in vitae placerat.</span>
+            <span className="leading-[28px]">Develop a comprehensive financing strategy that optimizes returns while managing risk responsibly.</span>
           </li>
           <li className="ms-[27px]">
-            <span className="leading-[28px]">Suspendisse maecenas ac donec scelerisque diam sed est duis purus.</span>
+            <span className="leading-[28px]">Build a diversified portfolio across multiple property types and geographic markets to maximize stability.</span>
           </li>
         </ol>
       </div>

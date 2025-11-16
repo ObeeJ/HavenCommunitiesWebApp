@@ -454,16 +454,16 @@ function RichText() {
       </div>
       <div className="content-stretch flex flex-col h-[380px] items-start relative shrink-0 w-full" data-name="Content item">
         <div className="font-['Avenir:Regular',sans-serif] leading-[0] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-          <p className="leading-[28px] mb-[18px]">Sagittis et eu at elementum, quis in. Proin praesent volutpat egestas sociis sit lorem nunc nunc sit. Eget diam curabitur mi ac. Auctor rutrum lacus malesuada massa ornare et. Vulputate consectetur ac ultrices at diam dui eget fringilla tincidunt. Arcu sit dignissim massa erat cursus vulputate gravida id. Sed quis auctor vulputate hac elementum gravida cursus dis.</p>
+          <p className="leading-[28px] mb-[18px]">Our platform provides comprehensive tools and resources to guide your real estate investment journey. From market analysis to financing guidance, we empower you with actionable insights and access to exceptional investment opportunities. Join thousands of successful investors who trust Haven Communities to help them build and manage profitable real estate portfolios.</p>
           <ol className="list-decimal">
             <li className="mb-0 ms-[27px]">
-              <span className="leading-[28px]">Lectus id duis vitae porttitor enim gravida morbi.</span>
+              <span className="leading-[28px]">Access exclusive property listings and comprehensive market analysis tools.</span>
             </li>
             <li className="mb-0 ms-[27px]">
-              <span className="leading-[28px]">Eu turpis posuere semper feugiat volutpat elit, ultrices suspendisse. Auctor vel in vitae placerat.</span>
+              <span className="leading-[28px]">Learn from industry experts through our curated educational resources and insights.</span>
             </li>
             <li className="ms-[27px]">
-              <span className="leading-[28px]">Suspendisse maecenas ac donec scelerisque diam sed est duis purus.</span>
+              <span className="leading-[28px]">Connect with a community of successful real estate investors and mentors.</span>
             </li>
           </ol>
         </div>

@@ -330,16 +330,16 @@ function ContentItem8() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
       <div className="font-['Avenir:Regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">
-        <p className="leading-[24px] mb-[16px]">Sagittis et eu at elementum, quis in. Proin praesent volutpat egestas sociis sit lorem nunc nunc sit. Eget diam curabitur mi ac. Auctor rutrum lacus malesuada massa ornare et. Vulputate consectetur ac ultrices at diam dui eget fringilla tincidunt. Arcu sit dignissim massa erat cursus vulputate gravida id. Sed quis auctor vulputate hac elementum gravida cursus dis.</p>
+        <p className="leading-[24px] mb-[16px]">Success in real estate requires a disciplined approach combining research, strategic planning, and continuous learning. Each investment decision should be grounded in data analysis, market understanding, and alignment with your long-term financial objectives and risk tolerance profile.</p>
         <ol className="list-decimal" start="1">
           <li className="mb-0 ms-[24px]">
-            <span className="leading-[24px]">Lectus id duis vitae porttitor enim gravida morbi.</span>
+            <span className="leading-[24px]">Conduct thorough market research and property analysis before investment decisions.</span>
           </li>
           <li className="mb-0 ms-[24px]">
-            <span className="leading-[24px]">Eu turpis posuere semper feugiat volutpat elit, ultrices suspendisse. Auctor vel in vitae placerat.</span>
+            <span className="leading-[24px]">Develop comprehensive financing strategies that optimize returns responsibly.</span>
           </li>
           <li className="ms-[24px]">
-            <span className="leading-[24px]">Suspendisse maecenas ac donec scelerisque diam sed est duis purus.</span>
+            <span className="leading-[24px]">Build diversified portfolios across multiple property types and markets.</span>
           </li>
         </ol>
       </div>
