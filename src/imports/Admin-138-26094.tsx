@@ -444,7 +444,7 @@ function Input3() {
     <div className="bg-white h-[250px] relative rounded-[8px] shrink-0 w-full" data-name="Input">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[8px] h-[250px] items-start px-[14px] py-[12px] relative w-full">
-          <p className="basis-0 font-['Avenir:Regular',sans-serif] grow h-full leading-[24px] min-h-px min-w-px not-italic relative shrink-0 text-[#101828] text-[16px]">Lorem ipsum dolor sit amet consectetur. Interdum arcu donec at lacus elementum et leo. Malesuada risus lobortis tristique sapien porttitor donec eros. Iaculis tortor faucibus ac mi condimentum sodales. Erat dapibus id quis dictum nulla in faucibus. Velit malesuada sagittis imperdiet eget quis. Placerat volutpat.</p>
+          <p className="basis-0 font-['Avenir:Regular',sans-serif] grow h-full leading-[24px] min-h-px min-w-px not-italic relative shrink-0 text-[#101828] text-[16px]">Enter compelling content here. For the short description: 200-300 character summary. For the full article: comprehensive real estate insights, market analysis, investment strategies, and actionable guidance for readers.</p>
         </div>
       </div>
       <div aria-hidden="true" className="absolute border border-[#d0d5dd] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]" />
@@ -550,7 +550,7 @@ function Input4() {
     <div className="bg-white h-[844px] relative rounded-[8px] shrink-0 w-full" data-name="Input">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="box-border content-stretch flex gap-[8px] h-[844px] items-start px-[14px] py-[12px] relative w-full">
-          <p className="basis-0 font-['Avenir:Regular',sans-serif] grow h-full leading-[24px] min-h-px min-w-px not-italic relative shrink-0 text-[#101828] text-[16px]">Lorem ipsum dolor sit amet consectetur. Interdum arcu donec at lacus elementum et leo. Malesuada risus lobortis tristique sapien porttitor donec eros. Iaculis tortor faucibus ac mi condimentum sodales. Erat dapibus id quis dictum nulla in faucibus. Velit malesuada sagittis imperdiet eget quis. Placerat volutpat.</p>
+          <p className="basis-0 font-['Avenir:Regular',sans-serif] grow h-full leading-[24px] min-h-px min-w-px not-italic relative shrink-0 text-[#101828] text-[16px]">Enter compelling content here. For the short description: 200-300 character summary. For the full article: comprehensive real estate insights, market analysis, investment strategies, and actionable guidance for readers.</p>
         </div>
       </div>
       <div aria-hidden="true" className="absolute border border-[#d0d5dd] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]" />

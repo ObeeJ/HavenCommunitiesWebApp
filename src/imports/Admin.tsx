@@ -880,7 +880,7 @@ function TableCell9() {
       <div aria-hidden="true" className="absolute border-[#eaecf0] border-[0px_0px_1px] border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="box-border content-stretch flex h-[72px] items-center px-[24px] py-[16px] relative w-full">
-          <p className="font-['Avenir:Regular',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#475467] text-[14px] w-[354px]">Lorem ipsum dolor sit amet consectetur. Sagittis tortor eget ipsum pellentesque et libero suscipit. Purus at tortor purus id.</p>
+          <p className="font-['Avenir:Regular',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#475467] text-[14px] w-[354px]">Real estate investor and property manager with expertise in market analysis, portfolio diversification, and wealth building strategies for sustainable financial growth.</p>
         </div>
       </div>
     </div>

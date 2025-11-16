@@ -273,7 +273,7 @@ function ContentItem2() {
 function ContentItem3() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
+      <p className="font-['Avenir:Regular',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#535862] text-[16px] w-full">Each investment decision should be grounded in comprehensive data analysis, market understanding, and alignment with your long-term financial objectives. Success requires discipline, research, and strategic positioning to capture emerging opportunities before the broader market recognizes their value.</p>
     </div>
   );
 }
@@ -640,8 +640,8 @@ function Image2() {
 function HeadingAndText() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur.</p>
-      <p className="-webkit-box css-l74gqu font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Ac neque fusce congue in et sed tortor nunc.</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">First-Time Home Buyers: Smart Investment Moves</p>
+      <p className="-webkit-box css-l74gqu font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Essential guidance for navigating mortgages, inspections, and securing your first property investment.</p>
     </div>
   );
 }
@@ -736,8 +736,8 @@ function Image3() {
 function HeadingAndText1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur.</p>
-      <p className="-webkit-box css-l74gqu font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Volutpat in donec nullam ante nisl massa fusce.</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Commercial Real Estate: Unlocking Enterprise Opportunities</p>
+      <p className="-webkit-box css-l74gqu font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Advanced strategies for office, retail, and industrial properties offering superior returns.</p>
     </div>
   );
 }

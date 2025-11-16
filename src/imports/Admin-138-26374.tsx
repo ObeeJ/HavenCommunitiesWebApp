@@ -548,8 +548,8 @@ function Image4() {
 function HeadingAndText4() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Eu tincidunt habitant dolor.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Id diam dignissim vel tempor scelerisque.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Rental Income Optimization for Property Owners</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Strategic approaches to maximize rental returns, tenant quality, and long-term property appreciation for residential investors.</p>
     </div>
   );
 }
@@ -625,8 +625,8 @@ function Image5() {
 function HeadingAndText5() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Aenean rhoncus sit.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Consequat habitant eget porta varius.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Building a Diversified Real Estate Portfolio</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Strategies for balancing residential, commercial, and alternative investments to create resilient wealth-building portfolios.</p>
     </div>
   );
 }
@@ -702,8 +702,8 @@ function Image6() {
 function HeadingAndText6() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Amet lacus fringilla enim ut.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. A dui enim enim at. Phasellus eget eget.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">First-Time Home Buyers: Smart Investment Moves</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Essential guidance for navigating mortgages, inspections, and negotiations to secure your first property investment confidently.</p>
     </div>
   );
 }
@@ -779,8 +779,8 @@ function Image7() {
 function HeadingAndText7() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Interdum vitae mattis sed.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Faucibus maecenas nec potenti facilisis nunc fringilla ut vivamus elementum. Mi malesuada purus pretium sed integer sit.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Commercial Real Estate: Unlocking Enterprise Opportunities</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Advanced strategies for office, retail, and industrial properties offering superior returns and portfolio expansion potential.</p>
     </div>
   );
 }
