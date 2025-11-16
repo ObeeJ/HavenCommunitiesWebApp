@@ -240,8 +240,8 @@ function Image() {
 function HeadingAndText() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Facilisis et ut duis parturient.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Netus malesuada eu lectus posuere eu nec turpis pharetra. Egestas tellus at duis sed natoque vitae sapien. Dictum.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Master Location Analysis and Market Trends</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Learn how to evaluate neighborhoods, predict growth patterns, and identify emerging markets for profitable real estate investments.</p>
     </div>
   );
 }
@@ -317,8 +317,8 @@ function Image1() {
 function HeadingAndText1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Phasellus sodales aliquam.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Mus tortor cursus in at lacus sagittis tristique massa egestas. Vitae et sagittis nisl arcu convallis sagittis duis arcu massa.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Financing Strategies That Maximize Returns</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Explore mortgage options, leverage techniques, and tax advantages for intelligent property investors seeking optimal profitability.</p>
     </div>
   );
 }
@@ -394,8 +394,8 @@ function Image2() {
 function HeadingAndText2() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Dictum tempus fermentum.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Dictumst convallis dui enim aliquet. Nibh vestibulum adipiscing quis elit habitant. Neque est amet convallis donec faucibus.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Property Valuation Essentials for Savvy Investors</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Master the key methods and metrics for accurately evaluating property value and identifying undervalued investment opportunities.</p>
     </div>
   );
 }
@@ -471,8 +471,8 @@ function Image3() {
 function HeadingAndText3() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Lorem ipsum dolor sit amet consectetur. Urna sagittis euismod nisi.</p>
-      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Lorem ipsum dolor sit amet consectetur. Cursus gravida ipsum suspendisse auctor. Donec ultrices vestibulum vestibulum quam odio scelerisque neque dui. In urna.</p>
+      <p className="font-['Avenir:Heavy',sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Understanding Market Cycles and Investment Timing</p>
+      <p className="-webkit-box font-['Avenir:Regular',sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Learn how economic indicators and market cycles influence real estate performance and position your investments strategically.</p>
     </div>
   );
 }
