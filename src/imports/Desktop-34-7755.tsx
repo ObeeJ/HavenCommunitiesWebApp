@@ -598,7 +598,7 @@ function ArrowLeft() {
 function TestiomonialCarouselArrow({ onClick }: { onClick?: () => void }) {
   return (
     <div 
-      className="content-stretch flex gap-[12px] items-center justify-center relative rounded-[28px] shrink-0 size-[56px] cursor-pointer hover:bg-gray-50 transition-colors" 
+      className="content-stretch flex gap-[12px] items-center justify-center relative rounded-[28px] shrink-0 size-[56px] cursor-pointer hover:bg-gray-50 transition-colors border border-[#D5D7DA]" 
       data-name="_Testiomonial carousel arrow"
       onClick={onClick}
     >
@@ -622,7 +622,7 @@ function ArrowRight() {
 function TestiomonialCarouselArrow1({ onClick }: { onClick?: () => void }) {
   return (
     <div 
-      className="content-stretch flex gap-[12px] items-center justify-center relative rounded-[28px] shrink-0 size-[56px] cursor-pointer hover:bg-gray-50 transition-colors" 
+      className="content-stretch flex gap-[12px] items-center justify-center relative rounded-[28px] shrink-0 size-[56px] cursor-pointer hover:bg-gray-50 transition-colors border border-[#D5D7DA]" 
       data-name="_Testiomonial carousel arrow"
       onClick={onClick}
     >
