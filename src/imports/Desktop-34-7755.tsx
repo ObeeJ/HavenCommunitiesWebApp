@@ -28,7 +28,7 @@ function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 w-16 h-16 backdrop-blur-md bg-white/20 border border-white/30 rounded-full shadow-2xl hover:bg-white/30 hover:scale-110 transition-all duration-300 z-50 group overflow-hidden"
+      className="fixed bottom-8 right-8 w-16 h-16 backdrop-blur-md bg-white/20 rounded-full shadow-2xl hover:bg-white/30 hover:scale-110 transition-all duration-300 z-50 group overflow-hidden"
       aria-label="Scroll to top"
     >
       {/* Animated fluid */}
@@ -373,9 +373,9 @@ function MarkerPin01() {
   );
 }
 
-function ButtonsButton4() {
+function ButtonsButton4({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0" data-name="Buttons/Button">
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
       <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Ogun State</p>
       <MarkerPin01 />
     </div>
@@ -427,9 +427,9 @@ function MarkerPin2() {
   );
 }
 
-function ButtonsButton5() {
+function ButtonsButton5({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0" data-name="Buttons/Button">
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
       <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Ogun State</p>
       <MarkerPin2 />
     </div>
@@ -481,9 +481,9 @@ function MarkerPin3() {
   );
 }
 
-function ButtonsButton6() {
+function ButtonsButton6({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0" data-name="Buttons/Button">
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
       <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Ogun State</p>
       <MarkerPin3 />
     </div>
@@ -535,9 +535,9 @@ function MarkerPin4() {
   );
 }
 
-function ButtonsButton7() {
+function ButtonsButton7({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0" data-name="Buttons/Button">
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
       <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Ogun State</p>
       <MarkerPin4 />
     </div>
@@ -1603,7 +1603,6 @@ function ButtonsButton12({ onClick }: { onClick?: () => void }) {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
         <TextPadding />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
     </div>
   );
 }
