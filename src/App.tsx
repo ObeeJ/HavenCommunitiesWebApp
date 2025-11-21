@@ -2,6 +2,8 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 import Desktop from './imports/Desktop-34-7755';
 import { MobileWithMenu } from './components/MobileWithMenu';
 import { EmailModal } from './components/EmailModal';
+import { ResponsiveWrapper } from './components/ResponsiveWrapper';
+import { useResponsive } from './hooks/useMediaQuery';
 
 // Lazy load heavy components
 const About = lazy(() => import('./components/About').then(m => ({ default: m.About })));
@@ -20,26 +22,16 @@ import { Home } from 'lucide-react';
 
 export default function App() {
   const [showModal, setShowModal] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [currentPage, setCurrentPage] = useState<NavigationPage>('home');
   const [showAdmin, setShowAdmin] = useState(false);
+  const { isDesktop } = useResponsive();
 
   useEffect(() => {
-    // Check screen size
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
     // Check if admin panel should be shown via URL parameter
     const params = new URLSearchParams(window.location.search);
     if (params.get('admin') === 'true') {
       setShowAdmin(true);
     }
-
-    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
@@ -86,7 +78,7 @@ export default function App() {
       {!showAdmin ? (
         <>
           {currentPage === 'home' && (
-            isMobile ? <MobileWithMenu onNavigate={navigateTo} /> : <Desktop onNavigate={navigateTo} />
+            isDesktop ? <Desktop onNavigate={navigateTo} /> : <MobileWithMenu onNavigate={navigateTo} />
           )}
           <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-4 border-[#155eef] border-t-transparent rounded-full animate-spin" /></div>}>
             {currentPage === 'about' && <About onNavigate={navigateTo} />}

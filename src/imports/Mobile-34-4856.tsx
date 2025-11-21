@@ -1,3 +1,4 @@
+import { useState } from "react";
 import svgPaths from "./svg-e7dmh6nzws";
 import imgHeroHeaderSection from "../assets/e3d1019dbfdb098d8c7bbbde56133652b3f42017.png";
 import imgCard from "../assets/8a74c5047b7ba9528f99614e7da998c47767d50e.png";
@@ -411,11 +412,13 @@ function Card3() {
 
 function CaseStudies() {
   return (
-    <div className="content-stretch flex gap-[24px] items-start relative shrink-0" data-name="Case studies">
-      <Card />
-      <Card1 />
-      <Card2 />
-      <Card3 />
+    <div className="overflow-x-auto scrollbar-hide" data-name="Case studies">
+      <div className="flex gap-[24px] items-start min-w-max px-4">
+        <Card />
+        <Card1 />
+        <Card2 />
+        <Card3 />
+      </div>
     </div>
   );
 }
