@@ -8,6 +8,7 @@ import imgImageDesktop from "../assets/0164ba3b1976ad1ab82d20102d9f32730fc8c6fb.
 import imgImageDesktop1 from "../assets/6a0f78d573110e8831ecfb44ca95157a1cf2d390.png";
 import imgContent from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
 import Logo from "./Logo";
+import { CoreValues } from "./CoreValues";
 
 // Mobile Components
 function Group1000003696Mobile() {
@@ -294,77 +295,7 @@ export function About({ onNavigate }: AboutProps) {
       </div>
 
       {/* Our Core Values Section */}
-      <div className="bg-neutral-50 box-border content-stretch flex flex-col gap-[48px] md:gap-[64px] items-center overflow-clip px-0 py-[64px] md:py-[96px] relative shrink-0 w-full z-[4]">
-        {/* Header */}
-        <div className="max-w-[1280px] relative shrink-0 w-full">
-          <div className="max-w-inherit size-full">
-            <div className="box-border content-stretch flex flex-col gap-[32px] items-start max-w-inherit px-[16px] md:px-[32px] py-0 relative w-full">
-              <div className="content-stretch flex flex-col gap-[32px] items-center relative shrink-0 w-full">
-                <div className="content-stretch flex flex-col gap-[16px] md:gap-[20px] items-center max-w-[768px] relative shrink-0 w-full">
-                  <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <p className="font-['Avenir:Heavy',_sans-serif] leading-[38px] md:leading-[44px] not-italic relative shrink-0 text-[#181d27] text-[30px] md:text-[36px] text-center tracking-[-0.72px] w-full">Our Core Values</p>
-                  </div>
-                  <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] md:leading-[30px] not-italic relative shrink-0 text-[#535862] text-[18px] md:text-[20px] text-center w-full">Our shared values keep us connected and guide us as one team.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Values Grid */}
-        <div className="max-w-[1280px] relative shrink-0 w-full">
-          <div className="max-w-inherit size-full">
-            <div className="box-border content-stretch flex flex-col gap-[64px] items-start max-w-inherit px-[16px] md:px-[32px] py-0 relative w-full">
-              <div className="content-start flex flex-col md:flex-row gap-[40px] md:gap-[32px] items-start relative shrink-0 w-full">
-                {/* Value 1 */}
-                <div className="basis-0 content-stretch flex flex-col gap-[16px] grow items-center min-h-px min-w-[320px] relative shrink-0">
-                  <div className="bg-white relative rounded-[8px] md:rounded-[10px] shrink-0 size-[40px] md:size-[48px]">
-                    <div className="overflow-clip relative rounded-[inherit] size-[40px] md:size-[48px]">
-                      <CoinsHand />
-                    </div>
-                    <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-                    <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] md:rounded-[10px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                  </div>
-                  <div className="content-stretch flex flex-col gap-[4px] items-center not-italic relative shrink-0 text-center w-full">
-                    <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Value</p>
-                    <p className="font-['Avenir:Regular',_sans-serif] leading-[24px] relative shrink-0 text-[#535862] text-[16px] w-full">We are committed to helping people settle down in a conducive community and also helping people find the right investment to help them grow their wealth.</p>
-                  </div>
-                </div>
-
-                {/* Excellence */}
-                <div className="basis-0 content-stretch flex flex-col gap-[16px] grow items-center min-h-px min-w-[320px] relative shrink-0">
-                  <div className="bg-white relative rounded-[8px] md:rounded-[10px] shrink-0 size-[40px] md:size-[48px]">
-                    <div className="overflow-clip relative rounded-[inherit] size-[40px] md:size-[48px]">
-                      <Award03 />
-                    </div>
-                    <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-                    <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] md:rounded-[10px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                  </div>
-                  <div className="content-stretch flex flex-col gap-[4px] items-center not-italic relative shrink-0 text-center w-full">
-                    <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Excellence</p>
-                    <p className="font-['Avenir:Regular',_sans-serif] leading-[24px] relative shrink-0 text-[#535862] text-[16px] w-full">We pursue excellence to the highest degree. We provide the best quality of product and service to our clients.</p>
-                  </div>
-                </div>
-
-                {/* Integrity */}
-                <div className="basis-0 content-stretch flex flex-col gap-[16px] grow items-center min-h-px min-w-[320px] relative shrink-0">
-                  <div className="bg-white relative rounded-[8px] md:rounded-[10px] shrink-0 size-[40px] md:size-[48px]">
-                    <div className="overflow-clip relative rounded-[inherit] size-[40px] md:size-[48px]">
-                      <Scales02 />
-                    </div>
-                    <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-                    <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] md:rounded-[10px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                  </div>
-                  <div className="content-stretch flex flex-col gap-[4px] items-center not-italic relative shrink-0 text-center w-full">
-                    <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Integrity</p>
-                    <p className="font-['Avenir:Regular',_sans-serif] leading-[24px] relative shrink-0 text-[#535862] text-[16px] w-full">We display unparalleled transparency in our dealings with our customers, thereby establishing trust and confidence in our brand.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CoreValues />
 
       {/* CTA Section */}
       <div className="bg-white box-border content-stretch flex flex-col gap-[48px] md:gap-[64px] items-center justify-center overflow-clip px-0 py-[64px] md:py-[96px] relative shrink-0 w-full z-[3]">
