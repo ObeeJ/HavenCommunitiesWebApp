@@ -278,7 +278,6 @@ function TextAndAction() {
       data-name="Text and action"
       onClick={handleScrollDown}
     >
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.5)] border-solid inset-0 pointer-events-none rounded-[234px]" />
       <CompanyAndQuote />
     </div>
   );
@@ -386,7 +385,6 @@ function ButtonsButton4() {
 function TextAndAction1() {
   return (
     <div className="backdrop-blur-md backdrop-filter bg-[rgba(255,255,255,0.3)] relative rounded-[8px] shrink-0 w-full" data-name="Text and action">
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.5)] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="size-full">
         <div className="box-border content-stretch flex flex-col gap-[12px] items-start px-[20px] py-[24px] relative w-full">
           <CompanyAndQuote1 />
@@ -441,7 +439,6 @@ function ButtonsButton5() {
 function TextAndAction2() {
   return (
     <div className="backdrop-blur-md backdrop-filter bg-[rgba(255,255,255,0.3)] relative rounded-[8px] shrink-0 w-full" data-name="Text and action">
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.5)] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="size-full">
         <div className="box-border content-stretch flex flex-col gap-[12px] items-start px-[20px] py-[24px] relative w-full">
           <CompanyAndQuote2 />
@@ -496,7 +493,6 @@ function ButtonsButton6() {
 function TextAndAction3() {
   return (
     <div className="backdrop-blur-md backdrop-filter bg-[rgba(255,255,255,0.3)] relative rounded-[8px] shrink-0 w-full" data-name="Text and action">
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.5)] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="size-full">
         <div className="box-border content-stretch flex flex-col gap-[12px] items-start px-[20px] py-[24px] relative w-full">
           <CompanyAndQuote3 />
@@ -551,7 +547,6 @@ function ButtonsButton7() {
 function TextAndAction4() {
   return (
     <div className="backdrop-blur-md backdrop-filter bg-[rgba(255,255,255,0.3)] relative rounded-[8px] shrink-0 w-full" data-name="Text and action">
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.5)] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="size-full">
         <div className="box-border content-stretch flex flex-col gap-[12px] items-start px-[20px] py-[24px] relative w-full">
           <CompanyAndQuote4 />
@@ -607,7 +602,6 @@ function TestiomonialCarouselArrow({ onClick }: { onClick?: () => void }) {
       data-name="_Testiomonial carousel arrow"
       onClick={onClick}
     >
-      <div aria-hidden="true" className="absolute border border-[#e9eaeb] border-solid inset-0 pointer-events-none rounded-[28px]" />
       <ArrowLeft />
     </div>
   );
@@ -632,7 +626,6 @@ function TestiomonialCarouselArrow1({ onClick }: { onClick?: () => void }) {
       data-name="_Testiomonial carousel arrow"
       onClick={onClick}
     >
-      <div aria-hidden="true" className="absolute border border-[#e9eaeb] border-solid inset-0 pointer-events-none rounded-[28px]" />
       <ArrowRight />
     </div>
   );
@@ -766,8 +759,8 @@ function FeaturedIcon() {
       <div className="overflow-clip relative rounded-[inherit] size-[48px]">
         <MarkerPin04 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[10px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(213,215,218,1),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
+      <div aria-hidden="true" className="absolute border border-[#D5D7DA] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );
 }
@@ -814,8 +807,8 @@ function FeaturedIcon1() {
       <div className="overflow-clip relative rounded-[inherit] size-[48px]">
         <Globe05 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[10px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(213,215,218,1),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
+      <div aria-hidden="true" className="absolute border border-[#D5D7DA] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );
 }
@@ -864,8 +857,8 @@ function FeaturedIcon2() {
       <div className="overflow-clip relative rounded-[inherit] size-[48px]">
         <Building07 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[10px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(213,215,218,1),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
+      <div aria-hidden="true" className="absolute border border-[#D5D7DA] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );
 }
@@ -1410,7 +1403,6 @@ function TextAndAction5() {
       data-name="Text and action"
       onClick={handleContactClick}
     >
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.5)] border-solid inset-0 pointer-events-none rounded-[234px]" />
       <CompanyAndQuote5 />
     </div>
   );
@@ -1612,7 +1604,6 @@ function ButtonsButton12({ onClick }: { onClick?: () => void }) {
         <TextPadding />
       </div>
       <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-      <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
 }
