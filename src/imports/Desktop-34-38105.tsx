@@ -1012,38 +1012,14 @@ function Container7({ onNavigate }: { onNavigate?: (page: 'terms' | 'privacy' | 
   );
 }
 
-function Footer({ onNavigate, email, setEmail, onSubmit, onPolicyNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; setEmail: (e: React.ChangeEvent<HTMLInputElement>) => void; onSubmit: () => void; onPolicyNavigate?: (page: 'terms' | 'privacy' | 'cookies') => void }) {
-  return (
-    <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-full z-[1]" data-name="Footer">
-      <Container6 onNavigate={onNavigate} email={email} setEmail={setEmail} onSubmit={onSubmit} />
-      <Container7 onNavigate={onPolicyNavigate} />
-    </div>
-  );
-}
 
-export default function Desktop({ onNavigate, onPolicyNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; onPolicyNavigate?: (page: 'terms' | 'privacy' | 'cookies') => void }) {
-  const [email, setEmail] = useState('');
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubscribe = () => {
-    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      console.log('Subscribing email:', email);
-      alert('Thank you for subscribing!');
-      setEmail('');
-    } else {
-      alert('Please enter a valid email address');
-    }
-  };
-
+export default function Desktop({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full" data-name="Desktop">
       <BlogPageHeader onNavigate={onNavigate} />
       <SectionDivider />
       <SectionDivider1 />
-      <Footer onNavigate={onNavigate} email={email} setEmail={handleEmailChange} onSubmit={handleSubscribe} onPolicyNavigate={onPolicyNavigate} />
     </div>
   );
 }

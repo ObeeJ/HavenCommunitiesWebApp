@@ -1170,11 +1170,146 @@ function Container9({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'co
   );
 }
 
-function Footer({ onNavigate, footerEmail, setFooterEmail, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; footerEmail: string; setFooterEmail: (value: string) => void; onSubmit: () => void }) {
+// Home page footer components
+function FooterLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full" data-name="Footer links">
+      <div className="content-stretch flex gap-[8px] items-center relative shrink-0" onClick={() => onNavigate?.('about')}>
+        <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre cursor-pointer hover:opacity-80 transition-opacity">About Us</p>
+      </div>
+      <div className="content-stretch flex gap-[8px] items-center relative shrink-0" onClick={() => onNavigate?.('projects')}>
+        <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre cursor-pointer hover:opacity-80 transition-opacity">Project</p>
+      </div>
+      <div className="content-stretch flex gap-[8px] items-center relative shrink-0" onClick={() => onNavigate?.('contact')}>
+        <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre cursor-pointer hover:opacity-80 transition-opacity">Contact</p>
+      </div>
+      <div className="content-stretch flex gap-[8px] items-center relative shrink-0" onClick={() => onNavigate?.('blog')}>
+        <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre cursor-pointer hover:opacity-80 transition-opacity">Blog</p>
+      </div>
+    </div>
+  );
+}
+
+function LogoAndLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[280px] relative shrink-0" data-name="Logo and links">
+      <Logo onClick={() => onNavigate?.('home')} variant="white" />
+      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-full max-w-[545px]">Crafting spaces, cultivating communities.</p>
+      <FooterLinks onNavigate={onNavigate} />
+    </div>
+  );
+}
+
+function Newsletter({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[360px]" data-name="Newsletter">
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white w-full">Stay up to date</p>
+      <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full">
+        <div className="basis-0 content-stretch flex flex-col gap-[6px] grow items-start min-h-px min-w-px relative shrink-0">
+          <div className="bg-white relative rounded-[234px] shrink-0 w-full">
+            <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+            <div className="flex flex-row items-center size-full">
+              <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] py-[10px] relative w-full">
+                <input
+                  type="email"
+                  value={value}
+                  onChange={(e) => onChange(e.target.value)}
+                  placeholder="Enter your email"
+                  className="basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[24px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden text-[#717680] text-[16px] bg-transparent border-none outline-none placeholder:text-[#717680] w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#00359e] relative rounded-[234px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" onClick={onSubmit}>
+          <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
+            <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Subscribe</p>
+          </div>
+          <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SocialIcons() {
+  return (
+    <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
+      <div className="relative shrink-0 size-[24px] bg-white/20 rounded"></div>
+      <div className="relative shrink-0 size-[24px] bg-white/20 rounded"></div>
+      <div className="relative shrink-0 size-[24px] bg-white/20 rounded"></div>
+      <div className="relative shrink-0 size-[24px] bg-white/20 rounded"></div>
+    </div>
+  );
+}
+
+function Frame1000003769({ email, onEmailChange, onSubmit }: { email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-stretch flex flex-col h-[202.72px] items-end justify-between relative shrink-0 w-full max-w-[359px]">
+      <Newsletter value={email} onChange={onEmailChange} onSubmit={onSubmit} />
+      <SocialIcons />
+    </div>
+  );
+}
+
+function Content15({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-start flex flex-wrap gap-[48px] h-[178px] items-start justify-between relative shrink-0 w-full" data-name="Content">
+      <LogoAndLinks onNavigate={onNavigate} />
+      <Frame1000003769 email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+    </div>
+  );
+}
+
+function Container9({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
+      <div className="max-w-inherit size-full">
+        <div className="box-border content-stretch flex flex-col gap-[48px] items-start max-w-inherit px-[32px] py-0 relative w-full">
+          <Content15 onNavigate={onNavigate} email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="content-stretch flex font-['Avenir:Medium',_sans-serif] gap-[16px] items-start leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre" data-name="Footer links">
+      <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('termsOfService')}>Terms</p>
+      <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('privacyPolicy')}>Privacy</p>
+      <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('cookiesPolicy')}>Cookies</p>
+    </div>
+  );
+}
+
+function Content16({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="box-border content-center flex flex-wrap gap-[24px] items-center justify-between pb-0 pt-[32px] px-0 relative shrink-0 w-full" data-name="Content">
+      <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(127,86,217,0)] border-solid inset-0 pointer-events-none" />
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">© 2025 Pishon Communities. All rights reserved.</p>
+      <FooterLinks1 onNavigate={onNavigate} />
+    </div>
+  );
+}
+
+function Container10({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
+      <div className="max-w-inherit size-full">
+        <div className="box-border content-stretch flex flex-col gap-[32px] items-start max-w-inherit px-[32px] py-0 relative w-full">
+          <Content16 onNavigate={onNavigate} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Footer({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
   return (
     <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-full z-[1]" data-name="Footer">
-      <Container8 onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={onSubmit} />
-      <Container9 onNavigate={onNavigate} />
+      <Container9 onNavigate={onNavigate} email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+      <Container10 onNavigate={onNavigate} />
     </div>
   );
 }
@@ -1196,7 +1331,7 @@ export default function Desktop({ onNavigate, onBookNow }: { onNavigate?: (page:
       <ContactPageHeader onBookNow={onBookNow} />
       <ContactSections />
       <SectionDivider />
-      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleSubmit} />
+      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleSubmit} />
     </div>
   );
 }
