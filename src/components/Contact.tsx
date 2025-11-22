@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import DesktopContact from '../imports/Desktop-34-20344';
 import { ContactModal } from './ContactModal';
-import { Footer } from './Footer';
 
 interface ContactProps {
   onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void;
@@ -18,7 +17,6 @@ export function Contact({ onNavigate }: ContactProps) {
     <>
       <div className="w-full">
         <DesktopContact onNavigate={onNavigate} onBookNow={handleBookNow} />
-        <Footer onNavigate={onNavigate} />
       </div>
 
       <ContactModal isOpen={showContactModal} onClose={() => setShowContactModal(false)} />

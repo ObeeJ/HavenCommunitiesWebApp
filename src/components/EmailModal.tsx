@@ -44,9 +44,9 @@ function XCloseMobile({ onClick }: { onClick?: () => void }) {
 
 function ButtonCloseX({ onClick }: { onClick?: () => void }) {
   return (
-    <button 
+    <button
       onClick={onClick}
-      className="absolute box-border content-stretch flex items-center justify-center overflow-clip p-[8px] right-[24px] rounded-[8px] size-[44px] top-[24px] cursor-pointer hover:bg-black/10 transition-colors z-10" 
+      className="absolute box-border content-stretch flex items-center justify-center overflow-clip p-[8px] right-[16px] rounded-[8px] size-[44px] top-[-60px] cursor-pointer hover:bg-black/10 transition-colors z-10"
       data-name="Button close X"
     >
       <XClose />
@@ -56,9 +56,9 @@ function ButtonCloseX({ onClick }: { onClick?: () => void }) {
 
 function ButtonCloseXMobile({ onClick }: { onClick?: () => void }) {
   return (
-    <button 
+    <button
       onClick={onClick}
-      className="absolute box-border content-stretch flex items-center justify-center overflow-clip p-[8px] right-[8px] rounded-[8px] size-[44px] top-[8px] cursor-pointer hover:bg-black/10 transition-colors" 
+      className="absolute box-border content-stretch flex items-center justify-center overflow-clip p-[8px] right-[8px] rounded-[8px] size-[44px] top-[8px] cursor-pointer hover:bg-black/10 transition-colors z-10"
       data-name="Button close X"
     >
       <XCloseMobile />
@@ -143,11 +143,11 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
                   {/* Image Section */}
                   <div className="basis-0 grow h-[480px] min-h-px min-w-px relative shrink-0" data-name="Image">
                     <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage} />
-                    <ButtonCloseX onClick={onClose} />
                   </div>
-                  
+
                   {/* Content Section */}
-                  <div className="basis-0 grow min-h-px min-w-px relative shrink-0" data-name="Content">
+                  <div className="basis-0 grow min-h-px min-w-px relative shrink-0 overflow-visible" data-name="Content">
+                    <ButtonCloseX onClick={onClose} />
                     <div className="flex flex-col justify-center size-full">
                       <div className="box-border content-stretch flex flex-col gap-[48px] items-start justify-center p-[64px] relative w-full">
                         {/* Heading */}
@@ -204,7 +204,6 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
                             </div>
                             {(email || isLoading) ? (
                               <>
-                                <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
                                 <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
                               </>
                             ) : (
@@ -228,7 +227,7 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
                 <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImageMobile} />
                 <ButtonCloseXMobile onClick={onClose} />
               </div>
-              
+
               {/* Text and Form */}
               <div className="relative shrink-0 w-full" data-name="Text and actions">
                 <div className="size-full">
@@ -289,7 +288,6 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
                         </div>
                         {(email || isLoading) ? (
                           <>
-                            <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
                             <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
                           </>
                         ) : (

@@ -3,6 +3,7 @@ import Desktop from './imports/Desktop-34-7755';
 import { MobileWithMenu } from './components/MobileWithMenu';
 import { EmailModal } from './components/EmailModal';
 import { ResponsiveWrapper } from './components/ResponsiveWrapper';
+import { Footer } from './components/Footer';
 import { useResponsive } from './hooks/useMediaQuery';
 
 // Lazy load heavy components
@@ -24,6 +25,7 @@ export default function App() {
   const [showModal, setShowModal] = useState(false);
   const [currentPage, setCurrentPage] = useState<NavigationPage>('home');
   const [showAdmin, setShowAdmin] = useState(false);
+  const [footerEmail, setFooterEmail] = useState('');
   const { isDesktop } = useResponsive();
 
   useEffect(() => {
@@ -68,6 +70,14 @@ export default function App() {
     setShowModal(false);
   };
 
+  const handleFooterSubmit = () => {
+    if (footerEmail.trim()) {
+      // Handle newsletter subscription
+      console.log('Newsletter subscription:', footerEmail);
+      setFooterEmail('');
+    }
+  };
+
   const navigateTo = (page: NavigationPage) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -91,6 +101,17 @@ export default function App() {
             {currentPage === 'termsOfService' && <TermsOfService onNavigate={navigateTo} />}
             {currentPage === 'cookiesPolicy' && <CookiesPolicy onNavigate={navigateTo} />}
           </Suspense>
+          
+          {/* Single Footer for all pages */}
+          {currentPage !== 'home' && (
+            <Footer 
+              onNavigate={navigateTo}
+              email={footerEmail}
+              onEmailChange={setFooterEmail}
+              onSubmit={handleFooterSubmit}
+            />
+          )}
+          
           <EmailModal isOpen={showModal} onClose={handleCloseModal} onNavigate={navigateTo} />
         </>
       ) : (

@@ -215,7 +215,6 @@ function ButtonsButton6({ onClick }: { onClick?: () => void }) {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[18px] py-[12px] relative rounded-[inherit]">
         <TextPadding7 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1120,7 +1119,6 @@ function ButtonsButton15() {
         <ArrowLeft />
         <TextPadding8 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1287,7 +1285,6 @@ function ButtonsButton16() {
         <TextPadding9 />
         <ArrowRight />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1482,7 +1479,7 @@ function LogoAndLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | '
     <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[560px] relative shrink-0" data-name="Logo and links">
       <Frame1000003794 onClick={() => onNavigate?.('home')} />
       <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-[545px]">Crafting spaces, cultivating communities.</p>
-      <FooterLinks onNavigate={onNavigate} />
+      <FooterLinks49489 onNavigate={onNavigate} />
     </div>
   );
 }
@@ -1538,7 +1535,6 @@ function ButtonsButton21() {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
         <TextPadding10 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1753,7 +1749,6 @@ function ButtonsButton12Newsletter({ onClick }: { onClick?: () => void }) {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
         <TextPaddingNewsletter />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1840,7 +1835,7 @@ function Container7({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'co
 }
 
 // Home page footer components
-function FooterLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+function FooterLinks49489({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full" data-name="Footer links">
       <div className="content-stretch flex gap-[8px] items-center relative shrink-0" onClick={() => onNavigate?.('about')}>
@@ -1859,17 +1854,17 @@ function FooterLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'c
   );
 }
 
-function LogoAndLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+function LogoAndLinks49489({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[280px] relative shrink-0" data-name="Logo and links">
       <Logo onClick={() => onNavigate?.('home')} variant="white" />
       <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-full max-w-[545px]">Crafting spaces, cultivating communities.</p>
-      <FooterLinks onNavigate={onNavigate} />
+      <FooterLinks49489 onNavigate={onNavigate} />
     </div>
   );
 }
 
-function Newsletter({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
+function Newsletter49489({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[360px]" data-name="Newsletter">
       <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white w-full">Stay up to date</p>
@@ -1894,14 +1889,13 @@ function Newsletter({ value, onChange, onSubmit }: { value: string; onChange: (v
           <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
             <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Subscribe</p>
           </div>
-          <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
         </div>
       </div>
     </div>
   );
 }
 
-function SocialIcons() {
+function SocialIcons49489() {
   return (
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[24px] bg-white/20 rounded"></div>
@@ -1912,20 +1906,20 @@ function SocialIcons() {
   );
 }
 
-function Frame1000003769({ email, onEmailChange, onSubmit }: { email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+function Frame100000376949489({ email, onEmailChange, onSubmit }: { email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
   return (
     <div className="content-stretch flex flex-col h-[202.72px] items-end justify-between relative shrink-0 w-full max-w-[359px]">
-      <Newsletter value={email} onChange={onEmailChange} onSubmit={onSubmit} />
-      <SocialIcons />
+      <Newsletter49489 value={email} onChange={onEmailChange} onSubmit={onSubmit} />
+      <SocialIcons49489 />
     </div>
   );
 }
 
-function Content15({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+function Content1549489({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
   return (
     <div className="content-start flex flex-wrap gap-[48px] h-[178px] items-start justify-between relative shrink-0 w-full" data-name="Content">
-      <LogoAndLinks onNavigate={onNavigate} />
-      <Frame1000003769 email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+      <LogoAndLinks49489 onNavigate={onNavigate} />
+      <Frame100000376949489 email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
     </div>
   );
 }
@@ -1935,14 +1929,14 @@ function Container9({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate
     <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
       <div className="max-w-inherit size-full">
         <div className="box-border content-stretch flex flex-col gap-[48px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-          <Content15 onNavigate={onNavigate} email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+          <Content1549489 onNavigate={onNavigate} email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
         </div>
       </div>
     </div>
   );
 }
 
-function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+function FooterLinks149489({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="content-stretch flex font-['Avenir:Medium',_sans-serif] gap-[16px] items-start leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre" data-name="Footer links">
       <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('termsOfService')}>Terms</p>
@@ -1952,12 +1946,12 @@ function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | '
   );
 }
 
-function Content16({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+function Content1649489({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="box-border content-center flex flex-wrap gap-[24px] items-center justify-between pb-0 pt-[32px] px-0 relative shrink-0 w-full" data-name="Content">
       <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(127,86,217,0)] border-solid inset-0 pointer-events-none" />
       <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">© 2025 Pishon Communities. All rights reserved.</p>
-      <FooterLinks1 onNavigate={onNavigate} />
+      <FooterLinks149489 onNavigate={onNavigate} />
     </div>
   );
 }
@@ -1967,7 +1961,7 @@ function Container10({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'c
     <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
       <div className="max-w-inherit size-full">
         <div className="box-border content-stretch flex flex-col gap-[32px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-          <Content16 onNavigate={onNavigate} />
+          <Content1649489 onNavigate={onNavigate} />
         </div>
       </div>
     </div>
@@ -2009,7 +2003,6 @@ export default function Desktop({ onNavigate, onBlogClick }: { onNavigate?: (pag
       <BlogPageHeader onNavigate={onNavigate} activeCategory={activeCategory} onCategoryChange={setActiveCategory} email={heroEmail} onEmailChange={setHeroEmail} onSubmit={handleHeroSubmit} />
       <SectionDivider />
       <SectionDivider1 />
-      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleFooterSubmit} />
     </div>
   );
 }

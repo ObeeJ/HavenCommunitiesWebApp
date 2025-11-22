@@ -759,7 +759,6 @@ function FeaturedIcon() {
       <div className="overflow-clip relative rounded-[inherit] size-[48px]">
         <MarkerPin04 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(213,215,218,1),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#D5D7DA] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );
@@ -807,7 +806,6 @@ function FeaturedIcon1() {
       <div className="overflow-clip relative rounded-[inherit] size-[48px]">
         <Globe05 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(213,215,218,1),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#D5D7DA] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );
@@ -857,7 +855,6 @@ function FeaturedIcon2() {
       <div className="overflow-clip relative rounded-[inherit] size-[48px]">
         <Building07 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(213,215,218,1),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#D5D7DA] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );

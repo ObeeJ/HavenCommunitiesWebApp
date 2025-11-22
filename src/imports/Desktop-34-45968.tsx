@@ -553,7 +553,6 @@ function ButtonsButton12() {
       <div className="box-border content-stretch flex gap-[6px] h-[48px] items-center justify-center overflow-clip px-[18px] py-[12px] relative rounded-[inherit] w-[224px]">
         <TextPadding7 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -588,7 +587,6 @@ function ButtonsButton13() {
       <div className="box-border content-stretch flex gap-[6px] h-[48px] items-center justify-center overflow-clip px-[18px] py-[12px] relative rounded-[inherit] w-[224px]">
         <TextPadding8 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[#155eef] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1090,7 +1088,6 @@ function ButtonsButton18({ onClick }: { onClick?: () => void }) {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
         <TextPadding9 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1329,7 +1326,6 @@ export default function Desktop({ onNavigate }: { onNavigate?: (page: 'home' | '
       <BlogPageHeader onNavigate={onNavigate} />
       <SectionDivider />
       <SectionDivider1 />
-      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleSubmit} />
     </div>
   );
 }

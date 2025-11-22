@@ -1,7 +1,6 @@
 import MobileCookiesPolicy from '../imports/Mobile-47-61236';
 import DesktopCookiesPolicy from '../imports/Desktop-47-62829';
 import type { NavigationProps } from '../types/navigation';
-import { Footer } from './Footer';
 
 interface CookiesPolicyProps extends NavigationProps {}
 
@@ -17,9 +16,6 @@ export function CookiesPolicy({ onNavigate }: CookiesPolicyProps) {
       <div className="hidden md:block w-full">
         <DesktopCookiesPolicy onNavigate={onNavigate} />
       </div>
-      
-      {/* Standardized Footer */}
-      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

@@ -1,185 +1,388 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Logo from './Logo';
+import svgPaths from '../imports/svg-nfww7tfte7';
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void;
+  email?: string;
+  onEmailChange?: (value: string) => void;
+  onSubmit?: () => void;
 }
 
-export function Footer({ onNavigate }: FooterProps) {
-  const [email, setEmail] = useState('');
+// Footer Link Components
+function ButtonsButton8({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">About Us</p>
+    </div>
+  );
+}
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
-  };
+function FooterLink({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
+      <ButtonsButton8 onClick={onClick} />
+    </div>
+  );
+}
 
-  const handleNavigation = (page: FooterProps['onNavigate'] extends (page: infer P) => void ? P : never) => {
-    onNavigate?.(page);
+function ButtonsButton9({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Projects</p>
+    </div>
+  );
+}
+
+function FooterLink1({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
+      <ButtonsButton9 onClick={onClick} />
+    </div>
+  );
+}
+
+function ButtonsButton10({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Contact</p>
+    </div>
+  );
+}
+
+function FooterLink2({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
+      <ButtonsButton10 onClick={onClick} />
+    </div>
+  );
+}
+
+function ButtonsButton11({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer" data-name="Buttons/Button" onClick={onClick}>
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Blog</p>
+    </div>
+  );
+}
+
+function FooterLink3({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
+      <ButtonsButton11 onClick={onClick} />
+    </div>
+  );
+}
+
+function FooterLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full" data-name="Footer links">
+      <FooterLink onClick={() => onNavigate?.('about')} />
+      <FooterLink1 onClick={() => onNavigate?.('projects')} />
+      <FooterLink2 onClick={() => onNavigate?.('contact')} />
+      <FooterLink3 onClick={() => onNavigate?.('blog')} />
+    </div>
+  );
+}
+
+function Frame1000003794({ onClick }: { onClick?: () => void }) {
+  return (
+    <Logo onClick={onClick} variant="white" />
+  );
+}
+
+function LogoAndLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[280px] relative shrink-0" data-name="Logo and links">
+      <Frame1000003794 onClick={() => onNavigate?.('home')} />
+      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-full max-w-[545px]">Crafting spaces, cultivating communities.</p>
+      <FooterLinks onNavigate={onNavigate} />
+    </div>
+  );
+}
+
+// Newsletter Components
+function Content14({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+  return (
+    <div className="basis-0 content-stretch flex gap-[8px] grow items-center min-h-px min-w-px relative shrink-0" data-name="Content">
+      <input
+        type="email"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Enter your email"
+        className="basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[24px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden text-[#717680] text-[16px] bg-transparent border-none outline-none placeholder:text-[#717680] w-full"
+      />
+    </div>
+  );
+}
+
+function Input({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+  return (
+    <div className="bg-white relative rounded-[234px] shrink-0 w-full" data-name="Input">
+      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+      <div className="flex flex-row items-center size-full">
+        <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] py-[10px] relative w-full">
+          <Content14 value={value} onChange={onChange} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function InputWithLabel({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="Input with label">
+      <Input value={value} onChange={onChange} />
+    </div>
+  );
+}
+
+function InputField({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+  return (
+    <div className="basis-0 content-stretch flex flex-col gap-[6px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Input field">
+      <InputWithLabel value={value} onChange={onChange} />
+    </div>
+  );
+}
+
+function TextPadding() {
+  return (
+    <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Subscribe</p>
+    </div>
+  );
+}
+
+function ButtonsButton12({ onClick }: { onClick?: () => void }) {
+  return (
+    <div className="bg-[#00359e] relative rounded-[234px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" data-name="Buttons/Button" onClick={onClick}>
+      <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
+        <TextPadding />
+      </div>
+    </div>
+  );
+}
+
+function EmailCapture({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="Email capture">
+      <InputField value={value} onChange={onChange} />
+      <ButtonsButton12 onClick={onSubmit} />
+    </div>
+  );
+}
+
+function Newsletter({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[360px]" data-name="Newsletter">
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white w-full">Stay up to date</p>
+      <EmailCapture value={value} onChange={onChange} onSubmit={onSubmit} />
+    </div>
+  );
+}
+
+// Social Icon Components
+function SocialIcon() {
+  return (
+    <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g id="Social icon">
+          <path clipRule="evenodd" d={svgPaths.p1f8d8b00} fill="var(--fill-0, white)" fillRule="evenodd" id="Vector" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+function Group() {
+  return (
+    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+      <g id="Group">
+        <path d={svgPaths.p2ccee40} fill="var(--fill-0, white)" id="Vector" />
+      </g>
+    </svg>
+  );
+}
+
+function SocialIcon1() {
+  return (
+    <div className="overflow-clip relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
+      <Group />
+    </div>
+  );
+}
+
+function SocialIcon2() {
+  return (
+    <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g clipPath="url(#clip0_4_21514)" id="Social icon">
+          <path d={svgPaths.p2334f790} fill="var(--fill-0, white)" id="Vector" />
+        </g>
+        <defs>
+          <clipPath id="clip0_4_21514">
+            <rect fill="white" height="24" width="24" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
+function SocialIcon3() {
+  return (
+    <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g clipPath="url(#clip0_4_21511)" id="Social icon">
+          <g id="Vector">
+            <path d={svgPaths.p3bfce500} fill="var(--fill-0, white)" />
+            <path d={svgPaths.p90dcd40} fill="var(--fill-0, white)" />
+            <path d={svgPaths.p36893400} fill="var(--fill-0, white)" />
+          </g>
+        </g>
+        <defs>
+          <clipPath id="clip0_4_21511">
+            <rect fill="white" height="24" width="24" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
+function SocialIcon4() {
+  return (
+    <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g id="Social icon">
+          <path d={svgPaths.p396b2062} fill="var(--fill-0, white)" id="Vector" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+function SocialIcon5() {
+  return (
+    <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g clipPath="url(#clip0_4_21523)" id="Social icon">
+          <path clipRule="evenodd" d={svgPaths.p2e42b500} fill="var(--fill-0, white)" fillRule="evenodd" id="Vector" />
+        </g>
+        <defs>
+          <clipPath id="clip0_4_21523">
+            <rect fill="white" height="24" width="24" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
+function SocialIcon6() {
+  const handleClick = () => {
+    const whatsappNumber = '+2348033892345';
+    const message = encodeURIComponent('Hello, I would like to connect with Haven Communities.');
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
 
   return (
+    <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon" onClick={handleClick}>
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g clipPath="url(#clip0_4_21505)" id="Social icon">
+          <path clipRule="evenodd" d={svgPaths.p3a36a3c0} fill="var(--fill-0, white)" fillRule="evenodd" id="Vector" />
+        </g>
+        <defs>
+          <clipPath id="clip0_4_21505">
+            <rect fill="white" height="24" width="24" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
+function SocialIcons() {
+  return (
+    <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-name="Social icons">
+      <SocialIcon />
+      <SocialIcon1 />
+      <SocialIcon2 />
+      <SocialIcon3 />
+      <SocialIcon4 />
+      <SocialIcon5 />
+      <SocialIcon6 />
+    </div>
+  );
+}
+
+function Frame1000003769({ email, onEmailChange, onSubmit }: { email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-stretch flex flex-col h-[202.72px] items-end justify-between relative shrink-0 w-full max-w-[359px]">
+      <Newsletter value={email} onChange={onEmailChange} onSubmit={onSubmit} />
+      <SocialIcons />
+    </div>
+  );
+}
+
+function Content15({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="content-start flex flex-wrap gap-[48px] h-[178px] items-start justify-between relative shrink-0 w-full" data-name="Content">
+      <LogoAndLinks onNavigate={onNavigate} />
+      <Frame1000003769 email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+    </div>
+  );
+}
+
+function Container9({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  return (
+    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
+      <div className="max-w-inherit size-full">
+        <div className="box-border content-stretch flex flex-col gap-[48px] items-start max-w-inherit px-[32px] py-0 relative w-full">
+          <Content15 onNavigate={onNavigate} email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="content-stretch flex font-['Avenir:Medium',_sans-serif] gap-[16px] items-start leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre" data-name="Footer links">
+      <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('termsOfService')}>Terms</p>
+      <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('privacyPolicy')}>Privacy</p>
+      <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => onNavigate?.('cookiesPolicy')}>Cookies</p>
+    </div>
+  );
+}
+
+function Content16({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="box-border content-center flex flex-wrap gap-[24px] items-center justify-between pb-0 pt-[32px] px-0 relative shrink-0 w-full" data-name="Content">
+      <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(127,86,217,0)] border-solid inset-0 pointer-events-none" />
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">© 2025 Pishon Communities. All rights reserved.</p>
+      <FooterLinks1 onNavigate={onNavigate} />
+    </div>
+  );
+}
+
+function Container10({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  return (
+    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
+      <div className="max-w-inherit size-full">
+        <div className="box-border content-stretch flex flex-col gap-[32px] items-start max-w-inherit px-[32px] py-0 relative w-full">
+          <Content16 onNavigate={onNavigate} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Footer({ onNavigate, email = '', onEmailChange, onSubmit }: FooterProps) {
+  return (
     <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-full z-[1]" data-name="Footer">
-      <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-        <div className="max-w-inherit size-full">
-          <div className="box-border content-stretch flex flex-col gap-[48px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-            <div className="content-start flex flex-wrap gap-[48px] h-[178px] items-start justify-between relative shrink-0 w-full" data-name="Content">
-              <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[280px] relative shrink-0" data-name="Logo and links">
-                <div className="relative shrink-0 cursor-pointer hover:opacity-90 transition-opacity" onClick={() => handleNavigation('home')}>
-                  <img src="/src/assets/3eada838a8a55b948f7379c648ac717c0e7f47c9.png" alt="Haven Communities Logo" className="h-auto w-[105px] brightness-0 invert" />
-                </div>
-                <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-full max-w-[545px]">Crafting spaces, cultivating communities.</p>
-                <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full" data-name="Footer links">
-                  <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-                    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={() => handleNavigation('about')}>
-                      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">About Us</p>
-                    </div>
-                  </div>
-                  <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-                    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={() => handleNavigation('projects')}>
-                      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Project</p>
-                    </div>
-                  </div>
-                  <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-                    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={() => handleNavigation('contact')}>
-                      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Contact</p>
-                    </div>
-                  </div>
-                  <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-                    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={() => handleNavigation('blog')}>
-                      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Blog</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="content-stretch flex flex-col h-[202.72px] items-end justify-between relative shrink-0 w-full max-w-[359px]">
-                <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[360px]" data-name="Newsletter">
-                  <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white w-full">Stay up to date</p>
-                  <form onSubmit={handleSubscribe} className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="Email capture">
-                    <div className="basis-0 content-stretch flex flex-col gap-[6px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Input field">
-                      <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="Input with label">
-                        <div className="bg-white relative rounded-[234px] shrink-0 w-full" data-name="Input">
-                          <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]"></div>
-                          <div className="flex flex-row items-center size-full">
-                            <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] py-[10px] relative w-full">
-                              <div className="basis-0 content-stretch flex gap-[8px] grow items-center min-h-px min-w-px relative shrink-0" data-name="Content">
-                                <input 
-                                  type="email" 
-                                  placeholder="Enter your email" 
-                                  className="basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[24px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden text-[#717680] text-[16px] bg-transparent border-none outline-none placeholder:text-[#717680] w-full" 
-                                  value={email}
-                                  onChange={(e) => setEmail(e.target.value)}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" className="bg-[#00359e] relative rounded-[234px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" data-name="Buttons/Button">
-                      <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
-                        <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-                          <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Subscribe</p>
-                        </div>
-                      </div>
-                    </button>
-                  </form>
-                </div>
-                <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-name="Social icons">
-                  <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g id="Social icon">
-                        <path clipRule="evenodd" d="M15.7661 22.5L10.469 14.9496L3.83758 22.5H1.03208L9.22429 13.1751L1.03208 1.5H8.23503L13.2276 8.61615L19.483 1.5H22.2885L14.4764 10.393L22.9691 22.5H15.7661ZM18.8904 20.3714H17.0016L5.04913 3.62864H6.93817L11.7252 10.3326L12.553 11.4959L18.8904 20.3714Z" fill="var(--fill-0, white)" fillRule="evenodd" id="Vector"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="overflow-clip relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g id="Group">
-                        <path d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5563 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2938 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516V20.4516Z" fill="var(--fill-0, white)" id="Vector"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g clipPath="url(#clip0_4_21514)" id="Social icon">
-                        <path d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z" fill="var(--fill-0, white)" id="Vector"></path>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_4_21514">
-                          <rect fill="white" height="24" width="24"></rect>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                  <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g clipPath="url(#clip0_4_21511)" id="Social icon">
-                        <g id="Vector">
-                          <path d="M12 2.16094C15.2063 2.16094 15.5859 2.175 16.8469 2.23125C18.0188 2.28281 18.6516 2.47969 19.0734 2.64375C19.6313 2.85938 20.0344 3.12188 20.4516 3.53906C20.8734 3.96094 21.1313 4.35938 21.3469 4.91719C21.5109 5.33906 21.7078 5.97656 21.7594 7.14375C21.8156 8.40937 21.8297 8.78906 21.8297 11.9906C21.8297 15.1969 21.8156 15.5766 21.7594 16.8375C21.7078 18.0094 21.5109 18.6422 21.3469 19.0641C21.1313 19.6219 20.8687 20.025 20.4516 20.4422C20.0297 20.8641 19.6313 21.1219 19.0734 21.3375C18.6516 21.5016 18.0141 21.6984 16.8469 21.75C15.5813 21.8062 15.2016 21.8203 12 21.8203C8.79375 21.8203 8.41406 21.8062 7.15313 21.75C5.98125 21.6984 5.34844 21.5016 4.92656 21.3375C4.36875 21.1219 3.96563 20.8594 3.54844 20.4422C3.12656 20.0203 2.86875 19.6219 2.65313 19.0641C2.48906 18.6422 2.29219 18.0047 2.24063 16.8375C2.18438 15.5719 2.17031 15.1922 2.17031 11.9906C2.17031 8.78438 2.18438 8.40469 2.24063 7.14375C2.29219 5.97187 2.48906 5.33906 2.65313 4.91719C2.86875 4.35938 3.13125 3.95625 3.54844 3.53906C3.97031 3.11719 4.36875 2.85938 4.92656 2.64375C5.34844 2.47969 5.98594 2.28281 7.15313 2.23125C8.41406 2.175 8.79375 2.16094 12 2.16094ZM12 0C8.74219 0 8.33438 0.0140625 7.05469 0.0703125C5.77969 0.126563 4.90313 0.332812 4.14375 0.628125C3.35156 0.9375 2.68125 1.34531 2.01563 2.01562C1.34531 2.68125 0.9375 3.35156 0.628125 4.13906C0.332812 4.90313 0.126563 5.775 0.0703125 7.05C0.0140625 8.33437 0 8.74219 0 12C0 15.2578 0.0140625 15.6656 0.0703125 16.9453C0.126563 18.2203 0.332812 19.0969 0.628125 19.8563C0.9375 20.6484 1.34531 21.3188 2.01563 21.9844C2.68125 22.65 3.35156 23.0625 4.13906 23.3672C4.90313 23.6625 5.775 23.8687 7.05 23.925C8.32969 23.9812 8.7375 23.9953 11.9953 23.9953C15.2531 23.9953 15.6609 23.9812 16.9406 23.925C18.2156 23.8687 19.0922 23.6625 19.8516 23.3672C20.6391 23.0625 21.3094 22.65 21.975 21.9844C22.6406 21.3188 23.0531 20.6484 23.3578 19.8609C23.6531 19.0969 23.8594 18.225 23.9156 16.95C23.9719 15.6703 23.9859 15.2625 23.9859 12.0047C23.9859 8.74688 23.9719 8.33906 23.9156 7.05938C23.8594 5.78438 23.6531 4.90781 23.3578 4.14844C23.0625 3.35156 22.6547 2.68125 21.9844 2.01562C21.3188 1.35 20.6484 0.9375 19.8609 0.632812C19.0969 0.3375 18.225 0.13125 16.95 0.075C15.6656 0.0140625 15.2578 0 12 0Z" fill="var(--fill-0, white)"></path>
-                          <path d="M12 5.83594C8.59688 5.83594 5.83594 8.59688 5.83594 12C5.83594 15.4031 8.59688 18.1641 12 18.1641C15.4031 18.1641 18.1641 15.4031 18.1641 12C18.1641 8.59688 15.4031 5.83594 12 5.83594ZM12 15.9984C9.79219 15.9984 8.00156 14.2078 8.00156 12C8.00156 9.79219 9.79219 8.00156 12 8.00156C14.2078 8.00156 15.9984 9.79219 15.9984 12C15.9984 14.2078 14.2078 15.9984 12 15.9984Z" fill="var(--fill-0, white)"></path>
-                          <path d="M19.8469 5.59214C19.8469 6.38902 19.2 7.0312 18.4078 7.0312C17.6109 7.0312 16.9688 6.38433 16.9688 5.59214C16.9688 4.79526 17.6156 4.15308 18.4078 4.15308C19.2 4.15308 19.8469 4.79995 19.8469 5.59214Z" fill="var(--fill-0, white)"></path>
-                        </g>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_4_21511">
-                          <rect fill="white" height="24" width="24"></rect>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                  <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g id="Social icon">
-                        <path d="M17.0725 0H13.0278V16.3478C13.0278 18.2957 11.4722 19.8957 9.53626 19.8957C7.60034 19.8957 6.04469 18.2957 6.04469 16.3478C6.04469 14.4348 7.56577 12.8695 9.43257 12.8V8.69567C5.31872 8.7652 2 12.1391 2 16.3478C2 20.5913 5.38786 24 9.57085 24C13.7538 24 17.1416 20.5565 17.1416 16.3478V7.9652C18.6627 9.07827 20.5295 9.73913 22.5 9.77393V5.66957C19.4579 5.56522 17.0725 3.06087 17.0725 0Z" fill="var(--fill-0, white)" id="Vector"></path>
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g clipPath="url(#clip0_4_21523)" id="Social icon">
-                        <path clipRule="evenodd" d="M22.7466 4.83413C23.119 5.20889 23.3864 5.67489 23.5221 6.18547C24.0239 8.07002 24.0239 12 24.0239 12C24.0239 12 24.0239 15.93 23.5221 17.8146C23.3864 18.3251 23.119 18.7911 22.7466 19.1659C22.3743 19.5407 21.91 19.8111 21.4003 19.95C19.5239 20.4546 12.0239 20.4546 12.0239 20.4546C12.0239 20.4546 4.52393 20.4546 2.64756 19.95C2.13786 19.8111 1.67358 19.5407 1.30121 19.1659C0.928842 18.7911 0.661431 18.3251 0.525744 17.8146C0.0239258 15.93 0.0239258 12 0.0239258 12C0.0239258 12 0.0239258 8.07002 0.525744 6.18547C0.661431 5.67489 0.928842 5.20889 1.30121 4.83413C1.67358 4.45936 2.13786 4.18897 2.64756 4.05002C4.52393 3.54547 12.0239 3.54547 12.0239 3.54547C12.0239 3.54547 19.5239 3.54547 21.4003 4.05002C21.91 4.18897 22.3743 4.45936 22.7466 4.83413ZM15.8421 12L9.56934 8.4314V15.5687L15.8421 12Z" fill="var(--fill-0, white)" fillRule="evenodd" id="Vector"></path>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_4_21523">
-                          <rect fill="white" height="24" width="24"></rect>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                  <div className="relative shrink-0 size-[24px] cursor-pointer hover:opacity-80 transition-opacity" data-name="Social icon">
-                    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                      <g clipPath="url(#clip0_4_21505)" id="Social icon">
-                        <path clipRule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C9.92479 24 7.97261 23.4732 6.26988 22.5461L0 24L1.55869 17.9185C0.566569 16.172 0 14.1522 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM12.0001 22.2857C17.6807 22.2857 22.2858 17.6807 22.2858 12C22.2858 6.31936 17.6807 1.71429 12.0001 1.71429C6.31943 1.71429 1.71436 6.31936 1.71436 12C1.71436 14.1933 2.40086 16.2263 3.57072 17.8958L2.64942 21.3507L6.1652 20.4717C7.82312 21.6158 9.83335 22.2857 12.0001 22.2857ZM7.93483 5.90557C8.34224 5.90205 8.73629 5.89863 9.00009 6.42848C9.22834 6.88694 9.50902 7.67402 9.84032 8.61426L9.84462 8.62646C9.92198 8.84575 10.0428 9.18815 9.88402 9.41509C9.7223 9.64629 9.3617 10.1115 9.10054 10.4129C9.03364 10.49 8.89958 10.6667 9.08227 10.9546C9.12769 11.0261 9.16689 11.0995 9.21008 11.1803C9.38407 11.5057 9.62285 11.9524 10.5939 12.8937C11.574 13.8438 12.8036 14.3907 13.2571 14.5727C13.3803 14.6426 13.6764 14.7361 13.8751 14.5513C13.9664 14.4662 14.1385 14.2464 14.3262 14.0067C14.5465 13.7252 14.7885 13.4162 14.9465 13.2656C14.9513 13.2612 14.9562 13.2567 14.9612 13.2521C15.0669 13.1552 15.2345 13.0016 15.5425 13.1249C15.8122 13.2329 16.847 13.7309 17.6286 14.107C17.7823 14.181 17.9262 14.2502 18.0526 14.3109C18.1769 14.3503 18.3572 14.4953 18.3572 14.786C18.3572 15.4418 17.8929 17.3838 15.6362 17.424C13.3795 17.4641 10.6612 16.2839 8.59243 14.0024C6.44874 11.6383 5.81257 10.058 5.81257 8.61425C5.81257 6.85268 7.04472 5.90615 7.83493 5.90615C7.86828 5.90615 7.9016 5.90586 7.93483 5.90557Z" fill="var(--fill-0, white)" fillRule="evenodd" id="Vector"></path>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_4_21505">
-                          <rect fill="white" height="24" width="24"></rect>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-        <div className="max-w-inherit size-full">
-          <div className="box-border content-stretch flex flex-col gap-[32px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-            <div className="box-border content-center flex flex-wrap gap-[24px] items-center justify-between pb-0 pt-[32px] px-0 relative shrink-0 w-full" data-name="Content">
-              <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(127,86,217,0)] border-solid inset-0 pointer-events-none"></div>
-              <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">© 2025 Pishon Communities. All rights reserved.</p>
-              <div className="content-stretch flex font-['Avenir:Medium',_sans-serif] gap-[16px] items-start leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre" data-name="Footer links">
-                <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => handleNavigation('termsOfService')}>Terms</p>
-                <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => handleNavigation('privacyPolicy')}>Privacy</p>
-                <p className="relative shrink-0 cursor-pointer hover:underline" onClick={() => handleNavigation('cookiesPolicy')}>Cookies</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Container9 onNavigate={onNavigate} email={email} onEmailChange={onEmailChange || (() => {})} onSubmit={onSubmit || (() => {})} />
+      <Container10 onNavigate={onNavigate} />
     </div>
   );
 }

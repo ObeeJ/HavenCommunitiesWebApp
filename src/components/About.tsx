@@ -9,7 +9,6 @@ import imgImageDesktop1 from "../assets/6a0f78d573110e8831ecfb44ca95157a1cf2d390
 import imgContent from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
 import Logo from "./Logo";
 import { CoreValues } from "./CoreValues";
-import { Footer } from "./Footer";
 
 // Mobile Components
 function Group1000003696Mobile() {
@@ -347,8 +346,6 @@ export function About({ onNavigate }: AboutProps) {
         </div>
       </div>
 
-      {/* Standardized Footer */}
-      <Footer onNavigate={onNavigate} />
     </div>
   );
 }
