@@ -212,7 +212,6 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
                   <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
                 </button>
               </form>
@@ -312,7 +311,6 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
                           </div>
                         </div>
                       </div>
-                      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
                       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
                     </button>
                   </form>

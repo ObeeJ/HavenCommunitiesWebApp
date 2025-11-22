@@ -1,5 +1,5 @@
 import DesktopBlog from '../imports/Desktop-34-49489';
-import { Footer } from './Footer';
+import styles from './Blog.module.css';
 
 interface BlogProps {
   onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void;
@@ -11,9 +11,8 @@ export function Blog({ onNavigate }: BlogProps) {
   };
 
   return (
-    <div className="w-full">
+    <div className={styles.pageWrapper}>
       <DesktopBlog onNavigate={onNavigate} onBlogClick={handleBlogClick} />
-      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

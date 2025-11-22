@@ -1,5 +1,5 @@
 import DesktopProjects from '../imports/Desktop-34-38105';
-import { Footer } from './Footer';
+import styles from './Projects.module.css';
 
 interface ProjectsProps {
   onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void;
@@ -7,9 +7,8 @@ interface ProjectsProps {
 
 export function Projects({ onNavigate }: ProjectsProps) {
   return (
-    <div className="w-full">
+    <div className={styles.pageWrapper}>
       <DesktopProjects onNavigate={onNavigate} />
-      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

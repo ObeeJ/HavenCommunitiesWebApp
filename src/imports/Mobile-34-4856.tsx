@@ -115,7 +115,7 @@ function HeadingAndSupportingText() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-end relative shrink-0 w-full" data-name="Heading and supporting text">
       <HeadingAndSubheading />
-      <div className="h-0 relative shrink-0 w-[343px]">
+      <div className="h-0 relative shrink-0 w-full max-w-full">
         <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 343 1">
             <line id="Line 1" stroke="var(--stroke-0, white)" strokeOpacity="0.5" x2="343" y1="0.5" y2="0.5" />
@@ -238,7 +238,7 @@ function TextAndAction1() {
 
 function Card() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-[304px]" data-name="Card">
+    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-full max-w-[304px]" data-name="Card">
       <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[8px] size-full" src={imgCard} />
       <TextAndAction1 />
     </div>
@@ -293,7 +293,7 @@ function TextAndAction2() {
 
 function Card1() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-[304px]" data-name="Card">
+    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-full max-w-[304px]" data-name="Card">
       <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[8px] size-full" src={imgCard1} />
       <TextAndAction2 />
     </div>
@@ -348,7 +348,7 @@ function TextAndAction3() {
 
 function Card2() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-[304px]" data-name="Card">
+    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-full max-w-[304px]" data-name="Card">
       <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[8px] size-full" src={imgCard2} />
       <TextAndAction3 />
     </div>
@@ -403,7 +403,7 @@ function TextAndAction4() {
 
 function Card3() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-[304px]" data-name="Card">
+    <div className="box-border content-stretch flex flex-col gap-[24px] h-[472px] items-start justify-end p-[24px] relative rounded-[8px] shrink-0 w-full max-w-[304px]" data-name="Card">
       <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[8px] size-full" src={imgCard3} />
       <TextAndAction4 />
     </div>
@@ -412,8 +412,8 @@ function Card3() {
 
 function CaseStudies() {
   return (
-    <div className="overflow-x-auto scrollbar-hide" data-name="Case studies">
-      <div className="flex gap-[24px] items-start min-w-max px-4">
+    <div className="overflow-x-auto scrollbar-hide w-full max-w-full" data-name="Case studies" style={{ maxWidth: '100vw', overflowX: 'auto' }}>
+      <div className="flex gap-[24px] items-start min-w-max px-4 max-w-full">
         <Card />
         <Card1 />
         <Card2 />
@@ -564,7 +564,6 @@ function FeaturedIcon() {
       <div className="overflow-clip relative rounded-[inherit] size-[40px]">
         <MarkerPin04 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -619,7 +618,6 @@ function FeaturedIcon1() {
       <div className="overflow-clip relative rounded-[inherit] size-[40px]">
         <Globe05 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -669,7 +667,6 @@ function FeaturedIcon2() {
       <div className="overflow-clip relative rounded-[inherit] size-[40px]">
         <Building07 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1168,7 +1165,7 @@ function Container7() {
 
 function TestimonialSection1() {
   return (
-    <div className="bg-white box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip px-0 py-[64px] relative shrink-0 w-[375px] z-[8]" data-name="Testimonial section">
+    <div className="bg-white box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip px-0 py-[64px] relative shrink-0 w-full max-w-full z-[8]" data-name="Testimonial section">
       <Container7 />
     </div>
   );
@@ -1176,7 +1173,7 @@ function TestimonialSection1() {
 
 function Container8() {
   return (
-    <div className="h-px relative shrink-0 w-[1280px]" data-name="Container">
+    <div className="h-px relative shrink-0 w-full max-w-full" data-name="Container">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1280 1">
         <g id="Container"></g>
       </svg>
@@ -1195,7 +1192,7 @@ function SectionDivider() {
 function HeadingAndSupportingText4() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[110px] items-start not-italic relative shrink-0 text-white w-full" data-name="Heading and supporting text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[38px] relative shrink-0 text-[23px] w-[312px]">Be a part of our community</p>
+      <p className="font-['Avenir:Heavy',_sans-serif] leading-[38px] relative shrink-0 text-[23px] w-full max-w-[312px]">Be a part of our community</p>
       <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] min-w-full relative shrink-0 text-[18px] w-[min-content]">Are you looking to buy land, build a home or invest with us?</p>
     </div>
   );
@@ -1287,7 +1284,7 @@ function Frame1000003768() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Content11 />
-      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-[320px]">Crafting spaces, cultivating communities.</p>
+      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-full max-w-[320px]">Crafting spaces, cultivating communities.</p>
     </div>
   );
 }
@@ -1478,7 +1475,6 @@ function ButtonsButton9() {
           <TextPadding />
         </div>
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1716,7 +1712,7 @@ function Footer({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contac
 
 export default function Mobile({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
-    <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full" data-name="Mobile">
+    <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full overflow-x-hidden max-w-full w-full" style={{ maxWidth: '100vw', overflowX: 'hidden' }} data-name="Mobile">
       <HeroHeaderSection onNavigate={onNavigate} />
       <TestimonialSection />
       <FeaturesSection />

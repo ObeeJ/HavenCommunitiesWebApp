@@ -298,7 +298,6 @@ function ButtonsButton4() {
         <Copy01 />
         <TextPadding />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -322,7 +321,6 @@ function ButtonsButton5() {
       <div className="box-border content-stretch flex items-center justify-center overflow-clip p-[10px] relative rounded-[inherit]">
         <SocialIcon />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -351,7 +349,6 @@ function ButtonsButton6() {
       <div className="box-border content-stretch flex items-center justify-center overflow-clip p-[10px] relative rounded-[inherit]">
         <SocialIcon1 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -381,7 +378,6 @@ function ButtonsButton7() {
       <div className="box-border content-stretch flex items-center justify-center overflow-clip p-[10px] relative rounded-[inherit]">
         <SocialIcon2 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -598,7 +594,6 @@ function FeaturedIcon() {
       <div className="overflow-clip relative rounded-[inherit] size-[56px]">
         <Send01 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -685,7 +680,6 @@ function ButtonsButton8({ onClick }: { onClick?: () => void }) {
           <TextPadding1 />
         </div>
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -819,7 +813,6 @@ function ButtonsButton9({ onNavigate }: NavigationProps) {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[18px] py-[12px] relative rounded-[inherit]">
         <TextPadding2 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1253,7 +1246,6 @@ function ButtonsButton16({ onClick }: { onClick?: () => void }) {
       <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
         <TextPadding3 />
       </div>
-      <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
       <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
     </div>
   );
@@ -1504,7 +1496,6 @@ export default function Desktop({ onNavigate }: NavigationProps) {
       <BlogPostPageHeader value={sidebarEmail} onChange={setSidebarEmail} onSubmit={handleSidebarSubmit} onNavigate={onNavigate} />
       <SectionDivider />
       <BlogSection onNavigate={onNavigate} />
-      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleFooterSubmit} />
     </div>
   );
 }

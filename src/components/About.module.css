@@ -1,0 +1,557 @@
+/* About Page Styles */
+
+.pageContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.heroHeaderSection {
+  display: flex;
+  flex-direction: column;
+  height: 683px;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroBackgroundOverlay {
+  position: absolute;
+  background-color: white;
+  inset: 0;
+}
+
+.heroImage {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Desktop Header */
+.desktopHeader {
+  display: block;
+  height: 112px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.desktopHeaderOverlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 112px;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+/* Desktop Hero Content */
+.desktopHeroContent {
+  display: block;
+  height: 683px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Mobile Header - Hidden by default (desktop) */
+.mobileHeader {
+  display: none;
+}
+
+/* Mobile Hero Content - Hidden by default (desktop) */
+.mobileHeroContent {
+  display: none;
+}
+
+/* Section Styles */
+.section {
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  position: relative;
+  width: 100%;
+}
+
+.sectionContainer {
+  max-width: 1280px;
+  position: relative;
+  width: 100%;
+}
+
+.sectionInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sectionContent {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.textContent {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  min-width: 480px;
+  width: 100%;
+  position: relative;
+}
+
+.sectionTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 768px;
+  position: relative;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900;
+  line-height: 44px;
+  font-style: normal;
+  position: relative;
+  color: #181d27;
+  font-size: 36px;
+  letter-spacing: -0.72px;
+  width: 100%;
+}
+
+.sectionTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 720px;
+  position: relative;
+  width: 100%;
+}
+
+.sectionText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  font-style: normal;
+  position: relative;
+  color: #535862;
+  font-size: 18px;
+  width: 100%;
+}
+
+.sectionTextParagraph {
+  margin-bottom: 18px;
+}
+
+.sectionImage {
+  flex: 1 1 0%;
+  height: 576px;
+  min-width: 480px;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+}
+
+.sectionImageImg {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Vision Section Specific */
+.visionSection {
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  position: relative;
+  width: 100%;
+  z-index: 7;
+}
+
+.visionSectionContent {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.visionImage {
+  flex: 1 1 0%;
+  height: 576px;
+  min-width: 480px;
+  position: relative;
+  border-radius: 12px;
+  order: -1;
+}
+
+.visionTextContent {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  min-width: 480px;
+  position: relative;
+  order: 1;
+}
+
+.visionTitle {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900;
+  line-height: 44px;
+  font-style: normal;
+  position: relative;
+  color: #181d27;
+  font-size: 36px;
+  letter-spacing: -0.72px;
+  width: 100%;
+}
+
+.visionText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  font-style: normal;
+  position: relative;
+  color: #535862;
+  font-size: 18px;
+  width: 100%;
+}
+
+.visionTextParagraph {
+  margin-bottom: 18px;
+}
+
+/* Section Divider */
+.sectionDivider {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 6;
+}
+
+.sectionDividerLine {
+  height: 1px;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* Mobile Styles */
+@media (max-width: 992px) {
+  .heroHeaderSection {
+    height: 476px;
+  }
+
+  .desktopHeader {
+    display: none;
+  }
+
+  .desktopHeroContent {
+    display: none;
+  }
+
+  /* Mobile Header */
+  .mobileHeader {
+    display: block;
+    height: 64px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .mobileHeaderContainer {
+    position: absolute;
+    height: 64px;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .mobileHeaderOverlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 64px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .mobileHeaderContent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .mobileHeaderInner {
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeaderRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileHeaderNav {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Hero Content - Mobile */
+  .mobileHeroContent {
+    display: block;
+    height: 404px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .mobileHeroOverlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 404px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .mobileHeroTextContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: auto;
+    align-items: center;
+    left: 50%;
+    top: 32px;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mobileHeroTextWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeroTextInner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeroTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeroTitle {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+    line-height: 36px;
+    font-style: normal;
+    position: relative;
+    color: white;
+    font-size: 28px;
+    letter-spacing: -0.56px;
+    width: 100%;
+  }
+
+  .mobileHeroDescription {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    font-style: normal;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* Section Styles - Mobile */
+  .section {
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .sectionContent {
+    gap: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .textContent {
+    gap: 24px;
+    min-width: 0;
+  }
+
+  .sectionTitleWrapper {
+    gap: 10px;
+  }
+
+  .sectionTitle {
+    line-height: 32px;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .sectionText {
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  .sectionTextParagraph {
+    margin-bottom: 12px;
+  }
+
+  .sectionImage {
+    height: 200px;
+    min-width: 0;
+    border-radius: 8px;
+  }
+
+  .sectionImageImg {
+    border-radius: 8px;
+  }
+
+  /* Vision Section - Mobile */
+  .visionSection {
+    gap: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .visionSectionContent {
+    flex-direction: column-reverse;
+    gap: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .visionImage {
+    height: 240px;
+    min-width: 320px;
+    border-radius: 8px;
+    order: 0;
+  }
+
+  .visionTextContent {
+    gap: 32px;
+    min-width: 320px;
+    order: 0;
+  }
+
+  .visionTitle {
+    line-height: 38px;
+    font-size: 30px;
+    letter-spacing: -0.72px;
+  }
+
+  .visionText {
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .visionTextParagraph {
+    margin-bottom: 16px;
+  }
+}

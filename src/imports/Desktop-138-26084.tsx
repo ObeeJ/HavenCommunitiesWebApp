@@ -244,7 +244,6 @@ function SocialLinks() {
           </div>
           <TextPadding />
         </div>
-        <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
         <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
       </div>
       <div className="bg-white relative rounded-[8px] shrink-0" data-name="Buttons/Button">
@@ -259,7 +258,6 @@ function SocialLinks() {
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
         <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
       </div>
       <div className="bg-white relative rounded-[8px] shrink-0" data-name="Buttons/Button">
@@ -274,7 +272,6 @@ function SocialLinks() {
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
         <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
       </div>
       <div className="bg-white relative rounded-[8px] shrink-0" data-name="Buttons/Button">
@@ -283,7 +280,6 @@ function SocialLinks() {
             <Group />
           </div>
         </div>
-        <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
         <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
       </div>
     </div>

@@ -9,7 +9,7 @@ import imgImageDesktop1 from "../assets/6a0f78d573110e8831ecfb44ca95157a1cf2d390
 import imgContent from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
 import Logo from "./Logo";
 import { CoreValues } from "./CoreValues";
-import { Footer } from "./Footer";
+import styles from "./About.module.css";
 
 // Mobile Components
 function Group1000003696Mobile() {
@@ -149,22 +149,22 @@ export function About({ onNavigate }: AboutProps) {
   };
 
   return (
-    <div className="bg-white content-stretch flex flex-col isolate items-center relative w-full min-h-screen">
+    <div className={styles.pageContainer}>
       {/* Hero Header Section */}
-      <div className="content-stretch flex flex-col h-[476px] md:h-[683px] isolate items-center overflow-clip relative shrink-0 w-full z-10" data-name="Hero header section">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-          <div className="absolute bg-white inset-0" />
-          <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgHeroHeaderSection} />
+      <div className={styles.heroHeaderSection} data-name="Hero header section">
+        <div aria-hidden="true" className={styles.heroBackground}>
+          <div className={styles.heroBackgroundOverlay} />
+          <img alt="" className={styles.heroImage} src={imgHeroHeaderSection} />
         </div>
         
         {/* Mobile Header */}
-        <div className="md:hidden h-[72px] relative shrink-0 w-full z-[2]">
-          <div className="absolute h-[72px] left-0 right-0 top-0">
-            <div className="absolute bg-[rgba(0,0,0,0.4)] h-[72px] left-0 top-0 w-full" />
-            <div className="absolute content-stretch flex flex-col h-[72px] items-center justify-center left-0 right-0 top-0">
-              <div className="relative shrink-0 w-full">
-                <div className="flex flex-row items-center size-full">
-                  <div className="box-border content-stretch flex items-center justify-between pl-[16px] pr-[12px] py-0 relative w-full">
+        <div className={styles.mobileHeader}>
+          <div className={styles.mobileHeaderContainer}>
+            <div className={styles.mobileHeaderOverlay} />
+            <div className={styles.mobileHeaderContent}>
+              <div className={styles.mobileHeaderInner}>
+                <div className={styles.mobileHeaderRow}>
+                  <div className={styles.mobileHeaderNav}>
                     <Frame1000003793Mobile onClick={() => onNavigate?.('home')} />
                     <NavMenuButton1 />
                   </div>
@@ -175,8 +175,8 @@ export function About({ onNavigate }: AboutProps) {
         </div>
 
         {/* Desktop Header */}
-        <div className="hidden md:block h-[80px] relative shrink-0 w-full z-[2]">
-          <div className="bg-[rgba(0,0,0,0.4)] content-stretch flex flex-col gap-[10px] h-[80px] items-start relative shrink-0 w-full">
+        <div className={styles.desktopHeader}>
+          <div className={styles.desktopHeaderOverlay}>
             <div className="h-[112px] relative shrink-0 w-full">
               <div className="absolute content-stretch flex flex-col h-[112px] items-center justify-center left-0 right-0 top-0">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 max-w-[1320px] w-full mx-auto px-[32px]">
@@ -202,22 +202,22 @@ export function About({ onNavigate }: AboutProps) {
         </div>
 
         {/* Hero Content - Mobile */}
-        <div className="md:hidden h-[404px] relative shrink-0 w-full z-[1]">
-          <div className="absolute bg-[rgba(0,0,0,0.4)] h-[404px] left-0 top-0 w-full" />
-          <div className="absolute content-stretch flex flex-col gap-[40px] h-[312px] items-center left-1/2 top-[46px] translate-x-[-50%] w-[343px]">
-            <div className="content-stretch flex flex-col gap-[32px] h-[276px] items-start relative shrink-0 w-full">
-              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
-                <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                  <p className="font-['Avenir:Heavy',_sans-serif] leading-[44px] not-italic relative shrink-0 text-[36px] text-white tracking-[-0.72px] w-full">Contact Us</p>
+        <div className={styles.mobileHeroContent}>
+          <div className={styles.mobileHeroOverlay} />
+          <div className={styles.mobileHeroTextContainer}>
+            <div className={styles.mobileHeroTextWrapper}>
+              <div className={styles.mobileHeroTextInner}>
+                <div className={styles.mobileHeroTitleWrapper}>
+                  <p className={styles.mobileHeroTitle}>Contact Us</p>
                 </div>
-                <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[16px] text-white w-full">{`We're a customer-focused real estate company dedicated to streamlining every step of your property pursuit. From acquiring a new land or a new home to securing a lucrative asset or forging new alliances, we provide a wide array of opportunities to help you achieve your goals. Our purpose is to make your real estate purchase straightforward, enjoyable, and seamless from start to finish.`}</p>
+                <p className={styles.mobileHeroDescription}>{`We're a customer-focused real estate company dedicated to streamlining every step of your property pursuit. From acquiring a new land or a new home to securing a lucrative asset or forging new alliances, we provide a wide array of opportunities to help you achieve your goals. Our purpose is to make your real estate purchase straightforward, enjoyable, and seamless from start to finish.`}</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Hero Content - Desktop */}
-        <div className="hidden md:block h-[603px] relative shrink-0 w-full z-[1]">
+        <div className={styles.desktopHeroContent}>
           <div className="absolute bg-[rgba(0,0,0,0.4)] h-[683px] left-0 top-0 w-full" />
           <div className="absolute box-border content-stretch flex flex-col gap-[12px] items-start left-[80px] px-[32px] py-0 top-[151px] w-[1280px]">
             <div className="content-stretch flex gap-[64px] items-start relative shrink-0 w-full">
@@ -231,27 +231,25 @@ export function About({ onNavigate }: AboutProps) {
       </div>
 
       {/* Our Mission Section */}
-      <div className="bg-white box-border content-stretch flex flex-col gap-[48px] md:gap-[64px] items-center overflow-clip px-0 py-[64px] md:py-[96px] relative shrink-0 w-full z-[8]">
-        <div className="max-w-[1280px] relative shrink-0 w-full">
-          <div className="flex flex-row items-center justify-center max-w-inherit size-full">
-            <div className="box-border content-center flex flex-wrap gap-[32px] md:gap-[64px] items-center justify-center max-w-inherit px-[16px] md:px-[32px] py-0 relative w-full">
+      <div className={`${styles.section} z-[8]`}>
+        <div className={styles.sectionContainer}>
+          <div className={styles.sectionInner}>
+            <div className={styles.sectionContent}>
               {/* Text Content */}
-              <div className="basis-0 content-stretch flex flex-col gap-[32px] md:gap-[48px] grow items-start min-h-px min-w-[320px] md:min-w-[480px] relative shrink-0">
-                <div className="content-stretch flex flex-col gap-[12px] items-start max-w-[768px] relative shrink-0 w-full">
-                  <p className="font-['Avenir:Heavy',_sans-serif] leading-[38px] md:leading-[44px] not-italic relative shrink-0 text-[#181d27] text-[30px] md:text-[36px] tracking-[-0.72px] w-full">Our Mission</p>
+              <div className={styles.textContent}>
+                <div className={styles.sectionTitleWrapper}>
+                  <p className={styles.sectionTitle}>Our Mission</p>
                 </div>
-                <div className="content-stretch flex flex-col items-start max-w-[720px] relative shrink-0 w-full">
-                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-                    <div className="font-['Avenir:Regular',_sans-serif] leading-[24px] md:leading-[28px] not-italic relative shrink-0 text-[#535862] text-[16px] md:text-[18px] w-full">
-                      <p className="mb-[16px] md:mb-[18px]">{`We are on a mission of creating beautiful and lush communities where our residents can feel safe, raise a family and live a meaningful and purposeful life. We do this by providing infrastructures like perimeter fencing for our lands, a gate house, good drainage system, good road network, constant electricity and 24/7 security. `}</p>
-                      <p>We also provide wealth creating opportunities to our community like lands that are located in strategic areas and can serve as land banking investments for our clients which creates wealth for them in the future. We believe that everyone should own a piece of the earth and we have made it accessible to everyone by streamlining the process of acquiring it.</p>
-                    </div>
+                <div className={styles.sectionTextWrapper}>
+                  <div className={styles.sectionText}>
+                    <p className={styles.sectionTextParagraph}>{`We are on a mission of creating beautiful and lush communities where our residents can feel safe, raise a family and live a meaningful and purposeful life. We do this by providing infrastructures like perimeter fencing for our lands, a gate house, good drainage system, good road network, constant electricity and 24/7 security. `}</p>
+                    <p>We also provide wealth creating opportunities to our community like lands that are located in strategic areas and can serve as land banking investments for our clients which creates wealth for them in the future. We believe that everyone should own a piece of the earth and we have made it accessible to everyone by streamlining the process of acquiring it.</p>
                   </div>
                 </div>
               </div>
               {/* Image */}
-              <div className="basis-0 grow h-[240px] md:h-[576px] min-h-px min-w-[320px] md:min-w-[480px] relative rounded-[8px] md:rounded-[12px] shrink-0">
-                <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[8px] md:rounded-[12px] size-full" src={imgImageMobile} />
+              <div className={styles.sectionImage}>
+                <img alt="" className={styles.sectionImageImg} src={imgImageMobile} />
               </div>
             </div>
           </div>
@@ -259,25 +257,23 @@ export function About({ onNavigate }: AboutProps) {
       </div>
 
       {/* Our Vision Section */}
-      <div className="bg-white box-border content-stretch flex flex-col gap-[48px] md:gap-[64px] items-center overflow-clip px-0 py-[64px] md:py-[96px] relative shrink-0 w-full z-[7]">
-        <div className="max-w-[1280px] relative shrink-0 w-full">
-          <div className="flex flex-row items-center justify-center max-w-inherit size-full">
-            <div className="box-border content-center flex flex-wrap md:flex-wrap-reverse gap-[32px] md:gap-[64px] items-center justify-center max-w-inherit px-[16px] md:px-[32px] py-0 relative w-full">
+      <div className={styles.visionSection}>
+        <div className={styles.sectionContainer}>
+          <div className={styles.sectionInner}>
+            <div className={styles.visionSectionContent}>
               {/* Image - First on mobile, second on desktop */}
-              <div className="basis-0 grow h-[240px] md:h-[576px] min-h-px min-w-[320px] md:min-w-[480px] relative rounded-[8px] md:rounded-[12px] shrink-0 md:order-first">
-                <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[8px] md:rounded-[12px] size-full" src={imgImageMobile1} />
+              <div className={styles.visionImage}>
+                <img alt="" className={styles.sectionImageImg} src={imgImageMobile1} />
               </div>
               {/* Text Content - Second on mobile, first on desktop */}
-              <div className="basis-0 content-stretch flex flex-col gap-[32px] md:gap-[48px] grow items-start min-h-px min-w-[320px] md:min-w-[480px] relative shrink-0 md:order-last">
-                <div className="content-stretch flex flex-col gap-[12px] items-start max-w-[768px] relative shrink-0 w-full">
-                  <p className="font-['Avenir:Heavy',_sans-serif] leading-[38px] md:leading-[44px] not-italic relative shrink-0 text-[#181d27] text-[30px] md:text-[36px] tracking-[-0.72px] w-full">Our Vision</p>
+              <div className={styles.visionTextContent}>
+                <div className={styles.sectionTitleWrapper}>
+                  <p className={styles.visionTitle}>Our Vision</p>
                 </div>
-                <div className="content-stretch flex flex-col items-start max-w-[720px] relative shrink-0 w-full">
-                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-                    <div className="font-['Avenir:Regular',_sans-serif] leading-[24px] md:leading-[28px] not-italic relative shrink-0 text-[#535862] text-[16px] md:text-[18px] w-full">
-                      <p className="mb-[16px] md:mb-[18px]">{`Our vision is to be the largest home builder in the country. We want solve the country's housing deficit problem by building as many affordable homes as possible, thereby creating a world where each individual can have a home to call theirs. `}</p>
-                      <p>We want to create communities that people can feel safe in, raise their families and be happy. We want to build a self sustainable ecosystem and community where amenities that is needed to survive, live and be happy will be provided for by the community. Amenities like good drainage systems, uninterrupted power supply, central waste system, shopping centers and malls, restaurants, farmers markets, schools, hospitals and so on. We want to create a haven for people. We want to create Heaven on earth.</p>
-                    </div>
+                <div className={styles.sectionTextWrapper}>
+                  <div className={styles.visionText}>
+                    <p className={styles.visionTextParagraph}>{`Our vision is to be the largest home builder in the country. We want solve the country's housing deficit problem by building as many affordable homes as possible, thereby creating a world where each individual can have a home to call theirs. `}</p>
+                    <p>We want to create communities that people can feel safe in, raise their families and be happy. We want to build a self sustainable ecosystem and community where amenities that is needed to survive, live and be happy will be provided for by the community. Amenities like good drainage systems, uninterrupted power supply, central waste system, shopping centers and malls, restaurants, farmers markets, schools, hospitals and so on. We want to create a haven for people. We want to create Heaven on earth.</p>
                   </div>
                 </div>
               </div>
@@ -287,8 +283,8 @@ export function About({ onNavigate }: AboutProps) {
       </div>
 
       {/* Section Divider */}
-      <div className="content-stretch flex items-start justify-center relative shrink-0 w-full z-[6]">
-        <div className="h-px relative shrink-0 w-full max-w-[1280px]">
+      <div className={styles.sectionDivider}>
+        <div className={styles.sectionDividerLine}>
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1280 1">
             <g id="Container"></g>
           </svg>
@@ -347,8 +343,6 @@ export function About({ onNavigate }: AboutProps) {
         </div>
       </div>
 
-      {/* Standardized Footer */}
-      <Footer onNavigate={onNavigate} />
     </div>
   );
 }

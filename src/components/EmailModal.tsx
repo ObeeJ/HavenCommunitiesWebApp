@@ -5,14 +5,15 @@ import imgImageMobile from "../assets/944300956d68a2c588e5fa327cca344e00b046d7.p
 import { motion } from "motion/react";
 import { subscribeToNewsletter } from '../lib/api';
 import { toast } from 'sonner';
+import styles from './EmailModal.module.css';
 
 function BackgroundOverlay() {
-  return <div className="absolute bg-[rgba(21,94,239,0.2)] inset-0 opacity-70" data-name="Background overlay" />;
+  return <div className={styles.backgroundOverlay} data-name="Background overlay" />;
 }
 
 function BackgroundOverlay1() {
   return (
-    <div className="absolute backdrop-blur backdrop-filter inset-0" data-name="Background overlay">
+    <div className={styles.backgroundOverlay1} data-name="Background overlay">
       <BackgroundOverlay />
     </div>
   );
@@ -20,8 +21,8 @@ function BackgroundOverlay1() {
 
 function XClose() {
   return (
-    <div className="relative shrink-0 size-[24px]" data-name="x-close">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+    <div className={styles.xClose} data-name="x-close">
+      <svg className={styles.xCloseIcon} fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="x-close">
           <path d="M18 6L6 18M6 6L18 18" id="Icon" stroke="var(--stroke-0, #A4A7AE)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
         </g>
@@ -32,8 +33,8 @@ function XClose() {
 
 function XCloseMobile({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="relative shrink-0 size-[20px] sm:size-[24px]" data-name="x-close">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+    <div className={styles.xCloseMobile} data-name="x-close">
+      <svg className={styles.xCloseIcon} fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="x-close">
           <path d="M18 6L6 18M6 6L18 18" id="Icon" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
         </g>
@@ -44,9 +45,9 @@ function XCloseMobile({ onClick }: { onClick?: () => void }) {
 
 function ButtonCloseX({ onClick }: { onClick?: () => void }) {
   return (
-    <button 
+    <button
       onClick={onClick}
-      className="absolute box-border content-stretch flex items-center justify-center overflow-clip p-[8px] right-[24px] rounded-[8px] size-[44px] top-[24px] cursor-pointer hover:bg-black/10 transition-colors z-10" 
+      className={styles.buttonCloseX}
       data-name="Button close X"
     >
       <XClose />
@@ -56,9 +57,9 @@ function ButtonCloseX({ onClick }: { onClick?: () => void }) {
 
 function ButtonCloseXMobile({ onClick }: { onClick?: () => void }) {
   return (
-    <button 
+    <button
       onClick={onClick}
-      className="absolute box-border content-stretch flex items-center justify-center overflow-clip p-[6px] sm:p-[8px] right-[6px] sm:right-[8px] rounded-[8px] size-[40px] sm:size-[44px] top-[6px] sm:top-[8px] cursor-pointer hover:bg-black/10 active:bg-black/20 transition-colors z-10" 
+      className={styles.buttonCloseXMobile}
       data-name="Button close X"
     >
       <XCloseMobile />
@@ -69,12 +70,12 @@ function ButtonCloseXMobile({ onClick }: { onClick?: () => void }) {
 function ButtonsButtonLoadingIcon() {
   return (
     <motion.div
-      className="relative shrink-0 size-[20px]"
+      className={styles.buttonLoadingIcon}
       data-name="Buttons/Button loading icon"
       animate={{ rotate: 360 }}
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
     >
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
+      <svg className={styles.buttonLoadingIconSvg} fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
         <g id="Buttons/Button loading icon">
           <path d={svgPaths.p39161900} id="Background" opacity="0.3" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
           <path d={svgPaths.p4660fb4} id="Line" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
@@ -128,58 +129,58 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50"
+      className={styles.modal}
       data-name="Modal"
     >
-      <div className="flex flex-col items-center justify-center size-full overflow-y-auto">
-        <div className="box-border content-stretch flex flex-col items-center justify-center p-[12px] sm:p-[16px] md:p-[16px] relative size-full min-h-full">
+      <div className={styles.modalContainer}>
+        <div className={styles.modalInner}>
           <BackgroundOverlay1 />
           
           {/* Desktop Layout */}
-          <div className="hidden md:block max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-            <div className="flex flex-row items-center justify-center max-w-inherit size-full">
-              <div className="box-border content-stretch flex items-center justify-center max-w-inherit px-[32px] py-0 relative w-full">
-                <div className="bg-neutral-50 content-stretch flex items-center overflow-clip relative rounded-[24px] shrink-0 max-w-[1095px] w-full" data-name="Content">
+          <div className={styles.desktopContainer} data-name="Container">
+            <div className={styles.desktopContainerInner}>
+              <div className={styles.desktopContentWrapper}>
+                <div className={styles.desktopContent} data-name="Content">
                   {/* Image Section */}
-                  <div className="basis-0 grow h-[480px] min-h-px min-w-px relative shrink-0" data-name="Image">
-                    <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage} />
-                    <ButtonCloseX onClick={onClose} />
+                  <div className={styles.desktopImageSection} data-name="Image">
+                    <img alt="" className={styles.desktopImage} src={imgImage} />
                   </div>
-                  
+
                   {/* Content Section */}
-                  <div className="basis-0 grow min-h-px min-w-px relative shrink-0" data-name="Content">
-                    <div className="flex flex-col justify-center size-full">
-                      <div className="box-border content-stretch flex flex-col gap-[48px] items-start justify-center p-[64px] relative w-full">
+                  <div className={styles.desktopContentSection} data-name="Content">
+                    <ButtonCloseX onClick={onClose} />
+                    <div className={styles.desktopContentInner}>
+                      <div className={styles.desktopFormContainer}>
                         {/* Heading */}
-                        <div className="content-stretch flex flex-col gap-[20px] items-start not-italic relative shrink-0 w-full" data-name="Heading and supporting text">
-                          <p className="font-['Avenir:Medium',_sans-serif] leading-[44px] relative shrink-0 text-[#181d27] text-[36px] tracking-[-0.72px] w-full">Stay in the know</p>
-                          <p className="font-['Avenir:Regular',_sans-serif] leading-[30px] relative shrink-0 text-[#535862] text-[20px] w-full">No spam. Just the latest releases and tips, interesting articles, and exclusive interviews.</p>
+                        <div className={styles.desktopHeadingContainer} data-name="Heading and supporting text">
+                          <p className={styles.desktopHeading}>Stay in the know</p>
+                          <p className={styles.desktopDescription}>No spam. Just the latest releases and tips, interesting articles, and exclusive interviews.</p>
                         </div>
                         
                         {/* Email Form */}
-                        <form onSubmit={handleSubmit} className="content-stretch flex gap-[16px] items-start max-w-[480px] relative shrink-0 w-full" data-name="Email capture">
-                          <div className="basis-0 content-stretch flex flex-col gap-[6px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Input field">
-                            <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="Input with label">
-                              <div className="bg-white relative rounded-[234px] shrink-0 w-full" data-name="Input">
-                                <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                                <div className="flex flex-row items-center size-full">
-                                  <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] py-[12px] relative w-full">
+                        <form onSubmit={handleSubmit} className={styles.desktopForm} data-name="Email capture">
+                          <div className={styles.desktopInputField} data-name="Input field">
+                            <div className={styles.desktopInputWrapper} data-name="Input with label">
+                              <div className={styles.desktopInput} data-name="Input">
+                                <div aria-hidden="true" className={styles.desktopInputBorder} />
+                                <div className={styles.desktopInputInner}>
+                                  <div className={styles.desktopInputContent}>
                                     <input
                                       type="email"
                                       value={email}
                                       onChange={(e) => setEmail(e.target.value)}
                                       placeholder="Enter your email"
                                       disabled={isLoading}
-                                      className="basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[24px] min-h-px min-w-px not-italic relative shrink-0 text-[#717680] text-[16px] bg-transparent border-none outline-none placeholder:text-[#717680] w-full disabled:opacity-50"
+                                      className={styles.desktopInputFieldInput}
                                     />
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <p className="font-['Avenir:Regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#535862] text-[14px] w-full">
+                            <p className={styles.desktopPrivacyText}>
                               <span>{`We care about your data in our `}</span>
                               <span 
-                                className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid underline cursor-pointer hover:text-[#155eef]"
+                                className={styles.desktopPrivacyLink}
                                 onClick={() => {
                                   onClose();
                                   onNavigate?.('privacyPolicy');
@@ -193,22 +194,19 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
                           <button
                             type="submit"
                             disabled={!email || isLoading}
-                            className={`relative rounded-[234px] shrink-0 min-h-[48px] transition-all ${(email || isLoading) ? 'bg-[#155eef]' : 'bg-transparent'} ${(email && !isLoading) ? 'cursor-pointer hover:bg-[#1250d4]' : 'cursor-not-allowed'}`}
+                            className={`${styles.desktopSubmitButton} ${(email || isLoading) ? styles.desktopSubmitButtonActive : styles.desktopSubmitButtonDisabled}`}
                             data-name="Buttons/Button"
                           >
-                            <div className="box-border content-stretch flex gap-[6px] items-center justify-center min-h-inherit overflow-clip px-[18px] py-[12px] relative rounded-[inherit]">
+                            <div className={styles.desktopSubmitButtonInner}>
                               {isLoading && <ButtonsButtonLoadingIcon />}
-                              <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-                                <p className={`font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap whitespace-pre ${(email || isLoading) ? 'text-white' : 'text-[#a4a7ae]'}`}>Subscribe</p>
+                              <div className={styles.desktopSubmitButtonText} data-name="Text padding">
+                                <p className={(email || isLoading) ? styles.desktopSubmitButtonTextActive : styles.desktopSubmitButtonTextDisabled}>Subscribe</p>
                               </div>
                             </div>
                             {(email || isLoading) ? (
-                              <>
-                                <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-                                <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                              </>
+                              <div aria-hidden="true" className={styles.desktopSubmitButtonBorderActive} />
                             ) : (
-                              <div aria-hidden="true" className="absolute border border-[#e9eaeb] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+                              <div aria-hidden="true" className={styles.desktopSubmitButtonBorderDisabled} />
                             )}
                           </button>
                         </form>
@@ -221,48 +219,48 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
           </div>
 
           {/* Mobile Layout */}
-          <div className="block md:hidden relative shrink-0 w-full max-w-[100%] sm:max-w-[420px] mx-auto my-auto" data-name="Mobile Container">
-            <div className="bg-white content-stretch flex flex-col items-center overflow-clip relative rounded-[12px] sm:rounded-[16px] shrink-0 w-full" data-name="Content">
+          <div className={styles.mobileContainer} data-name="Mobile Container">
+            <div className={styles.mobileContent} data-name="Content">
               {/* Image Section */}
-              <div className="relative shrink-0 w-full overflow-hidden rounded-t-[12px] sm:rounded-t-[16px]" data-name="Image Section">
-                <img alt="" className="block max-w-none object-50%-50% object-cover pointer-events-none w-full h-auto" src={imgImageMobile} />
+              <div className={styles.mobileImageSection} data-name="Image Section">
+                <img alt="" className={styles.mobileImage} src={imgImageMobile} />
                 <ButtonCloseXMobile onClick={onClose} />
               </div>
-              
-              {/* Text and Form Section - Light Grey Background */}
-              <div className="bg-[#f5f5f5] relative shrink-0 w-full rounded-b-[12px] sm:rounded-b-[16px]" data-name="Text and actions">
-                <div className="size-full">
-                  <div className="box-border content-stretch flex flex-col gap-[20px] sm:gap-[24px] items-center p-[16px] sm:p-[20px] md:p-[24px] relative w-full">
+
+              {/* Text and Form */}
+              <div className={styles.mobileTextSection} data-name="Text and actions">
+                <div className={styles.mobileTextInner}>
+                  <div className={styles.mobileFormContainer}>
                     {/* Heading */}
-                    <div className="content-stretch flex flex-col gap-[10px] sm:gap-[12px] items-center not-italic relative shrink-0 w-full text-center" data-name="Heading and supporting text">
-                      <p className="font-['Avenir:Medium',_sans-serif] leading-[28px] sm:leading-[32px] relative shrink-0 text-[#181d27] text-[24px] sm:text-[26px] md:text-[28px] font-bold w-full">Stay in the know</p>
-                      <p className="font-['Avenir:Regular',_sans-serif] leading-[22px] sm:leading-[24px] relative shrink-0 text-[#535862] text-[14px] sm:text-[15px] md:text-[16px] w-full px-[4px]">No spam. Just the latest releases and tips, interesting articles, and exclusive interviews.</p>
+                    <div className={styles.mobileHeadingContainer} data-name="Heading and supporting text">
+                      <p className={styles.mobileHeading}>Stay in the know</p>
+                      <p className={styles.mobileDescription}>No spam. Just the latest releases and tips, interesting articles, and exclusive interviews.</p>
                     </div>
                     
                     {/* Email Form */}
-                    <form onSubmit={handleSubmit} className="content-stretch flex flex-col gap-[14px] sm:gap-[16px] items-center relative shrink-0 w-full" data-name="Email capture">
-                      <div className="content-stretch flex flex-col gap-[6px] sm:gap-[8px] items-center relative shrink-0 w-full" data-name="Input field">
-                        <div className="content-stretch flex flex-col gap-[6px] items-center relative shrink-0 w-full" data-name="Input with label">
-                          <div className="bg-white relative rounded-[234px] shrink-0 w-full" data-name="Input">
-                            <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                            <div className="flex flex-row items-center size-full">
-                              <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] sm:px-[16px] py-[12px] sm:py-[14px] relative w-full">
+                    <form onSubmit={handleSubmit} className={styles.mobileForm} data-name="Email capture">
+                      <div className={styles.mobileInputField} data-name="Input field">
+                        <div className={styles.mobileInputWrapper} data-name="Input with label">
+                          <div className={styles.mobileInput} data-name="Input">
+                            <div aria-hidden="true" className={styles.mobileInputBorder} />
+                            <div className={styles.mobileInputInner}>
+                              <div className={styles.mobileInputContent}>
                                 <input
                                   type="email"
                                   value={email}
                                   onChange={(e) => setEmail(e.target.value)}
                                   placeholder="Enter your email"
                                   disabled={isLoading}
-                                  className="basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[22px] sm:leading-[24px] min-h-px min-w-px not-italic relative shrink-0 text-[#717680] text-[15px] sm:text-[16px] bg-transparent border-none outline-none placeholder:text-[#717680] w-full disabled:opacity-50"
+                                  className={styles.mobileInputFieldInput}
                                 />
                               </div>
                             </div>
                           </div>
                         </div>
-                        <p className="font-['Avenir:Regular',_sans-serif] leading-[18px] sm:leading-[20px] not-italic relative shrink-0 text-[#535862] text-[13px] sm:text-[14px] w-full text-center px-[4px]">
+                        <p className={styles.mobilePrivacyText}>
                           <span>{`Read about our `}</span>
                           <span 
-                            className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid underline cursor-pointer hover:text-[#155eef] text-[#535862]"
+                            className={styles.mobilePrivacyLink}
                             onClick={() => {
                               onClose();
                               onNavigate?.('privacyPolicy');
@@ -276,24 +274,21 @@ export function EmailModal({ isOpen, onClose, onNavigate }: EmailModalProps) {
                       <button
                         type="submit"
                         disabled={!email || isLoading}
-                        className={`relative rounded-[234px] shrink-0 w-full min-h-[44px] sm:min-h-[48px] transition-all ${(email || isLoading) ? 'bg-[#155eef]' : 'bg-[#e9eaeb]'} ${(email && !isLoading) ? 'cursor-pointer hover:bg-[#1250d4] active:bg-[#0f47b8]' : 'cursor-not-allowed'}`}
+                        className={`${styles.mobileSubmitButton} ${(email || isLoading) ? styles.mobileSubmitButtonActive : styles.mobileSubmitButtonDisabled}`}
                         data-name="Buttons/Button"
                       >
-                        <div className="flex flex-row items-center justify-center min-h-inherit overflow-clip rounded-[inherit] size-full">
-                          <div className="box-border content-stretch flex gap-[6px] sm:gap-[8px] items-center justify-center px-[16px] sm:px-[18px] py-[11px] sm:py-[12px] relative w-full">
+                        <div className={styles.mobileSubmitButtonInner}>
+                          <div className={styles.mobileSubmitButtonContent}>
                             {isLoading && <ButtonsButtonLoadingIcon />}
-                            <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-                              <p className={`font-['Avenir:Medium',_sans-serif] leading-[22px] sm:leading-[24px] not-italic relative shrink-0 text-[15px] sm:text-[16px] font-bold text-nowrap whitespace-pre ${(email || isLoading) ? 'text-white' : 'text-[#a4a7ae]'}`}>Subscribe</p>
+                            <div className={styles.mobileSubmitButtonText} data-name="Text padding">
+                              <p className={(email || isLoading) ? styles.mobileSubmitButtonTextActive : styles.mobileSubmitButtonTextDisabled}>Subscribe</p>
                             </div>
                           </div>
                         </div>
                         {(email || isLoading) ? (
-                          <>
-                            <div className="absolute inset-0 pointer-events-none shadow-[0px_0px_0px_1px_inset_rgba(10,13,18,0.18),0px_-2px_0px_0px_inset_rgba(10,13,18,0.05)]" />
-                            <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                          </>
+                          <div aria-hidden="true" className={styles.mobileSubmitButtonBorderActive} />
                         ) : (
-                          <div aria-hidden="true" className="absolute border border-[#e9eaeb] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
+                          <div aria-hidden="true" className={styles.mobileSubmitButtonBorderDisabled} />
                         )}
                       </button>
                     </form>

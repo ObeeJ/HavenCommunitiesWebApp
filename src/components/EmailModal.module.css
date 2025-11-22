@@ -1,0 +1,794 @@
+/* EmailModal Component Styles */
+
+/* Background Overlay */
+.backgroundOverlay {
+  position: absolute;
+  background-color: rgba(21, 94, 239, 0.2);
+  inset: 0;
+  opacity: 0.7;
+}
+
+.backgroundOverlay1 {
+  position: absolute;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  inset: 0;
+}
+
+/* Close Button Icons */
+.xClose {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.xCloseIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Close Buttons */
+.buttonCloseX {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px;
+  right: 16px;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  top: -60px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 10;
+}
+
+.buttonCloseX:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.buttonCloseXMobile {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px;
+  right: 8px;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  top: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 10;
+}
+
+.buttonCloseXMobile:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Icon */
+.buttonLoadingIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.buttonLoadingIconSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Modal Container */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Desktop Layout */
+.desktopContainer {
+  display: block;
+  max-width: 1280px;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .desktopContainer {
+    display: none;
+  }
+}
+
+.desktopContainerInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopContentWrapper {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.desktopContent {
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 24px;
+  max-width: 1095px;
+  width: 100%;
+}
+
+.desktopImageSection {
+  flex: 1 1 0%;
+  height: 480px;
+  min-width: 0;
+  position: relative;
+}
+
+.desktopImage {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopContentSection {
+  flex: 1 1 0%;
+  min-width: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.desktopContentInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopFormContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px;
+  position: relative;
+  width: 100%;
+}
+
+.desktopHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  font-style: normal;
+  position: relative;
+  width: 100%;
+}
+
+.desktopHeading {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  line-height: 44px;
+  font-style: normal;
+  position: relative;
+  color: #181d27;
+  font-size: 36px;
+  letter-spacing: -0.72px;
+  width: 100%;
+}
+
+.desktopDescription {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: normal;
+  position: relative;
+  color: #535862;
+  font-size: 20px;
+  width: 100%;
+}
+
+.desktopForm {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  max-width: 480px;
+  position: relative;
+  width: 100%;
+}
+
+.desktopInputField {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  min-width: 0;
+  position: relative;
+}
+
+.desktopInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+.desktopInput {
+  background-color: white;
+  position: relative;
+  border-radius: 234px;
+  width: 100%;
+}
+
+.desktopInputBorder {
+  position: absolute;
+  border: 1px solid #d5d7da;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 234px;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+.desktopInputInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.desktopInputContent {
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.desktopInputFieldInput {
+  flex: 1 1 0%;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  min-width: 0;
+  font-style: normal;
+  position: relative;
+  color: #717680;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.desktopInputFieldInput::placeholder {
+  color: #717680;
+}
+
+.desktopInputFieldInput:disabled {
+  opacity: 0.5;
+}
+
+.desktopPrivacyText {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  font-style: normal;
+  position: relative;
+  color: #535862;
+  font-size: 14px;
+  width: 100%;
+}
+
+.desktopPrivacyLink {
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #535862;
+}
+
+.desktopPrivacyLink:hover {
+  color: #155eef;
+}
+
+.desktopSubmitButton {
+  position: relative;
+  border-radius: 234px;
+  min-height: 48px;
+  transition: all 0.2s;
+}
+
+.desktopSubmitButtonActive {
+  background-color: #155eef;
+  cursor: pointer;
+}
+
+.desktopSubmitButtonActive:hover {
+  background-color: #1250d4;
+}
+
+.desktopSubmitButtonDisabled {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.desktopSubmitButtonInner {
+  box-sizing: border-box;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+  border-radius: inherit;
+}
+
+.desktopSubmitButtonText {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.desktopSubmitButtonTextActive {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-style: normal;
+  position: relative;
+  font-size: 16px;
+  white-space: pre;
+  color: white;
+}
+
+.desktopSubmitButtonTextDisabled {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-style: normal;
+  position: relative;
+  font-size: 16px;
+  white-space: pre;
+  color: #a4a7ae;
+}
+
+.desktopSubmitButtonBorderActive {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  inset: 0;
+  pointer-events: none;
+  border-radius: 234px;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+.desktopSubmitButtonBorderDisabled {
+  position: absolute;
+  border: 1px solid #e9eaeb;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 234px;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+/* Mobile Layout */
+.mobileContainer {
+  display: none;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (max-width: 992px) {
+  .mobileContainer {
+    display: block;
+    width: 370px;
+    max-width: calc(100vw - 24px);
+    box-sizing: border-box;
+  }
+
+  .modalInner {
+    padding: 12px;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .xCloseMobile {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobileContent {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobileImageSection {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .mobileImage {
+    display: block;
+    max-width: none;
+    object-fit: cover;
+    object-position: 50% 50%;
+    pointer-events: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .mobileTextSection {
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileTextInner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileFormContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .mobileHeadingContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-style: normal;
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobileHeading {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 500;
+    line-height: 28px;
+    font-style: normal;
+    position: relative;
+    color: #181d27;
+    font-size: 24px;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  .mobileDescription {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    line-height: 22px;
+    font-style: normal;
+    position: relative;
+    color: #535862;
+    font-size: 14px;
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .mobileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileInputField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileInputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileInput {
+    background-color: white;
+    position: relative;
+    border-radius: 234px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobileInputBorder {
+    position: absolute;
+    border: 1px solid #d5d7da;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 234px;
+    box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+  }
+
+  .mobileInputInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileInputContent {
+    box-sizing: border-box;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileInputFieldInput {
+    flex: 1 1 0%;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    line-height: 22px;
+    min-width: 0;
+    font-style: normal;
+    position: relative;
+    color: #717680;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+
+  .mobileInputFieldInput::placeholder {
+    color: #717680;
+  }
+
+  .mobileInputFieldInput:disabled {
+    opacity: 0.5;
+  }
+
+  .mobilePrivacyText {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+    font-style: normal;
+    position: relative;
+    color: #535862;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .mobilePrivacyLink {
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #535862;
+  }
+
+  .mobilePrivacyLink:hover {
+    color: #155eef;
+  }
+
+  .mobileSubmitButton {
+    position: relative;
+    border-radius: 234px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+    transition: all 0.2s;
+    box-sizing: border-box;
+  }
+
+  .mobileSubmitButtonActive {
+    background-color: #155eef;
+    cursor: pointer;
+  }
+
+  .mobileSubmitButtonActive:hover {
+    background-color: #1250d4;
+  }
+
+  .mobileSubmitButtonActive:active {
+    background-color: #0f47b8;
+  }
+
+  .mobileSubmitButtonDisabled {
+    background-color: #e9eaeb;
+    cursor: not-allowed;
+  }
+
+  .mobileSubmitButtonInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileSubmitButtonContent {
+    box-sizing: border-box;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileSubmitButtonText {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+  }
+
+  .mobileSubmitButtonTextActive {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 500;
+    line-height: 22px;
+    font-style: normal;
+    position: relative;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: pre;
+    color: white;
+  }
+
+  .mobileSubmitButtonTextDisabled {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 500;
+    line-height: 22px;
+    font-style: normal;
+    position: relative;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: pre;
+    color: #a4a7ae;
+  }
+
+  .mobileSubmitButtonBorderActive {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    inset: 0;
+    pointer-events: none;
+    border-radius: 234px;
+    box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+  }
+
+  .mobileSubmitButtonBorderDisabled {
+    position: absolute;
+    border: 1px solid #e9eaeb;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 234px;
+    box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+  }
+}
+
+.modalInner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
