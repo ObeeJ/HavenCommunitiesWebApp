@@ -103,7 +103,7 @@ function Content2({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'cont
 
 function Container1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[1320px]" data-name="Container">
+    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full max-w-[1320px] px-[32px]" data-name="Container">
       <Content2 onNavigate={onNavigate} />
     </div>
   );
@@ -284,7 +284,7 @@ function Section() {
 
 function HeroHeaderSection({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
-    <div className="bg-white content-stretch flex flex-col h-[844px] isolate items-center overflow-clip relative shrink-0 w-[1440px]" data-name="Hero header section">
+    <div className="bg-white content-stretch flex flex-col h-[476px] md:h-[683px] isolate items-center overflow-clip relative shrink-0 w-full" data-name="Hero header section">
       <Frame5 onNavigate={onNavigate} />
       <Section />
     </div>
