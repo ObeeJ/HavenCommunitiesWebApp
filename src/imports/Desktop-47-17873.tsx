@@ -107,7 +107,7 @@ function Content({ onNavigate }: NavigationProps) {
 
 function Container({ onNavigate }: NavigationProps) {
   return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[1320px]" data-name="Container">
+    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full max-w-[1320px] px-[32px]" data-name="Container">
       <Content onNavigate={onNavigate} />
     </div>
   );

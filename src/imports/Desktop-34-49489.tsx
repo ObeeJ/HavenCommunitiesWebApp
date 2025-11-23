@@ -110,7 +110,7 @@ function Content2({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'cont
 
 function Container1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[1320px]" data-name="Container">
+    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full max-w-[1320px] px-[32px]" data-name="Container">
       <Content2 onNavigate={onNavigate} />
     </div>
   );
@@ -257,7 +257,7 @@ function HeadingAndSupportingText({ email, onEmailChange, onSubmit, onNavigate }
 
 function Container2({ email, onEmailChange, onSubmit, onNavigate }: { email: string; onEmailChange: (value: string) => void; onSubmit: () => void; onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
-    <div className="absolute box-border content-stretch flex flex-col gap-[12px] items-start left-[80px] max-w-[1280px] px-[32px] py-0 top-[151px] w-[1280px]" data-name="Container">
+    <div className="absolute box-border content-stretch flex flex-col gap-[12px] items-start left-0 right-0 mx-auto max-w-[1280px] px-[32px] md:px-[64px] lg:px-[112px] py-0 top-[120px] w-full" data-name="Container">
       <HeadingAndSupportingText email={email} onEmailChange={onEmailChange} onSubmit={onSubmit} onNavigate={onNavigate} />
     </div>
   );
@@ -274,7 +274,7 @@ function Frame3({ email, onEmailChange, onSubmit, onNavigate }: { email: string;
 
 function HeroHeaderSection({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
   return (
-    <div className="content-stretch flex flex-col h-[683px] isolate items-center overflow-clip relative shrink-0 w-full" data-name="Hero header section">
+    <div className="content-stretch flex flex-col h-[476px] md:h-[683px] isolate items-center overflow-clip relative shrink-0 w-full" data-name="Hero header section">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute bg-white inset-0" />
         <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgHeroHeaderSection} />

@@ -319,7 +319,7 @@ function Frame3() {
 
 function HeroHeaderSection({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact') => void }) {
   return (
-    <div className="content-stretch flex flex-col h-[683px] isolate items-center overflow-clip relative shrink-0 w-full z-[11]" data-name="Hero header section">
+    <div className="content-stretch flex flex-col h-[476px] md:h-[683px] isolate items-center overflow-clip relative shrink-0 w-full z-[11]" data-name="Hero header section">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute bg-white inset-0" />
         <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgHeroHeaderSection} />
