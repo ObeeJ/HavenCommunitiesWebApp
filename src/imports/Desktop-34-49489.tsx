@@ -1979,16 +1979,7 @@ function Footer({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (
 
 export default function Desktop({ onNavigate, onBlogClick }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; onBlogClick?: () => void }) {
   const [activeCategory, setActiveCategory] = useState<BlogCategory>('all');
-  const [footerEmail, setFooterEmail] = useState('');
   const [heroEmail, setHeroEmail] = useState('');
-
-  const handleFooterSubmit = () => {
-    if (footerEmail) {
-      console.log('Newsletter subscription:', footerEmail);
-      alert(`Thank you for subscribing with: ${footerEmail}`);
-      setFooterEmail('');
-    }
-  };
 
   const handleHeroSubmit = () => {
     if (heroEmail) {
@@ -2003,7 +1994,6 @@ export default function Desktop({ onNavigate, onBlogClick }: { onNavigate?: (pag
       <BlogPageHeader onNavigate={onNavigate} activeCategory={activeCategory} onCategoryChange={setActiveCategory} email={heroEmail} onEmailChange={setHeroEmail} onSubmit={handleHeroSubmit} />
       <SectionDivider />
       <SectionDivider1 />
-      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleFooterSubmit} />
     </div>
   );
 }
