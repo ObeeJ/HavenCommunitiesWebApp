@@ -1,4 +1,3 @@
-import { useState } from "react";
 import svgPaths from "./svg-2nk8xexzdl";
 import imgHeroHeaderSection from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd665b38.png";
 import imgPegmanOffscreen2X from "../assets/747a27fe416ebfaf57b25beae190a98036e77d0e.png";
@@ -1308,23 +1307,12 @@ function Footer({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (
 }
 
 export default function Desktop({ onNavigate, onBookNow }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; onBookNow?: () => void }) {
-  const [footerEmail, setFooterEmail] = useState('');
-
-  const handleSubmit = () => {
-    if (footerEmail) {
-      console.log('Newsletter subscription:', footerEmail);
-      alert(`Thank you for subscribing with: ${footerEmail}`);
-      setFooterEmail('');
-    }
-  };
-
   return (
     <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full" data-name="Desktop">
       <HeroHeaderSection onNavigate={onNavigate} />
       <ContactPageHeader onBookNow={onBookNow} />
       <ContactSections />
       <SectionDivider />
-      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleSubmit} />
     </div>
   );
 }
