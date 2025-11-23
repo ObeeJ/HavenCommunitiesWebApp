@@ -394,3 +394,254 @@
   height: 100%;
 }
 
+/* Mobile Styles */
+@media (max-width: 992px) {
+  .heroHeaderSection {
+    height: 476px;
+  }
+
+  .desktopHeader {
+    display: none;
+  }
+
+  .desktopHeroContent {
+    display: none;
+  }
+
+  /* Mobile Header */
+  .mobileHeader {
+    display: block;
+    height: 64px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .mobileHeaderContainer {
+    position: absolute;
+    height: 64px;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .mobileHeaderOverlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 64px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .mobileHeaderContent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .mobileHeaderInner {
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeaderRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileHeaderNav {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Hero Content - Mobile */
+  .mobileHeroContent {
+    display: block;
+    height: 404px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .mobileHeroOverlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 404px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .mobileHeroTextContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: auto;
+    align-items: center;
+    left: 50%;
+    top: 32px;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mobileHeroTextWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeroTextInner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeroTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobileHeroTitle {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+    line-height: 36px;
+    font-style: normal;
+    position: relative;
+    color: white;
+    font-size: 28px;
+    letter-spacing: -0.56px;
+    width: 100%;
+  }
+
+  .mobileHeroDescription {
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    font-style: normal;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* Section Styles - Mobile */
+  .section {
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .sectionContent {
+    gap: 24px;
+    display: inline-block;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .textContent {
+    margin-bottom: 48px;
+    min-width: 0;
+  }
+
+  .sectionTitleWrapper {
+    gap: 10px;
+  }
+
+  .sectionTitle {
+    line-height: 32px;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .sectionText {
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  .sectionTextParagraph {
+    margin-bottom: 12px;
+  }
+
+  .sectionImage {
+    height: 200px;
+    min-width: 0;
+    border-radius: 8px;
+  }
+
+  .sectionImageImg {
+    border-radius: 8px;
+  }
+
+  /* Vision Section - Mobile */
+  .visionSection {
+    gap: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .visionSectionContent {
+    flex-direction: column-reverse;
+    gap: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .visionImage {
+    height: 240px;
+    min-width: 320px;
+    border-radius: 8px;
+    order: 0;
+  }
+
+  .visionTextContent {
+    gap: 32px;
+    min-width: 320px;
+    order: 0;
+  }
+
+  .visionTitle {
+    line-height: 38px;
+    font-size: 30px;
+    letter-spacing: -0.72px;
+  }
+
+  .visionText {
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .visionTextParagraph {
+    margin-bottom: 16px;
+  }
+}
