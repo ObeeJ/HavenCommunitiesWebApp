@@ -1496,6 +1496,7 @@ export default function Desktop({ onNavigate }: NavigationProps) {
       <BlogPostPageHeader value={sidebarEmail} onChange={setSidebarEmail} onSubmit={handleSidebarSubmit} onNavigate={onNavigate} />
       <SectionDivider />
       <BlogSection onNavigate={onNavigate} />
+      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleFooterSubmit} />
     </div>
   );
 }

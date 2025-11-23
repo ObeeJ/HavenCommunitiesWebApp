@@ -1324,6 +1324,7 @@ export default function Desktop({ onNavigate, onBookNow }: { onNavigate?: (page:
       <ContactPageHeader onBookNow={onBookNow} />
       <ContactSections />
       <SectionDivider />
+      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleSubmit} />
     </div>
   );
 }

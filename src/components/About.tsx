@@ -9,67 +9,11 @@ import imgImageDesktop1 from "../assets/6a0f78d573110e8831ecfb44ca95157a1cf2d390
 import imgContent from "../assets/26d2fceb73e66695fbe106bfc5490e82c6f2f378.png";
 import Logo from "./Logo";
 import { CoreValues } from "./CoreValues";
+import { PageHeaderWithOverlay } from "./Header";
+import { MobileHeader } from "./MobileHeader";
+import { useResponsive } from '../hooks/useMediaQuery';
 import styles from "./About.module.css";
 
-// Mobile Components
-function Group1000003696Mobile() {
-  return (
-    <div className="h-[16.29px] relative shrink-0 w-[36.367px]">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 37 17">
-        <g id="Group 1000003696">
-          <path d={svgPathsMobile.p36958300} fill="var(--fill-0, white)" id="Vector 2" />
-          <path d={svgPathsMobile.pdb80000} fill="var(--fill-0, white)" id="Vector 1" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame1000003793Mobile({ onClick }: { onClick?: () => void }) {
-  return (
-    <Logo onClick={onClick} className="w-[78.75px]" />
-  );
-}
-
-function Menu2() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="menu-01">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g id="menu-01">
-          <path d="M3 12H21M3 6H21M3 18H21" id="Icon" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function NavMenuButton1() {
-  return (
-    <div className="box-border content-stretch flex gap-[8px] items-center justify-center overflow-clip p-[8px] relative rounded-[8px] shrink-0" data-name="_Nav menu button">
-      <Menu2 />
-    </div>
-  );
-}
-
-// Desktop Components
-function Group1000003696Desktop() {
-  return (
-    <div className="h-[21.72px] relative shrink-0 w-[48.49px]">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 49 22">
-        <g id="Group 1000003696">
-          <path d={svgPathsDesktop.p27cf2e80} fill="var(--fill-0, white)" id="Vector 2" />
-          <path d={svgPathsDesktop.p14e48780} fill="var(--fill-0, white)" id="Vector 1" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame1000003793Desktop({ onClick }: { onClick?: () => void }) {
-  return (
-    <Logo onClick={onClick} className="w-[105px]" />
-  );
-}
 
 function CoinsHand() {
   return (
@@ -138,6 +82,7 @@ interface AboutProps extends NavigationProps {}
 
 export function About({ onNavigate }: AboutProps) {
   const [mobileFooterEmail, setMobileFooterEmail] = useState('');
+  const { isDesktop } = useResponsive();
 
   const handleMobileFooterSubmit = () => {
     if (mobileFooterEmail && mobileFooterEmail.includes('@')) {
@@ -158,47 +103,13 @@ export function About({ onNavigate }: AboutProps) {
         </div>
         
         {/* Mobile Header */}
-        <div className={styles.mobileHeader}>
-          <div className={styles.mobileHeaderContainer}>
-            <div className={styles.mobileHeaderOverlay} />
-            <div className={styles.mobileHeaderContent}>
-              <div className={styles.mobileHeaderInner}>
-                <div className={styles.mobileHeaderRow}>
-                  <div className={styles.mobileHeaderNav}>
-                    <Frame1000003793Mobile onClick={() => onNavigate?.('home')} />
-                    <NavMenuButton1 />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="md:hidden absolute top-0 left-0 right-0 z-[20]">
+          <MobileHeader onNavigate={onNavigate} />
         </div>
 
         {/* Desktop Header */}
-        <div className={styles.desktopHeader}>
-          <div className={styles.desktopHeaderOverlay}>
-            <div className="h-[112px] relative shrink-0 w-full">
-              <div className="absolute content-stretch flex flex-col h-[112px] items-center justify-center left-0 right-0 top-0">
-                <div className="content-stretch flex items-center justify-between relative shrink-0 max-w-[1320px] w-full mx-auto px-[32px]">
-                  <div className="basis-0 content-stretch flex grow items-center justify-between min-h-px min-w-px relative shrink-0">
-                    <Frame1000003793Desktop onClick={() => onNavigate?.('home')} />
-                    <div className="content-stretch flex gap-[32px] items-center relative shrink-0">
-                      <div className="content-stretch flex flex-col items-center relative shrink-0 cursor-pointer" onClick={() => onNavigate?.('about')}>
-                        <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">About Us</p>
-                      </div>
-                      <div className="content-stretch flex flex-col items-center relative shrink-0 cursor-pointer" onClick={() => onNavigate?.('projects')}>
-                        <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Projects</p>
-                      </div>
-                      <div className="content-stretch flex flex-col items-center relative shrink-0 cursor-pointer" onClick={() => onNavigate?.('contact')}>
-                        <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Contact</p>
-                      </div>
-                      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre cursor-pointer" onClick={() => onNavigate?.('blog')}>Blog</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="hidden md:block">
+          <PageHeaderWithOverlay onNavigate={onNavigate} />
         </div>
 
         {/* Hero Content - Mobile */}

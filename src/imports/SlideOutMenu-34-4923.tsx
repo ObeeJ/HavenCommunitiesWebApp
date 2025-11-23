@@ -95,9 +95,13 @@ function Content2() {
   );
 }
 
-function NavItemBase1() {
+function NavItemBase1({ onClick }: { onClick?: () => void }) {
   return (
-    <div className={styles.navItem} data-name="_Nav item base">
+    <div 
+      className={styles.navItem}
+      data-name="_Nav item base"
+      onClick={onClick}
+    >
       <div className={styles.navItemInner}>
         <div className={styles.navItemContent}>
           <Content2 />
@@ -139,9 +143,13 @@ function Content4() {
   );
 }
 
-function NavItemBase3() {
+function NavItemBase3({ onClick }: { onClick?: () => void }) {
   return (
-    <div className={`${styles.navItem} ${styles.navItemActive}`} data-name="_Nav item base">
+    <div 
+      className={styles.navItem}
+      data-name="_Nav item base"
+      onClick={onClick}
+    >
       <div className={styles.navItemInner}>
         <div className={styles.navItemContent}>
           <Content4 />
@@ -151,22 +159,24 @@ function NavItemBase3() {
   );
 }
 
-function Navigation({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact') => void }) {
+import type { NavigationPage } from '../types/navigation';
+
+function Navigation({ onNavigate }: { onNavigate?: (page: NavigationPage) => void }) {
   return (
     <div className={styles.navigation} data-name="Navigation">
       <div className={styles.navigationInner}>
         <div className={styles.navigationContent}>
           <NavItemBase onClick={() => onNavigate?.('about')} />
-          <NavItemBase1 />
+          <NavItemBase1 onClick={() => onNavigate?.('projects')} />
           <NavItemBase2 onClick={() => onNavigate?.('contact')} />
-          <NavItemBase3 />
+          <NavItemBase3 onClick={() => onNavigate?.('blog')} />
         </div>
       </div>
     </div>
   );
 }
 
-function Panel({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact') => void }) {
+function Panel({ onNavigate }: { onNavigate?: (page: NavigationPage) => void }) {
   return (
     <div className={styles.panel} data-name="Panel">
       <SlideOutMenuHeader />
@@ -175,7 +185,7 @@ function Panel({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact
   );
 }
 
-export default function SlideOutMenu({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact') => void }) {
+export default function SlideOutMenu({ onNavigate }: { onNavigate?: (page: NavigationPage) => void }) {
   return (
     <div className={styles.slideOutMenu} data-name="Slide out menu">
       <div className={styles.slideOutMenuInner}>

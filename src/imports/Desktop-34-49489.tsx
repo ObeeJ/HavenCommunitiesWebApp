@@ -2003,6 +2003,7 @@ export default function Desktop({ onNavigate, onBlogClick }: { onNavigate?: (pag
       <BlogPageHeader onNavigate={onNavigate} activeCategory={activeCategory} onCategoryChange={setActiveCategory} email={heroEmail} onEmailChange={setHeroEmail} onSubmit={handleHeroSubmit} />
       <SectionDivider />
       <SectionDivider1 />
+      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleFooterSubmit} />
     </div>
   );
 }

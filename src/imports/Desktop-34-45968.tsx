@@ -1303,7 +1303,7 @@ function Container9({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'co
 
 function Footer({ onNavigate, footerEmail, setFooterEmail, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; footerEmail: string; setFooterEmail: (value: string) => void; onSubmit: () => void }) {
   return (
-    <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-[1440px] z-[1]" data-name="Footer">
+    <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-full z-[1]" data-name="Footer">
       <Container8 onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={onSubmit} />
       <Container9 onNavigate={onNavigate} />
     </div>
@@ -1326,6 +1326,7 @@ export default function Desktop({ onNavigate }: { onNavigate?: (page: 'home' | '
       <BlogPageHeader onNavigate={onNavigate} />
       <SectionDivider />
       <SectionDivider1 />
+      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleSubmit} />
     </div>
   );
 }

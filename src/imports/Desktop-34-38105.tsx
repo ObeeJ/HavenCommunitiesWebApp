@@ -670,18 +670,18 @@ function FooterLink({ onClick }: { onClick?: () => void }) {
   );
 }
 
-function ButtonsButton9() {
+function ButtonsButton9({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0" data-name="Buttons/Button">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Project</p>
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={onClick}>
+      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Projects</p>
     </div>
   );
 }
 
-function FooterLink1() {
+function FooterLink1({ onClick }: { onClick?: () => void }) {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-      <ButtonsButton9 />
+      <ButtonsButton9 onClick={onClick} />
     </div>
   );
 }
@@ -702,38 +702,38 @@ function FooterLink2({ onClick }: { onClick?: () => void }) {
   );
 }
 
-function ButtonsButton11() {
+function ButtonsButton11({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0" data-name="Buttons/Button">
+    <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={onClick}>
       <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Blog</p>
     </div>
   );
 }
 
-function FooterLink3() {
+function FooterLink3({ onClick }: { onClick?: () => void }) {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-      <ButtonsButton11 />
+      <ButtonsButton11 onClick={onClick} />
     </div>
   );
 }
 
-function FooterLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects') => void }) {
+function FooterLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full" data-name="Footer links">
       <FooterLink onClick={() => onNavigate?.('about')} />
-      <FooterLink1 />
+      <FooterLink1 onClick={() => onNavigate?.('projects')} />
       <FooterLink2 onClick={() => onNavigate?.('contact')} />
-      <FooterLink3 />
+      <FooterLink3 onClick={() => onNavigate?.('blog')} />
     </div>
   );
 }
 
-function LogoAndLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects') => void }) {
+function LogoAndLinks({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[560px] relative shrink-0" data-name="Logo and links">
+    <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[280px] relative shrink-0" data-name="Logo and links">
       <Logo onClick={() => onNavigate?.('home')} variant="white" />
-      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-[545px]">Crafting spaces, cultivating communities.</p>
+      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-full max-w-[545px]">Crafting spaces, cultivating communities.</p>
       <FooterLinks onNavigate={onNavigate} />
     </div>
   );
@@ -956,7 +956,7 @@ function Frame1000003769({ email, setEmail, onSubmit }: { email: string; setEmai
   );
 }
 
-function Content21({ onNavigate, email, setEmail, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects') => void; email: string; setEmail: (e: React.ChangeEvent<HTMLInputElement>) => void; onSubmit: () => void }) {
+function Content21({ onNavigate, email, setEmail, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; setEmail: (e: React.ChangeEvent<HTMLInputElement>) => void; onSubmit: () => void }) {
   return (
     <div className="content-start flex flex-wrap gap-[48px] h-[178px] items-start justify-between relative shrink-0 w-full" data-name="Content">
       <LogoAndLinks onNavigate={onNavigate} />
@@ -965,7 +965,7 @@ function Content21({ onNavigate, email, setEmail, onSubmit }: { onNavigate?: (pa
   );
 }
 
-function Container6({ onNavigate, email, setEmail, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects') => void; email: string; setEmail: (e: React.ChangeEvent<HTMLInputElement>) => void; onSubmit: () => void }) {
+function Container6({ onNavigate, email, setEmail, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; setEmail: (e: React.ChangeEvent<HTMLInputElement>) => void; onSubmit: () => void }) {
   return (
     <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
       <div className="max-w-inherit size-full">
@@ -977,17 +977,17 @@ function Container6({ onNavigate, email, setEmail, onSubmit }: { onNavigate?: (p
   );
 }
 
-function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'terms' | 'privacy' | 'cookies') => void }) {
+function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="content-stretch flex font-['Avenir:Medium',_sans-serif] gap-[16px] items-start leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre" data-name="Footer links">
-      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('terms')}>Terms</p>
-      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('privacy')}>Privacy</p>
-      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('cookies')}>Cookies</p>
+      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('termsOfService')}>Terms</p>
+      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('privacyPolicy')}>Privacy</p>
+      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('cookiesPolicy')}>Cookies</p>
     </div>
   );
 }
 
-function Content22({ onNavigate }: { onNavigate?: (page: 'terms' | 'privacy' | 'cookies') => void }) {
+function Content22({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="box-border content-center flex flex-wrap gap-[24px] items-center justify-between pb-0 pt-[32px] px-0 relative shrink-0 w-full" data-name="Content">
       <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(127,86,217,0)] border-solid inset-0 pointer-events-none" />
@@ -997,7 +997,7 @@ function Content22({ onNavigate }: { onNavigate?: (page: 'terms' | 'privacy' | '
   );
 }
 
-function Container7({ onNavigate }: { onNavigate?: (page: 'terms' | 'privacy' | 'cookies') => void }) {
+function Container7({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
       <div className="max-w-inherit size-full">
@@ -1009,14 +1009,38 @@ function Container7({ onNavigate }: { onNavigate?: (page: 'terms' | 'privacy' | 
   );
 }
 
+function Footer({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void; email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onEmailChange(e.target.value);
+  };
+
+  return (
+    <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-full z-[1]" data-name="Footer">
+      <Container6 onNavigate={onNavigate} email={email} setEmail={handleEmailChange} onSubmit={onSubmit} />
+      <Container7 onNavigate={onNavigate} />
+    </div>
+  );
+}
+
 
 
 export default function Desktop({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  const [footerEmail, setFooterEmail] = useState('');
+
+  const handleSubmit = () => {
+    if (footerEmail) {
+      console.log('Newsletter subscription:', footerEmail);
+      alert(`Thank you for subscribing with: ${footerEmail}`);
+      setFooterEmail('');
+    }
+  };
+
   return (
     <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full" data-name="Desktop">
       <BlogPageHeader onNavigate={onNavigate} />
       <SectionDivider />
       <SectionDivider1 />
+      <Footer onNavigate={onNavigate} email={footerEmail} onEmailChange={setFooterEmail} onSubmit={handleSubmit} />
     </div>
   );
 }
