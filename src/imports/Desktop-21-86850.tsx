@@ -111,7 +111,7 @@ function Content() {
 
 function Container() {
   return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[1320px]" data-name="Container">
+    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full max-w-[1320px] px-[32px]" data-name="Container">
       <Content />
     </div>
   );
@@ -201,7 +201,7 @@ function HeadingAndSupportingText() {
 
 function Container1() {
   return (
-    <div className="absolute box-border content-stretch flex flex-col gap-[12px] items-start left-[80px] max-w-[1280px] px-[32px] py-0 top-[120px] w-[1280px]" data-name="Container">
+    <div className="absolute box-border content-stretch flex flex-col gap-[12px] items-start left-0 right-0 mx-auto max-w-[1280px] px-[32px] md:px-[64px] lg:px-[112px] py-0 top-[120px] w-full" data-name="Container">
       <HeadingAndSupportingText />
     </div>
   );

@@ -103,7 +103,7 @@ export function About({ onNavigate }: AboutProps) {
         </div>
         
         {/* Mobile Header */}
-        <div className="md:hidden">
+        <div className="md:hidden absolute top-0 left-0 right-0 z-[20]">
           <MobileHeader onNavigate={onNavigate} />
         </div>
 

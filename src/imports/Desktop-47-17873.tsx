@@ -107,7 +107,7 @@ function Content({ onNavigate }: NavigationProps) {
 
 function Container({ onNavigate }: NavigationProps) {
   return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-[1320px]" data-name="Container">
+    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full max-w-[1320px] px-[32px]" data-name="Container">
       <Content onNavigate={onNavigate} />
     </div>
   );
@@ -1496,6 +1496,7 @@ export default function Desktop({ onNavigate }: NavigationProps) {
       <BlogPostPageHeader value={sidebarEmail} onChange={setSidebarEmail} onSubmit={handleSidebarSubmit} onNavigate={onNavigate} />
       <SectionDivider />
       <BlogSection onNavigate={onNavigate} />
+      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleFooterSubmit} />
     </div>
   );
 }

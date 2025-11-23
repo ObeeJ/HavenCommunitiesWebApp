@@ -386,19 +386,20 @@
   /* Hero Content - Mobile */
   .mobileHeroContent {
     display: block;
-    height: 404px;
+    height: 476px;
     position: relative;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
   }
 
   .mobileHeroOverlay {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
-    height: 404px;
+    height: 476px;
     left: 0;
     top: 0;
     width: 100%;
+    z-index: 0;
   }
 
   .mobileHeroTextContainer {
@@ -409,11 +410,12 @@
     height: auto;
     align-items: center;
     left: 50%;
-    top: 32px;
+    top: 96px;
     transform: translateX(-50%);
     width: calc(100% - 32px);
     padding-left: 16px;
     padding-right: 16px;
+    z-index: 2;
   }
 
   .mobileHeroTextWrapper {
