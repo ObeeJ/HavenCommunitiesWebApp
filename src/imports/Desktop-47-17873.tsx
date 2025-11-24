@@ -5,1498 +5,337 @@ import imgImage1 from "../assets/7cea1cc7a63d49724f662dc4ca77ec22ed421454.png";
 import imgImage2 from "../assets/9f4ea61beb99ae8c2da093d59eccf06f640e117f.png";
 import imgImage3 from "../assets/0f4f2fcb6049962790ac0a2810925489622b792c.png";
 import Logo from "../components/Logo";
-import type { NavigationProps } from '../types/navigation';
+import { MobileHeader } from "../components/MobileHeader";
+import styles from "./Desktop-47-17873.module.css";
 
-function Frame1000003793({ onNavigate }: NavigationProps) {
+type NavigateTarget =
+  | "home"
+  | "about"
+  | "contact"
+  | "projects"
+  | "projectDetail"
+  | "blog"
+  | "blogDetail"
+  | "privacyPolicy"
+  | "termsOfService"
+  | "cookiesPolicy";
+
+type NavigateHandler = (page: NavigateTarget) => void;
+
+const NAV_ITEMS: { label: string; route: NavigateTarget }[] = [
+  { label: "About Us", route: "about" },
+  { label: "Projects", route: "projects" },
+  { label: "Contact", route: "contact" },
+  { label: "Blog", route: "blog" },
+];
+
+const RELATED_POSTS = [
+  { id: 1, image: imgImage1, author: "Demi Wilkinson", date: "16 Jan 2025", category: "Land", title: "Rental Income Optimization for Property Owners", description: "Strategic approaches to maximize rental returns, tenant quality, and long-term property appreciation for residential investors." },
+  { id: 2, image: imgImage2, author: "Candice Wu", date: "15 Jan 2025", category: "Land", title: "Building a Diversified Real Estate Portfolio", description: "Strategies for balancing residential, commercial, and alternative investments to create resilient wealth-building portfolios." },
+  { id: 3, image: imgImage3, author: "Natali Craig", date: "14 Jan 2025", category: "Investment", title: "First-Time Home Buyers: Smart Investment Moves", description: "Essential guidance for navigating mortgages, inspections, and negotiations to secure your first property investment confidently." },
+];
+
+function CopyIcon() {
   return (
-    <Logo onClick={() => onNavigate?.('home')} variant="blue" useBlueLogo={true} />
-  );
-}
-
-function ButtonsButton({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[4px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button" 
-      onClick={() => onNavigate?.('about')}
-    >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#717680] text-[16px] text-nowrap whitespace-pre">About Us</p>
-    </div>
-  );
-}
-
-function DropdownHeaderNavigationTrigger({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="_Dropdown header navigation trigger">
-      <ButtonsButton onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function ButtonsButton1({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[4px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button" 
-      onClick={() => onNavigate?.('projects')}
-    >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#717680] text-[16px] text-nowrap whitespace-pre">Projects</p>
-    </div>
-  );
-}
-
-function DropdownHeaderNavigationTrigger1({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="_Dropdown header navigation trigger">
-      <ButtonsButton1 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function ButtonsButton2({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[4px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button" 
-      onClick={() => onNavigate?.('contact')}
-    >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#717680] text-[16px] text-nowrap whitespace-pre">Contact</p>
-    </div>
-  );
-}
-
-function DropdownHeaderNavigationTrigger2({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0" data-name="_Dropdown header navigation trigger">
-      <ButtonsButton2 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function ButtonsButton3({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[4px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button" 
-      onClick={() => onNavigate?.('blog')}
-    >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#717680] text-[16px] text-nowrap whitespace-pre">Blog</p>
-    </div>
-  );
-}
-
-function Navigation({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[32px] items-center relative shrink-0" data-name="Navigation">
-      <DropdownHeaderNavigationTrigger onNavigate={onNavigate} />
-      <DropdownHeaderNavigationTrigger1 onNavigate={onNavigate} />
-      <DropdownHeaderNavigationTrigger2 onNavigate={onNavigate} />
-      <ButtonsButton3 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Content({ onNavigate }: NavigationProps) {
-  return (
-    <div className="basis-0 content-stretch flex grow items-center justify-between min-h-px min-w-px relative shrink-0" data-name="Content">
-      <Logo onClick={() => onNavigate?.('home')} variant="blue" useBlueLogo={true} />
-      <Navigation onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Container({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full max-w-[1320px] px-[32px]" data-name="Container">
-      <Content onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Header({ onNavigate }: NavigationProps) {
-  return (
-    <div className="absolute content-stretch flex flex-col h-[112px] items-center justify-center left-0 right-0 top-0" data-name="Header">
-      <Container onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function DropdownHeaderNavigation({ onNavigate }: NavigationProps) {
-  return (
-    <div className="h-[112px] relative shrink-0 w-full" data-name="Dropdown header navigation">
-      <Header onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Frame2({ onNavigate }: NavigationProps) {
-  return (
-    <div className="absolute content-stretch flex flex-col gap-[10px] h-[112px] items-start left-0 right-0 top-0">
-      <DropdownHeaderNavigation onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function DropdownHeaderNavigation1({ onNavigate }: NavigationProps) {
-  return (
-    <div className="h-[80px] relative shrink-0 w-full" data-name="Dropdown header navigation">
-      <Frame2 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Frame3({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col gap-[10px] h-[80px] items-start relative shrink-0 w-full z-[5]">
-      <DropdownHeaderNavigation1 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Badge() {
-  return (
-    <div className="bg-white box-border content-stretch flex items-center px-[8px] py-[2px] relative rounded-[9999px] shrink-0" data-name="Badge">
-      <div aria-hidden="true" className="absolute border border-[#84adff] border-solid inset-0 pointer-events-none rounded-[9999px]" />
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[18px] not-italic relative shrink-0 text-[#155eef] text-[12px] text-center text-nowrap whitespace-pre">Land</p>
-    </div>
-  );
-}
-
-function Content1() {
-  return (
-    <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Content">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[18px] not-italic relative shrink-0 text-[#155eef] text-[12px] text-nowrap whitespace-pre">8 min read</p>
-    </div>
-  );
-}
-
-function BadgeGroup() {
-  return (
-    <div className="bg-[#eff4ff] box-border content-stretch flex gap-[8px] items-center pl-[4px] pr-[12px] py-[4px] relative rounded-[9999px] shrink-0" data-name="Badge group">
-      <div aria-hidden="true" className="absolute border border-[#84adff] border-solid inset-0 pointer-events-none rounded-[9999px]" />
-      <Badge />
-      <Content1 />
-    </div>
-  );
-}
-
-function HeadingAndBadge() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Heading and badge">
-      <BadgeGroup />
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[60px] min-w-full not-italic relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-[min-content]">Transform Your Real Estate Investment Strategy Today</p>
-    </div>
-  );
-}
-
-function TextAndSupportingText() {
-  return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start max-w-[768px] relative shrink-0 w-full" data-name="Text and supporting text">
-      <HeadingAndBadge />
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[30px] not-italic relative shrink-0 text-[#535862] text-[20px] w-full">Discover how modern real estate investment strategies can help you build wealth and secure your financial future. Learn proven techniques from industry experts and start your journey to property success today.</p>
-    </div>
-  );
-}
-
-function Content2() {
-  return (
-    <div className="basis-0 content-stretch flex flex-col gap-[32px] grow items-start min-h-px min-w-px relative self-stretch shrink-0" data-name="Content">
-      <TextAndSupportingText />
-    </div>
-  );
-}
-
-function Container1() {
-  return (
-    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="max-w-inherit size-full">
-        <div className="box-border content-stretch flex gap-[32px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-          <Content2 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Image() {
-  return (
-    <div className="aspect-[1216/640] relative rounded-[20px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgImage} />
-    </div>
-  );
-}
-
-function Author() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start not-italic relative shrink-0 text-nowrap whitespace-pre" data-name="Author">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] relative shrink-0 text-[#155eef] text-[14px]">Written by</p>
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px]">Alec Whitten</p>
-    </div>
-  );
-}
-
-function PublishDate() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start not-italic relative shrink-0 text-nowrap whitespace-pre" data-name="Publish date">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] relative shrink-0 text-[#155eef] text-[14px]">Published on</p>
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px]">17 Jan 2025</p>
-    </div>
-  );
-}
-
-function AuthorAndPublishDate() {
-  return (
-    <div className="content-stretch flex gap-[48px] items-start relative shrink-0" data-name="Author and publish date">
-      <Author />
-      <PublishDate />
-    </div>
-  );
-}
-
-function Copy01() {
-  return (
-    <div className="relative shrink-0 size-[20px]" data-name="copy-01">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-        <g clipPath="url(#clip0_47_18113)" id="copy-01">
-          <path d={svgPaths.p22dacb00} id="Icon" stroke="var(--stroke-0, #A4A7AE)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-        </g>
-        <defs>
-          <clipPath id="clip0_47_18113">
-            <rect fill="white" height="20" width="20" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function TextPadding() {
-  return (
-    <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#414651] text-[14px] text-nowrap whitespace-pre">Copy link</p>
-    </div>
-  );
-}
-
-function ButtonsButton4() {
-  const handleCopy = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      alert('Link copied to clipboard!');
-    }).catch(() => {
-      alert('Failed to copy link');
-    });
-  };
-
-  return (
-    <div 
-      className="bg-white relative rounded-[8px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={handleCopy}
-    >
-      <div className="box-border content-stretch flex gap-[4px] items-center justify-center overflow-clip px-[14px] py-[10px] relative rounded-[inherit]">
-        <Copy01 />
-        <TextPadding />
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function SocialIcon() {
-  return (
-    <div className="relative shrink-0 size-[20px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-        <g id="Social icon">
-          <path clipRule="evenodd" d={svgPaths.p32584700} fill="var(--fill-0, #A4A7AE)" fillRule="evenodd" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function ButtonsButton5() {
-  return (
-    <div className="bg-white relative rounded-[8px] shrink-0" data-name="Buttons/Button">
-      <div className="box-border content-stretch flex items-center justify-center overflow-clip p-[10px] relative rounded-[inherit]">
-        <SocialIcon />
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function SocialIcon1() {
-  return (
-    <div className="relative shrink-0 size-[20px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-        <g clipPath="url(#clip0_47_18124)" id="Social icon">
-          <path d={svgPaths.p24dd3180} fill="var(--fill-0, #A4A7AE)" id="Vector" />
-        </g>
-        <defs>
-          <clipPath id="clip0_47_18124">
-            <rect fill="white" height="20" width="20" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function ButtonsButton6() {
-  return (
-    <div className="bg-white relative rounded-[8px] shrink-0" data-name="Buttons/Button">
-      <div className="box-border content-stretch flex items-center justify-center overflow-clip p-[10px] relative rounded-[inherit]">
-        <SocialIcon1 />
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function Group() {
-  return (
-    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-      <g id="Group">
-        <path d={svgPaths.p3fb91680} fill="var(--fill-0, #A4A7AE)" id="Vector" />
+    <svg className={styles.icon} fill="none" viewBox="0 0 20 20">
+      <g clipPath="url(#clip0_47_18113)">
+        <path d={svgPaths.p22dacb00} stroke="var(--stroke-0, #A4A7AE)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
       </g>
+      <defs>
+        <clipPath id="clip0_47_18113">
+          <rect fill="white" height="20" width="20" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
 
-function SocialIcon2() {
+function SocialIcon({ path, clipPathId }: { path: string; clipPathId?: string }) {
   return (
-    <div className="overflow-clip relative shrink-0 size-[20px]" data-name="Social icon">
-      <Group />
-    </div>
-  );
-}
-
-function ButtonsButton7() {
-  return (
-    <div className="bg-white relative rounded-[8px] shrink-0" data-name="Buttons/Button">
-      <div className="box-border content-stretch flex items-center justify-center overflow-clip p-[10px] relative rounded-[inherit]">
-        <SocialIcon2 />
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function SocialLinks() {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start relative shrink-0" data-name="Social links">
-      <ButtonsButton4 />
-      <ButtonsButton5 />
-      <ButtonsButton6 />
-      <ButtonsButton7 />
-    </div>
-  );
-}
-
-function Content3() {
-  return (
-    <div className="content-start flex flex-wrap gap-[24px] items-start justify-between relative shrink-0 w-full" data-name="Content">
-      <AuthorAndPublishDate />
-      <SocialLinks />
-    </div>
-  );
-}
-
-function Container2() {
-  return (
-    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col items-center max-w-inherit size-full">
-        <div className="box-border content-stretch flex flex-col gap-[32px] items-center max-w-inherit px-[32px] py-0 relative w-full">
-          <Image />
-          <Content3 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Section() {
-  return (
-    <div className="box-border content-stretch flex flex-col gap-[64px] items-center px-0 py-[96px] relative shrink-0 w-full" data-name="Section">
-      <Container1 />
-      <Container2 />
-    </div>
-  );
-}
-
-function PaddingBottom() {
-  return <div className="content-stretch flex flex-col h-[20px] items-start shrink-0 w-full" data-name="Padding bottom" />;
-}
-
-function ContentItem() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[38px] not-italic relative shrink-0 text-[#181d27] text-[30px] w-full">Introduction</p>
-      <PaddingBottom />
-    </div>
-  );
-}
-
-function ContentItem1() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <div className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-        <p className="mb-[18px]">The real estate investment landscape continues to evolve, offering unprecedented opportunities for those who understand market dynamics and timing. Whether you're a seasoned investor or exploring your first property purchase, the key to success lies in comprehensive market analysis, strategic property selection, and long-term wealth building perspective. This comprehensive guide explores proven strategies that industry leaders use to maximize returns and minimize risk in today's competitive market.</p>
-        <p>{`Real estate remains one of the most tangible and historically proven wealth-building vehicles available. The combination of property appreciation, rental income generation, and leverage through mortgage financing creates multiple pathways to financial independence. Successful investors distinguish themselves through diligent market research, understanding local economic drivers, and positioning their portfolios to capture emerging opportunities before the broader market recognizes their value. `}</p>
-      </div>
-    </div>
-  );
-}
-
-function PaddingTop1() {
-  return <div className="content-stretch flex flex-col h-[48px] items-start shrink-0 w-full" data-name="Padding top" />;
-}
-
-function Image1() {
-  return (
-    <div className="aspect-[720/480] relative rounded-[12px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[12px] size-full" src={imgImage1} />
-    </div>
-  );
-}
-
-function Content4() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Content">
-      <Image1 />
-    </div>
-  );
-}
-
-function PaddingBottom1() {
-  return <div className="content-stretch flex flex-col h-[48px] items-start shrink-0 w-full" data-name="Padding bottom" />;
-}
-
-function ContentItem2() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <PaddingTop1 />
-      <Content4 />
-      <PaddingBottom1 />
-    </div>
-  );
-}
-
-function ContentItem3() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">Real estate has long been considered one of the most reliable and profitable investments. Whether you're looking for steady rental income, long-term appreciation, or a quick flip, understanding the fundamentals is essential for success in today's dynamic market.</p>
-    </div>
-  );
-}
-
-function ContentItem4() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <div className="font-['Avenir:Regular',_sans-serif] leading-[28px] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-        <p className="mb-[18px]">Understanding market dynamics is crucial to identifying high-potential investment opportunities. Real estate professionals evaluate factors including property appreciation trends, rental demand forecasts, neighborhood development plans, and economic indicators. These insights help investors make data-driven decisions that position their portfolios for long-term growth and sustainable returns.</p>
-        <p className="mb-[18px]">The real estate market offers multiple pathways to financial success. From residential properties that provide stable rental income to commercial spaces that generate significant returns, each investment type has unique advantages. Smart investors analyze market trends, location fundamentals, and property potential before committing their capital. With proper research and due diligence, you can identify opportunities that align with your financial goals.</p>
-        <p>Market conditions and timing play crucial roles in real estate success. Understanding supply and demand dynamics in your target area, recognizing growth trends, and positioning yourself ahead of the curve can significantly boost your returns. Whether interest rates are rising or falling, multiple investment opportunities exist for informed investors who know where to look.</p>
-      </div>
-    </div>
-  );
-}
-
-function PaddingTop2() {
-  return <div className="content-stretch flex flex-col h-[32px] items-start shrink-0 w-full" data-name="Padding top" />;
-}
-
-function PaddingBottom2() {
-  return <div className="content-stretch flex flex-col h-[16px] items-start shrink-0 w-full" data-name="Padding bottom" />;
-}
-
-function ContentItem5() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <PaddingTop2 />
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[32px] not-italic relative shrink-0 text-[#181d27] text-[24px] w-full">Software and tools</p>
-      <PaddingBottom2 />
-    </div>
-  );
-}
-
-function PaddingTop3() {
-  return <div className="content-stretch flex flex-col h-[32px] items-start shrink-0 w-full" data-name="Padding top" />;
-}
-
-function PaddingBottom3() {
-  return <div className="content-stretch flex flex-col h-[16px] items-start shrink-0 w-full" data-name="Padding bottom" />;
-}
-
-function ContentItem7() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <PaddingTop3 />
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[32px] not-italic relative shrink-0 text-[#181d27] text-[24px] w-full">Other resources</p>
-      <PaddingBottom3 />
-    </div>
-  );
-}
-
-function ContentItem8() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Content item">
-      <div className="font-['Avenir:Regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#535862] text-[18px] w-full">
-        <p className="leading-[28px] mb-[18px]">Building a diversified real estate portfolio requires strategic planning and patience. Start with properties that match your risk tolerance and investment timeline. Consider factors like location appreciation potential, tenant demand, maintenance costs, and tax implications. Many successful investors begin with single-family homes before expanding to multi-unit buildings or commercial properties. Your real estate journey is unique—tailor your strategy to your personal financial situation and long-term objectives.</p>
-        <ol className="list-decimal" start="1">
-          <li className="mb-0 ms-[27px]">
-            <span className="leading-[28px]">Conduct thorough market research and property analysis before making any investment decisions.</span>
-          </li>
-          <li className="mb-0 ms-[27px]">
-            <span className="leading-[28px]">Develop a comprehensive financing strategy that optimizes returns while managing risk responsibly.</span>
-          </li>
-          <li className="ms-[27px]">
-            <span className="leading-[28px]">Build a diversified portfolio across multiple property types and geographic markets to maximize stability.</span>
-          </li>
-        </ol>
-      </div>
-    </div>
-  );
-}
-
-function RichText() {
-  return (
-    <div className="basis-0 content-stretch flex flex-col grow items-start max-w-[720px] min-h-px min-w-[560px] relative shrink-0" data-name="Rich text">
-      <ContentItem />
-      <ContentItem1 />
-      <ContentItem2 />
-      <ContentItem3 />
-      <ContentItem4 />
-      <ContentItem5 />
-      <ContentItem1 />
-      <ContentItem7 />
-      <ContentItem8 />
-    </div>
-  );
-}
-
-function Send01() {
-  return (
-    <div className="absolute left-[14px] size-[28px] top-[14px]" data-name="send-01">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 28 28">
-        <g id="send-01">
-          <path d={svgPaths.p3959e900} id="Icon" stroke="var(--stroke-0, #414651)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    <svg className={styles.icon} fill="none" viewBox="0 0 20 20">
+      {clipPathId ? (
+        <g clipPath={`url(#${clipPathId})`}>
+          <path d={path} fill="var(--fill-0, #A4A7AE)" />
         </g>
-      </svg>
-    </div>
-  );
-}
-
-function FeaturedIcon() {
-  return (
-    <div className="bg-white relative rounded-[12px] shrink-0 size-[56px]" data-name="Featured icon">
-      <div className="overflow-clip relative rounded-[inherit] size-[56px]">
-        <Send01 />
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function HeadingAndSupportingText() {
-  return (
-    <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and supporting text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[30px] relative shrink-0 text-[#181d27] text-[20px] w-full">Weekly newsletter</p>
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[24px] relative shrink-0 text-[#535862] text-[16px] w-full">No spam. Just the latest releases and tips, interesting articles, and exclusive interviews in your inbox every week.</p>
-    </div>
-  );
-}
-
-function Content5({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="basis-0 content-stretch flex gap-[8px] grow items-center min-h-px min-w-px relative shrink-0" data-name="Content">
-      <input
-        type="email"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder="Enter your email"
-        className="[white-space-collapse:collapse] basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[24px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#717680] text-[16px] bg-transparent border-none outline-none w-full"
-      />
-    </div>
-  );
-}
-
-function Input({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="bg-white relative rounded-[234px] shrink-0 w-full" data-name="Input">
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-      <div className="flex flex-row items-center size-full">
-        <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] py-[10px] relative w-full">
-          <Content5 value={value} onChange={onChange} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function InputWithLabel({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="Input with label">
-      <Input value={value} onChange={onChange} />
-    </div>
-  );
-}
-
-function InputField({ value, onChange, onNavigate }: { value: string; onChange: (value: string) => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="Input field">
-      <InputWithLabel value={value} onChange={onChange} />
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#535862] text-[0px] text-[14px] w-full">
-        <span>{`Read about our `}</span>
-        <span 
-          className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid underline cursor-pointer hover:opacity-80 transition-opacity"
-          onClick={() => onNavigate?.('privacyPolicy')}
-        >
-          privacy policy
-        </span>.
-      </p>
-    </div>
-  );
-}
-
-function TextPadding1() {
-  return (
-    <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Subscribe</p>
-    </div>
-  );
-}
-
-function ButtonsButton8({ onClick }: { onClick?: () => void }) {
-  return (
-    <div 
-      className="bg-[#155eef] relative rounded-[234px] shrink-0 w-full cursor-pointer hover:opacity-90 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={onClick}
-    >
-      <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-        <div className="box-border content-stretch flex gap-[6px] items-center justify-center px-[18px] py-[12px] relative w-full">
-          <TextPadding1 />
-        </div>
-      </div>
-      <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function EmailCapture({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Email capture">
-      <InputField value={value} onChange={onChange} onNavigate={onNavigate} />
-      <ButtonsButton8 onClick={onSubmit} />
-    </div>
-  );
-}
-
-function TextAndEmailCapture({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full" data-name="Text and email capture">
-      <HeadingAndSupportingText />
-      <EmailCapture value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function BlogSubscribeCard({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="bg-neutral-50 box-border content-stretch flex flex-col gap-[32px] items-start min-w-[320px] p-[32px] relative rounded-[16px] shrink-0 w-[384px]" data-name="Blog subscribe card">
-      <div aria-hidden="true" className="absolute border border-[#e9eaeb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-      <FeaturedIcon />
-      <TextAndEmailCapture value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Sidebar({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-name="Sidebar">
-      <BlogSubscribeCard value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Content6({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="content-start flex flex-wrap gap-[96px] items-start justify-center relative shrink-0 w-full" data-name="Content">
-      <RichText />
-      <Sidebar value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Container3({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col items-center max-w-inherit size-full">
-        <div className="box-border content-stretch flex flex-col gap-[64px] items-center max-w-inherit px-[32px] py-0 relative w-full">
-          <Content6 value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Section1({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="box-border content-stretch flex flex-col gap-[64px] items-center pb-[96px] pt-0 px-0 relative shrink-0 w-full" data-name="Section">
-      <Container3 value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function BlogPostPageHeader({ value, onChange, onSubmit, onNavigate }: { value: string; onChange: (value: string) => void; onSubmit: () => void; onNavigate?: NavigationProps['onNavigate'] }) {
-  return (
-    <div className="bg-white content-stretch flex flex-col items-center overflow-clip relative shrink-0 w-full z-[4]" data-name="Blog post page header">
-      <Section />
-      <Section1 value={value} onChange={onChange} onSubmit={onSubmit} onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Container4() {
-  return (
-    <div className="h-px relative shrink-0 w-[1280px]" data-name="Container">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1280 1">
-        <g id="Container"></g>
-      </svg>
-    </div>
-  );
-}
-
-function SectionDivider() {
-  return (
-    <div className="content-stretch flex items-start justify-center relative shrink-0 w-full z-[3]" data-name="–––– Section divider ––––">
-      <Container4 />
-    </div>
-  );
-}
-
-function HeadingAndSubheading() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full" data-name="Heading and subheading">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] relative shrink-0 text-[#155eef] text-[16px] w-full">Latest</p>
-      <p className="font-['Inter:Semibold',_sans-serif] leading-[44px] relative shrink-0 text-[#181d27] text-[36px] tracking-[-0.72px] w-full">From the blog</p>
-    </div>
-  );
-}
-
-function HeadingAndSupportingText1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[20px] items-start not-italic relative shrink-0 w-full" data-name="Heading and supporting text">
-      <HeadingAndSubheading />
-      <p className="font-['Avenir:Regular',_sans-serif] leading-[28px] relative shrink-0 text-[#535862] text-[18px] w-full">The latest industry news, interviews, technologies, and resources.</p>
-    </div>
-  );
-}
-
-function TextPadding2() {
-  return (
-    <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">View all posts</p>
-    </div>
-  );
-}
-
-function ButtonsButton9({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="bg-[#155eef] relative rounded-[234px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('blog')}
-    >
-      <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[18px] py-[12px] relative rounded-[inherit]">
-        <TextPadding2 />
-      </div>
-      <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function Actions({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[12px] items-start relative shrink-0" data-name="Actions">
-      <ButtonsButton9 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function TextAndAction({ onNavigate }: NavigationProps) {
-  return (
-    <div className="basis-0 content-stretch flex flex-col gap-[32px] grow items-start max-w-[400px] min-h-px min-w-[320px] relative shrink-0" data-name="Text and action">
-      <HeadingAndSupportingText1 />
-      <Actions onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function TextAndSupportingText1() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Text and supporting text">
-      <p className="font-['Avenir:Medium',_sans-serif] relative shrink-0">Demi Wilkinson</p>
-      <p className="font-['Avenir:Regular',_sans-serif] relative shrink-0">16 Jan 2025</p>
-    </div>
-  );
-}
-
-function Content7() {
-  return (
-    <div className="content-stretch flex items-start justify-between leading-[20px] not-italic relative shrink-0 text-[14px] text-nowrap text-white w-full whitespace-pre" data-name="Content">
-      <TextAndSupportingText1 />
-      <p className="font-['Avenir:Heavy',_sans-serif] relative shrink-0">Land</p>
-    </div>
-  );
-}
-
-function AttributionCard() {
-  return (
-    <div className="backdrop-blur-md backdrop-filter bg-[rgba(255,255,255,0.3)] relative shrink-0 w-full" data-name="Attribution card">
-      <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(255,255,255,0.3)] border-solid inset-0 pointer-events-none" />
-      <div className="size-full">
-        <div className="box-border content-stretch flex flex-col gap-[24px] items-start p-[20px] relative w-full">
-          <Content7 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function BottomPanel() {
-  return (
-    <div className="absolute bg-gradient-to-b bottom-0 content-stretch flex flex-col from-[rgba(0,0,0,0)] items-center justify-center left-0 right-0 to-[rgba(0,0,0,0.4)]" data-name="Bottom panel">
-      <AttributionCard />
-    </div>
-  );
-}
-
-function Image2() {
-  return (
-    <div className="aspect-[384/256] overflow-clip relative rounded-[16px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[16px] size-full" src={imgImage2} />
-      <BottomPanel />
-    </div>
-  );
-}
-
-function HeadingAndText() {
-  return (
-    <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Master Location Analysis and Market Trends</p>
-      <p className="-webkit-box css-2gg9ad font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Learn how to evaluate neighborhoods and predict growth patterns for profitable investments.</p>
-    </div>
+      ) : (
+        <g>
+          <path d={path} fill="var(--fill-0, #A4A7AE)" />
+        </g>
+      )}
+      {clipPathId && (
+        <defs>
+          <clipPath id={clipPathId}>
+            <rect fill="white" height="20" width="20" />
+          </clipPath>
+        </defs>
+      )}
+    </svg>
   );
 }
 
 function ArrowUpRight() {
   return (
-    <div className="relative shrink-0 size-[20px]" data-name="arrow-up-right">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-        <g id="arrow-up-right">
-          <path d={svgPaths.p32dd8280} id="Icon" stroke="var(--stroke-0, #00359E)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function ButtonsButton10({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('blogDetail')}
-    >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#155eef] text-[16px] text-nowrap whitespace-pre">Read post</p>
-      <ArrowUpRight />
-    </div>
-  );
-}
-
-function Content8({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full" data-name="Content">
-      <HeadingAndText />
-      <ButtonsButton10 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function BlogPostCard({ onNavigate }: NavigationProps) {
-  return (
-    <div className="basis-0 content-stretch flex flex-col gap-[16px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Blog post card">
-      <Image2 />
-      <Content8 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function TextAndSupportingText2() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Text and supporting text">
-      <p className="font-['Avenir:Medium',_sans-serif] relative shrink-0">Alec Whitten</p>
-      <p className="font-['Avenir:Regular',_sans-serif] relative shrink-0">17 Jan 2025</p>
-    </div>
-  );
-}
-
-function Content9() {
-  return (
-    <div className="content-stretch flex items-start justify-between leading-[20px] not-italic relative shrink-0 text-[14px] text-nowrap text-white w-full whitespace-pre" data-name="Content">
-      <TextAndSupportingText2 />
-      <p className="font-['Avenir:Heavy',_sans-serif] relative shrink-0">Construction</p>
-    </div>
-  );
-}
-
-function AttributionCard1() {
-  return (
-    <div className="backdrop-blur-md backdrop-filter bg-[rgba(255,255,255,0.3)] relative shrink-0 w-full" data-name="Attribution card">
-      <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(255,255,255,0.3)] border-solid inset-0 pointer-events-none" />
-      <div className="size-full">
-        <div className="box-border content-stretch flex flex-col gap-[24px] items-start p-[20px] relative w-full">
-          <Content9 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function BottomPanel1() {
-  return (
-    <div className="absolute bg-gradient-to-b bottom-0 content-stretch flex flex-col from-[rgba(0,0,0,0)] items-center justify-center left-0 right-0 to-[rgba(0,0,0,0.4)]" data-name="Bottom panel">
-      <AttributionCard1 />
-    </div>
-  );
-}
-
-function Image3() {
-  return (
-    <div className="aspect-[384/256] overflow-clip relative rounded-[16px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[16px] size-full" src={imgImage3} />
-      <BottomPanel1 />
-    </div>
-  );
-}
-
-function HeadingAndText1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[4px] items-start not-italic relative shrink-0 w-full" data-name="Heading and text">
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[28px] relative shrink-0 text-[#181d27] text-[18px] w-full">Financing Strategies That Maximize Returns</p>
-      <p className="-webkit-box css-2gg9ad font-['Avenir:Regular',_sans-serif] leading-[24px] overflow-ellipsis overflow-hidden relative shrink-0 text-[#535862] text-[16px] w-full">Explore mortgage options, leverage techniques, and tax advantages for intelligent property investors.</p>
-    </div>
-  );
-}
-
-function ArrowUpRight1() {
-  return (
-    <div className="relative shrink-0 size-[20px]" data-name="arrow-up-right">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-        <g id="arrow-up-right">
-          <path d={svgPaths.p32dd8280} id="Icon" stroke="var(--stroke-0, #00359E)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function ButtonsButton11({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('blogDetail')}
-    >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#155eef] text-[16px] text-nowrap whitespace-pre">Read post</p>
-      <ArrowUpRight1 />
-    </div>
-  );
-}
-
-function Content10({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full" data-name="Content">
-      <HeadingAndText1 />
-      <ButtonsButton11 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function BlogPostCard1({ onNavigate }: NavigationProps) {
-  return (
-    <div className="basis-0 content-stretch flex flex-col gap-[16px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Blog post card">
-      <Image3 />
-      <Content10 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Content11({ onNavigate }: NavigationProps) {
-  return (
-    <div className="basis-0 content-start flex flex-wrap gap-[32px] grow items-start min-h-px min-w-[640px] relative shrink-0" data-name="Content">
-      <BlogPostCard onNavigate={onNavigate} />
-      <BlogPostCard1 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Container5({ onNavigate }: NavigationProps) {
-  return (
-    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="max-w-inherit size-full">
-        <div className="box-border content-start flex flex-wrap gap-[64px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-          <TextAndAction onNavigate={onNavigate} />
-          <Content11 onNavigate={onNavigate} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function BlogSection({ onNavigate }: NavigationProps) {
-  return (
-    <div className="bg-white box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip px-0 py-[96px] relative shrink-0 w-full z-[2]" data-name="Blog section">
-      <Container5 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Group1000003697() {
-  return (
-    <div className="h-[21.72px] relative shrink-0 w-[48.49px]">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 49 22">
-        <g id="Group 1000003696">
-          <path d={svgPaths.p27cf2e80} fill="var(--fill-0, white)" id="Vector 2" />
-          <path d={svgPaths.p14e48780} fill="var(--fill-0, white)" id="Vector 1" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Frame1000003794({ onNavigate }: NavigationProps) {
-  return (
-    <Logo onClick={() => onNavigate?.('home')} variant="white" />
-  );
-}
-
-function ButtonsButton12({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('about')}
-    >
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">About Us</p>
-    </div>
-  );
-}
-
-function FooterLink({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-      <ButtonsButton12 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function ButtonsButton13({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('projects')}
-    >
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Project</p>
-    </div>
-  );
-}
-
-function FooterLink1({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-      <ButtonsButton13 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function ButtonsButton14({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('contact')}
-    >
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Contact</p>
-    </div>
-  );
-}
-
-function FooterLink2({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-      <ButtonsButton14 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function ButtonsButton15({ onNavigate }: NavigationProps) {
-  return (
-    <div 
-      className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={() => onNavigate?.('blog')}
-    >
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Blog</p>
-    </div>
-  );
-}
-
-function FooterLink3({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="_Footer link">
-      <ButtonsButton15 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function FooterLinks({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex gap-[32px] items-center relative shrink-0 w-full" data-name="Footer links">
-      <FooterLink onNavigate={onNavigate} />
-      <FooterLink1 onNavigate={onNavigate} />
-      <FooterLink2 onNavigate={onNavigate} />
-      <FooterLink3 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function LogoAndLinks({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start min-w-[560px] relative shrink-0" data-name="Logo and links">
-      <Frame1000003794 onNavigate={onNavigate} />
-      <p className="font-['Avenir:Regular',_sans-serif] h-[48px] leading-[24px] not-italic relative shrink-0 text-[16px] text-white w-[545px]">Crafting spaces, cultivating communities.</p>
-      <FooterLinks onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Content12({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="basis-0 content-stretch flex gap-[8px] grow items-center min-h-px min-w-px relative shrink-0" data-name="Content">
-      <input
-        type="email"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder="Enter your email"
-        className="[white-space-collapse:collapse] basis-0 font-['Avenir:Regular',_sans-serif] grow leading-[24px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#717680] text-[16px] bg-transparent border-none outline-none w-full"
-      />
-    </div>
-  );
-}
-
-function Input1({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="bg-white relative rounded-[234px] shrink-0 w-full" data-name="Input">
-      <div aria-hidden="true" className="absolute border border-[#d5d7da] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-      <div className="flex flex-row items-center size-full">
-        <div className="box-border content-stretch flex gap-[8px] items-center px-[14px] py-[10px] relative w-full">
-          <Content12 value={value} onChange={onChange} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function InputWithLabel1({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="Input with label">
-      <Input1 value={value} onChange={onChange} />
-    </div>
-  );
-}
-
-function InputField1({ value, onChange }: { value: string; onChange: (value: string) => void }) {
-  return (
-    <div className="basis-0 content-stretch flex flex-col gap-[6px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Input field">
-      <InputWithLabel1 value={value} onChange={onChange} />
-    </div>
-  );
-}
-
-function TextPadding3() {
-  return (
-    <div className="box-border content-stretch flex items-center justify-center px-[2px] py-0 relative shrink-0" data-name="Text padding">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Subscribe</p>
-    </div>
-  );
-}
-
-function ButtonsButton16({ onClick }: { onClick?: () => void }) {
-  return (
-    <div 
-      className="bg-[#00359e] relative rounded-[234px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
-      data-name="Buttons/Button"
-      onClick={onClick}
-    >
-      <div className="box-border content-stretch flex gap-[6px] items-center justify-center overflow-clip px-[16px] py-[10px] relative rounded-[inherit]">
-        <TextPadding3 />
-      </div>
-      <div aria-hidden="true" className="absolute border-2 border-[rgba(255,255,255,0.12)] border-solid inset-0 pointer-events-none rounded-[234px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-    </div>
-  );
-}
-
-function EmailCapture1({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
-  return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="Email capture">
-      <InputField1 value={value} onChange={onChange} />
-      <ButtonsButton16 onClick={onSubmit} />
-    </div>
-  );
-}
-
-function Newsletter({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[360px]" data-name="Newsletter">
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white w-full">Stay up to date</p>
-      <EmailCapture1 value={value} onChange={onChange} onSubmit={onSubmit} />
-    </div>
-  );
-}
-
-function SocialIcon3() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g id="Social icon">
-          <path clipRule="evenodd" d={svgPaths.p1f8d8b00} fill="var(--fill-0, white)" fillRule="evenodd" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Group1() {
-  return (
-    <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-      <g id="Group">
-        <path d={svgPaths.p2ccee40} fill="var(--fill-0, white)" id="Vector" />
+    <svg className={styles.icon} fill="none" viewBox="0 0 20 20">
+      <g>
+        <path d={svgPaths.p32dd8280} stroke="var(--stroke-0, #00359E)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
       </g>
     </svg>
   );
 }
 
-function SocialIcon4() {
+function Navigation({ onNavigate }: { onNavigate?: NavigateHandler }) {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Social icon">
-      <Group1 />
-    </div>
+    <nav className={styles.navigation} aria-label="Primary navigation">
+      {NAV_ITEMS.map(({ label, route }) => (
+        <button key={route} type="button" className={styles.navigationButton} onClick={() => onNavigate?.(route)}>
+          {label}
+        </button>
+      ))}
+    </nav>
   );
 }
 
-function SocialIcon5() {
+function DesktopHeader({ onNavigate }: { onNavigate?: NavigateHandler }) {
   return (
-    <div className="relative shrink-0 size-[24px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g clipPath="url(#clip0_4_21514)" id="Social icon">
-          <path d={svgPaths.p2334f790} fill="var(--fill-0, white)" id="Vector" />
-        </g>
-        <defs>
-          <clipPath id="clip0_4_21514">
-            <rect fill="white" height="24" width="24" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function SocialIcon6() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g clipPath="url(#clip0_4_21511)" id="Social icon">
-          <g id="Vector">
-            <path d={svgPaths.p3bfce500} fill="var(--fill-0, white)" />
-            <path d={svgPaths.p90dcd40} fill="var(--fill-0, white)" />
-            <path d={svgPaths.p36893400} fill="var(--fill-0, white)" />
-          </g>
-        </g>
-        <defs>
-          <clipPath id="clip0_4_21511">
-            <rect fill="white" height="24" width="24" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function SocialIcon7() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g id="Social icon">
-          <path d={svgPaths.p396b2062} fill="var(--fill-0, white)" id="Vector" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function SocialIcon8() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g clipPath="url(#clip0_4_21523)" id="Social icon">
-          <path clipRule="evenodd" d={svgPaths.p2e42b500} fill="var(--fill-0, white)" fillRule="evenodd" id="Vector" />
-        </g>
-        <defs>
-          <clipPath id="clip0_4_21523">
-            <rect fill="white" height="24" width="24" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function SocialIcon9() {
-  return (
-    <div className="relative shrink-0 size-[24px]" data-name="Social icon">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-        <g clipPath="url(#clip0_4_21505)" id="Social icon">
-          <path clipRule="evenodd" d={svgPaths.p3a36a3c0} fill="var(--fill-0, white)" fillRule="evenodd" id="Vector" />
-        </g>
-        <defs>
-          <clipPath id="clip0_4_21505">
-            <rect fill="white" height="24" width="24" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function SocialIcons() {
-  return (
-    <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-name="Social icons">
-      <SocialIcon3 />
-      <SocialIcon4 />
-      <SocialIcon5 />
-      <SocialIcon6 />
-      <SocialIcon7 />
-      <SocialIcon8 />
-      <SocialIcon9 />
-    </div>
-  );
-}
-
-function Frame1000003769({ value, onChange, onSubmit }: { value: string; onChange: (value: string) => void; onSubmit: () => void }) {
-  return (
-    <div className="content-stretch flex flex-col h-[202.72px] items-end justify-between relative shrink-0 w-[359px]">
-      <Newsletter value={value} onChange={onChange} onSubmit={onSubmit} />
-      <SocialIcons />
-    </div>
-  );
-}
-
-function Content13({ onNavigate, footerEmail, setFooterEmail, onSubmit }: NavigationProps & { footerEmail: string; setFooterEmail: (value: string) => void; onSubmit: () => void }) {
-  return (
-    <div className="content-start flex flex-wrap gap-[48px] h-[178px] items-start justify-between relative shrink-0 w-full" data-name="Content">
-      <LogoAndLinks onNavigate={onNavigate} />
-      <Frame1000003769 value={footerEmail} onChange={setFooterEmail} onSubmit={onSubmit} />
-    </div>
-  );
-}
-
-function Container6({ onNavigate, footerEmail, setFooterEmail, onSubmit }: NavigationProps & { footerEmail: string; setFooterEmail: (value: string) => void; onSubmit: () => void }) {
-  return (
-    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="max-w-inherit size-full">
-        <div className="box-border content-stretch flex flex-col gap-[48px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-          <Content13 onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={onSubmit} />
-        </div>
+    <div className={styles.desktopHeader}>
+      <div className={styles.desktopHeaderInner}>
+        <Logo onClick={() => onNavigate?.("home")} variant="blue" useBlueLogo={true} />
+        <Navigation onNavigate={onNavigate} />
       </div>
     </div>
   );
 }
 
-function FooterLinks1({ onNavigate }: NavigationProps) {
-  return (
-    <div className="content-stretch flex font-['Avenir:Medium',_sans-serif] gap-[16px] items-start leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre" data-name="Footer links">
-      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('termsOfService')}>Terms</p>
-      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('privacyPolicy')}>Privacy</p>
-      <p className="relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => onNavigate?.('cookiesPolicy')}>Cookies</p>
-    </div>
-  );
-}
+function HeroSection({ onNavigate }: { onNavigate?: NavigateHandler }) {
+  const handleCopy = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Link copied to clipboard!");
+    }).catch(() => {
+      alert("Failed to copy link");
+    });
+  };
 
-function Content14({ onNavigate }: NavigationProps) {
   return (
-    <div className="box-border content-center flex flex-wrap gap-[24px] items-center justify-between pb-0 pt-[32px] px-0 relative shrink-0 w-full" data-name="Content">
-      <div aria-hidden="true" className="absolute border-[1px_0px_0px] border-[rgba(127,86,217,0)] border-solid inset-0 pointer-events-none" />
-      <p className="font-['Avenir:Medium',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">© 2025 Pishon Communities. All rights reserved.</p>
-      <FooterLinks1 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function Container7({ onNavigate }: NavigationProps) {
-  return (
-    <div className="max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <div className="max-w-inherit size-full">
-        <div className="box-border content-stretch flex flex-col gap-[32px] items-start max-w-inherit px-[32px] py-0 relative w-full">
-          <Content14 onNavigate={onNavigate} />
+    <section className={styles.heroSection}>
+      <DesktopHeader onNavigate={onNavigate} />
+      <div className={styles.heroContainer}>
+        <div className={styles.heroContent}>
+          <div className={styles.heroBadgeGroup}>
+            <span className={styles.heroBadge}>Land</span>
+            <span className={styles.heroReadTime}>8 min read</span>
+          </div>
+          <h1 className={styles.heroTitle}>Transform Your Real Estate Investment Strategy Today</h1>
+          <p className={styles.heroDescription}>
+            Discover how modern real estate investment strategies can help you build wealth and secure your financial future. Learn proven techniques from industry experts and start your journey to property success today.
+          </p>
+        </div>
+        <div className={styles.heroImage}>
+          <img alt="Real estate investment strategy" src={imgImage} />
+        </div>
+        <div className={styles.heroMeta}>
+          <div className={styles.heroMetaItem}>
+            <p className={styles.heroMetaLabel}>Written by</p>
+            <p className={styles.heroMetaValue}>Alec Whitten</p>
+          </div>
+          <div className={styles.heroMetaItem}>
+            <p className={styles.heroMetaLabel}>Published on</p>
+            <p className={styles.heroMetaValue}>17 Jan 2025</p>
+          </div>
+          <div className={styles.socialLinks}>
+            <button type="button" className={styles.copyButton} onClick={handleCopy}>
+              <CopyIcon />
+              Copy link
+            </button>
+            <button type="button" className={styles.socialButton} aria-label="Share on social media">
+              <SocialIcon path={svgPaths.p32584700} />
+            </button>
+            <button type="button" className={styles.socialButton} aria-label="Share on social media">
+              <SocialIcon path={svgPaths.p24dd3180} clipPathId="clip0_47_18124" />
+            </button>
+            <button type="button" className={styles.socialButton} aria-label="Share on social media">
+              <SocialIcon path={svgPaths.p3fb91680} />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function Footer({ onNavigate, footerEmail, setFooterEmail, onSubmit }: NavigationProps & { footerEmail: string; setFooterEmail: (value: string) => void; onSubmit: () => void }) {
+function ContentSection({ sidebarEmail, onSidebarEmailChange, onSidebarSubmit, onNavigate }: {
+  sidebarEmail: string;
+  onSidebarEmailChange: (value: string) => void;
+  onSidebarSubmit: () => void;
+  onNavigate?: NavigateHandler;
+}) {
   return (
-    <div className="bg-[#155eef] box-border content-stretch flex flex-col gap-[64px] items-center overflow-clip pb-[48px] pt-[64px] px-0 relative shrink-0 w-full z-[1]" data-name="Footer">
-      <Container6 onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={onSubmit} />
-      <Container7 onNavigate={onNavigate} />
-    </div>
+    <section className={styles.contentSection}>
+      <div className={styles.contentContainer}>
+        <div className={styles.contentMain}>
+          <h2 className={styles.contentHeading}>Introduction</h2>
+          <div>
+            <p className={styles.contentParagraph}>
+              The real estate investment landscape continues to evolve, offering unprecedented opportunities for those who understand market dynamics and timing. Whether you&apos;re a seasoned investor or exploring your first property purchase, the key to success lies in comprehensive market analysis, strategic property selection, and long-term wealth building perspective. This comprehensive guide explores proven strategies that industry leaders use to maximize returns and minimize risk in today&apos;s competitive market.
+            </p>
+            <p className={styles.contentParagraph}>
+              Real estate remains one of the most tangible and historically proven wealth-building vehicles available. The combination of property appreciation, rental income generation, and leverage through mortgage financing creates multiple pathways to financial independence. Successful investors distinguish themselves through diligent market research, understanding local economic drivers, and positioning their portfolios to capture emerging opportunities before the broader market recognizes their value.
+            </p>
+          </div>
+          <div className={styles.contentImage}>
+            <img alt="Real estate investment" src={imgImage1} />
+          </div>
+          <p className={styles.contentParagraph}>
+            Real estate has long been considered one of the most reliable and profitable investments. Whether you&apos;re looking for steady rental income, long-term appreciation, or a quick flip, understanding the fundamentals is essential for success in today&apos;s dynamic market.
+          </p>
+          <div>
+            <p className={styles.contentParagraph}>
+              Understanding market dynamics is crucial to identifying high-potential investment opportunities. Real estate professionals evaluate factors including property appreciation trends, rental demand forecasts, neighborhood development plans, and economic indicators. These insights help investors make data-driven decisions that position their portfolios for long-term growth and sustainable returns.
+            </p>
+            <p className={styles.contentParagraph}>
+              The real estate market offers multiple pathways to financial success. From residential properties that provide stable rental income to commercial spaces that generate significant returns, each investment type has unique advantages. Smart investors analyze market trends, location fundamentals, and property potential before committing their capital. With proper research and due diligence, you can identify opportunities that align with your financial goals.
+            </p>
+            <p className={styles.contentParagraph}>
+              Market conditions and timing play crucial roles in real estate success. Understanding supply and demand dynamics in your target area, recognizing growth trends, and positioning yourself ahead of the curve can significantly boost your returns. Whether interest rates are rising or falling, multiple investment opportunities exist for informed investors who know where to look.
+            </p>
+          </div>
+          <h3 className={styles.contentSubheading}>Software and tools</h3>
+          <p className={styles.contentParagraph}>
+            The real estate market offers multiple pathways to financial success. From residential properties that provide stable rental income to commercial spaces that generate significant returns, each investment type has unique advantages.
+          </p>
+          <h3 className={styles.contentSubheading}>Other resources</h3>
+          <div>
+            <p className={styles.contentParagraph}>
+              Building a diversified real estate portfolio requires strategic planning and patience. Start with properties that match your risk tolerance and investment timeline. Consider factors like location appreciation potential, tenant demand, maintenance costs, and tax implications. Many successful investors begin with single-family homes before expanding to multi-unit buildings or commercial properties. Your real estate journey is unique—tailor your strategy to your personal financial situation and long-term objectives.
+            </p>
+            <ol className={styles.contentList}>
+              <li>Conduct thorough market research and property analysis before making any investment decisions.</li>
+              <li>Develop a comprehensive financing strategy that optimizes returns while managing risk responsibly.</li>
+              <li>Build a diversified portfolio across multiple property types and geographic markets to maximize stability.</li>
+            </ol>
+          </div>
+        </div>
+        <aside className={styles.contentSidebar}>
+          <div className={styles.sidebarCard}>
+            <h3 className={styles.sidebarCardTitle}>Newsletter</h3>
+            <p className={styles.sidebarCardDescription}>
+              Subscribe to our newsletter to get the latest updates and insights.
+            </p>
+            <div className={styles.sidebarNewsletter}>
+              <input
+                type="email"
+                value={sidebarEmail}
+                onChange={(e) => onSidebarEmailChange(e.target.value)}
+                placeholder="Enter your email"
+                className={styles.sidebarNewsletterInput}
+              />
+              <button type="button" className={styles.sidebarNewsletterButton} onClick={onSidebarSubmit}>
+                Subscribe
+              </button>
+            </div>
+            <p className={styles.sidebarPrivacy}>
+              We care about your data in our{" "}
+              <button type="button" className={styles.sidebarPrivacyLink} onClick={() => onNavigate?.("privacyPolicy")}>
+                privacy policy
+              </button>
+              .
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
   );
 }
 
-export default function Desktop({ onNavigate }: NavigationProps) {
-  const [sidebarEmail, setSidebarEmail] = useState('');
-  const [footerEmail, setFooterEmail] = useState('');
+function RelatedPostsSection({ onNavigate }: { onNavigate?: NavigateHandler }) {
+  return (
+    <section className={styles.relatedPostsSection}>
+      <div className={styles.relatedPostsContainer}>
+        <div className={styles.relatedPostsHeader}>
+          <div>
+            <p className={styles.relatedPostsTitle}>Latest</p>
+            <h2 className={styles.relatedPostsHeading}>From the blog</h2>
+            <p className={styles.relatedPostsDescription}>
+              The latest industry news, interviews, technologies, and resources.
+            </p>
+          </div>
+          <button type="button" className={styles.relatedPostsButton} onClick={() => onNavigate?.("blog")}>
+            View all posts
+          </button>
+        </div>
+        <div className={styles.relatedPostsGrid}>
+          {RELATED_POSTS.map((post) => (
+            <article
+              key={post.id}
+              className={styles.relatedPostCard}
+              onClick={() => onNavigate?.("blogDetail")}
+            >
+              <div className={styles.relatedPostImage}>
+                <img alt={post.title} src={post.image} />
+                <div className={styles.relatedPostOverlay}>
+                  <div className={styles.relatedPostAttribution}>
+                    <div>
+                      <p className={styles.relatedPostAuthor}>{post.author}</p>
+                      <p className={styles.relatedPostDate}>{post.date}</p>
+                    </div>
+                    <p className={styles.relatedPostCategory}>{post.category}</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.relatedPostContent}>
+                <h3 className={styles.relatedPostTitle}>{post.title}</h3>
+                <p className={styles.relatedPostDescription}>{post.description}</p>
+                <button
+                  type="button"
+                  className={styles.relatedPostAction}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onNavigate?.("blogDetail");
+                  }}
+                >
+                  Read post
+                  <ArrowUpRight />
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SectionDivider() {
+  return <div className={styles.sectionDivider} aria-hidden="true" />;
+}
+
+export default function Desktop({ onNavigate }: { onNavigate?: NavigateHandler }) {
+  const [sidebarEmail, setSidebarEmail] = useState("");
 
   const handleSidebarSubmit = () => {
-    if (sidebarEmail && sidebarEmail.includes('@')) {
-      alert('Thank you for subscribing!');
-      setSidebarEmail('');
+    if (sidebarEmail && sidebarEmail.includes("@")) {
+      alert("Thank you for subscribing!");
+      setSidebarEmail("");
     } else {
-      alert('Please enter a valid email address');
-    }
-  };
-
-  const handleFooterSubmit = () => {
-    if (footerEmail && footerEmail.includes('@')) {
-      alert('Thank you for subscribing!');
-      setFooterEmail('');
-    } else {
-      alert('Please enter a valid email address');
+      alert("Please enter a valid email address");
     }
   };
 
   return (
-    <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full" data-name="Desktop">
-      <Frame3 onNavigate={onNavigate} />
-      <BlogPostPageHeader value={sidebarEmail} onChange={setSidebarEmail} onSubmit={handleSidebarSubmit} onNavigate={onNavigate} />
+    <div className={styles.desktopPage}>
+      <div className={styles.mobileHeader}>
+        <MobileHeader onNavigate={onNavigate} />
+      </div>
+      <HeroSection onNavigate={onNavigate} />
       <SectionDivider />
-      <BlogSection onNavigate={onNavigate} />
-      <Footer onNavigate={onNavigate} footerEmail={footerEmail} setFooterEmail={setFooterEmail} onSubmit={handleFooterSubmit} />
+      <ContentSection
+        sidebarEmail={sidebarEmail}
+        onSidebarEmailChange={setSidebarEmail}
+        onSidebarSubmit={handleSidebarSubmit}
+        onNavigate={onNavigate}
+      />
+      <RelatedPostsSection onNavigate={onNavigate} />
     </div>
   );
 }
+

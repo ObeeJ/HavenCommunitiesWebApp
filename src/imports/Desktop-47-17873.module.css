@@ -1,0 +1,688 @@
+.desktopPage {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.mobileHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+@media (min-width: 768px) {
+  .mobileHeader {
+    display: none;
+  }
+}
+
+.desktopHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 112px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .desktopHeader {
+    display: flex;
+  }
+}
+
+.desktopHeaderInner {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navigationButton {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #717680;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: opacity 0.2s ease;
+}
+
+.navigationButton:hover,
+.navigationButton:focus-visible {
+  opacity: 0.8;
+  outline: none;
+}
+
+.heroSection {
+  width: 100%;
+  padding: 96px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+}
+
+.heroContainer {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .heroContainer {
+    padding: 0 64px;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 768px;
+}
+
+.heroBadgeGroup {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 12px 4px 4px;
+  background: #eff4ff;
+  border: 1px solid #84adff;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.heroBadge {
+  padding: 2px 8px;
+  background: #ffffff;
+  border: 1px solid #84adff;
+  border-radius: 9999px;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #155eef;
+}
+
+.heroReadTime {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #155eef;
+}
+
+.heroTitle {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.25;
+  color: #181d27;
+  margin: 0;
+  letter-spacing: -0.96px;
+}
+
+.heroDescription {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #535862;
+  margin: 0;
+  max-width: 768px;
+}
+
+.heroImage {
+  width: 100%;
+  aspect-ratio: 1216 / 640;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .heroMeta {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.heroMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heroMetaLabel {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #155eef;
+  margin: 0;
+}
+
+.heroMetaValue {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #181d27;
+  margin: 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #d5d7da;
+  background: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+.socialButton:hover {
+  opacity: 0.9;
+}
+
+.copyButton {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #d5d7da;
+  background: #ffffff;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #414651;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+.copyButton:hover {
+  opacity: 0.9;
+}
+
+.contentSection {
+  width: 100%;
+  padding: 96px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+}
+
+.contentContainer {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+@media (min-width: 768px) {
+  .contentContainer {
+    padding: 0 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contentContainer {
+    flex-direction: row;
+    gap: 64px;
+    align-items: flex-start;
+  }
+}
+
+.contentMain {
+  flex: 1;
+  min-width: 0;
+  max-width: 720px;
+}
+
+.contentSidebar {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 1024px) {
+  .contentSidebar {
+    width: 400px;
+    flex-shrink: 0;
+  }
+}
+
+.contentHeading {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  color: #181d27;
+  margin: 0 0 20px 0;
+}
+
+.contentParagraph {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #535862;
+  margin: 0 0 18px 0;
+}
+
+.contentParagraph:last-child {
+  margin-bottom: 0;
+}
+
+.contentImage {
+  width: 100%;
+  aspect-ratio: 720 / 480;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 48px 0;
+}
+
+.contentImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentSubheading {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #181d27;
+  margin: 32px 0 16px 0;
+}
+
+.contentList {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #535862;
+  margin: 0;
+  padding-left: 27px;
+}
+
+.contentList li {
+  margin-bottom: 0;
+}
+
+.sidebarCard {
+  background: #ffffff;
+  border: 1px solid #d5d7da;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+.sidebarCardTitle {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #181d27;
+  margin: 0 0 16px 0;
+}
+
+.sidebarCardDescription {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #535862;
+  margin: 0 0 20px 0;
+}
+
+.sidebarNewsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebarNewsletterInput {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 234px;
+  border: 1px solid #d5d7da;
+  background: #ffffff;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #717680;
+  outline: none;
+}
+
+.sidebarNewsletterInput::placeholder {
+  color: #717680;
+}
+
+.sidebarNewsletterButton {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 234px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: #155eef;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.sidebarNewsletterButton:hover {
+  opacity: 0.9;
+}
+
+.sidebarPrivacy {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #535862;
+  margin: 12px 0 0 0;
+}
+
+.sidebarPrivacyLink {
+  text-decoration: underline;
+  text-underline-position: from-font;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.sidebarPrivacyLink:hover {
+  opacity: 0.8;
+}
+
+.relatedPostsSection {
+  width: 100%;
+  padding: 96px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+}
+
+.relatedPostsContainer {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .relatedPostsContainer {
+    padding: 0 64px;
+  }
+}
+
+.relatedPostsHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .relatedPostsHeader {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.relatedPostsTitle {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #155eef;
+  margin: 0;
+}
+
+.relatedPostsHeading {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.22;
+  color: #181d27;
+  margin: 0;
+  letter-spacing: -0.72px;
+}
+
+.relatedPostsDescription {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #535862;
+  margin: 0;
+}
+
+.relatedPostsButton {
+  padding: 12px 18px;
+  border-radius: 234px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: #155eef;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+}
+
+.relatedPostsButton:hover {
+  opacity: 0.9;
+}
+
+.relatedPostsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .relatedPostsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .relatedPostsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.relatedPostCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.relatedPostCard:hover {
+  opacity: 0.9;
+}
+
+.relatedPostImage {
+  width: 100%;
+  aspect-ratio: 384 / 256;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.relatedPostImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.relatedPostOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  padding: 20px;
+}
+
+.relatedPostAttribution {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.relatedPostAuthor {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.relatedPostDate {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.relatedPostCategory {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+.relatedPostContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.relatedPostTitle {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #181d27;
+  margin: 0;
+}
+
+.relatedPostDescription {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #535862;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.relatedPostAction {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #155eef;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.relatedPostAction:hover {
+  opacity: 0.8;
+}
+
+.sectionDivider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1px;
+  background: #e9eaeb;
+}
+
+.icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+

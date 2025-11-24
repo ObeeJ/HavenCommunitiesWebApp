@@ -1,0 +1,379 @@
+.desktopPage {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.pageBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.mobileHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+@media (min-width: 768px) {
+  .mobileHeader {
+    display: none;
+  }
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 476px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    min-height: 683px;
+  }
+}
+
+.heroMedia {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.desktopHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 112px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .desktopHeader {
+    display: flex;
+  }
+}
+
+.desktopHeaderInner {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1280px;
+  padding: 160px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    padding: 200px 64px 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroContent {
+    padding-left: 112px;
+    padding-right: 112px;
+  }
+}
+
+.heroHeading {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .heroHeading {
+    font-size: 36px;
+  }
+}
+
+.heroDescription {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 768px;
+}
+
+.navigation {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navigationButton {
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: opacity 0.2s ease;
+}
+
+.navigationButton:hover,
+.navigationButton:focus-visible {
+  opacity: 0.75;
+  outline: none;
+}
+
+.listingsSection {
+  width: 100%;
+  padding: 96px 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .listingsSection {
+    padding: 64px 0;
+  }
+}
+
+.listingsContainer {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (max-width: 600px) {
+  .listingsContainer {
+    padding: 0 20px;
+  }
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.listingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #e9eaeb;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.listingCard:focus-visible {
+  outline: 2px solid #155eef;
+  outline-offset: 4px;
+}
+
+.listingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .cardImageWrapper {
+    height: 290px;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBadge {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: #ecfdf3;
+  color: #067647;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: 1px solid #abefc6;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  color: #181d27;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #535862;
+}
+
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  padding: 0;
+  color: #155eef;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.cardAction:hover,
+.cardAction:focus-visible {
+  text-decoration: underline;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid #e9eaeb;
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d5d7da;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #414651;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.paginationButton:hover {
+  opacity: 0.8;
+}
+
+.paginationNumbers {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paginationNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #717680;
+  border: 1px solid transparent;
+}
+
+.paginationNumberActive {
+  background: #f4f4f5;
+  color: #414651;
+  border-color: #d5d7da;
+}
+
+.sectionDividerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background-color: #ffffff;
+}
+
+.sectionDividerLine,
+.sectionDividerSecondary {
+  width: 100%;
+  max-width: 1280px;
+  height: 1px;
+}
+
+.sectionDividerLine {
+  background-color: #e9eaeb;
+}
+
+.sectionDividerSecondary {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
