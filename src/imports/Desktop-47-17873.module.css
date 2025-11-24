@@ -8,16 +8,94 @@
 }
 
 .mobileHeader {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 9999;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
   .mobileHeader {
     display: none;
+  }
+}
+
+.mobileHeaderContainer {
+  position: relative;
+  height: 64px;
+  width: 100%;
+}
+
+.mobileHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+}
+
+.mobileHeaderContent > *:first-child {
+  width: 78.75px;
+  flex-shrink: 0;
+}
+
+.hamburgerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.hamburgerButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hamburgerButton:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hamburgerIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.menuOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 200ms ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menuSlideIn {
+  animation: slideInFromRight 300ms ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -81,6 +159,13 @@
   flex-direction: column;
   align-items: center;
   background: #ffffff;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    padding-top: 112px;
+  }
 }
 
 .heroContainer {
@@ -172,18 +257,12 @@
 
 .heroMeta {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-}
-
-@media (max-width: 640px) {
-  .heroMeta {
-    flex-direction: column;
-    gap: 16px;
-  }
 }
 
 .heroMetaItem {
@@ -208,12 +287,6 @@
   line-height: 28px;
   color: #181d27;
   margin: 0;
-}
-
-.socialLinks {
-  display: flex;
-  gap: 12px;
-  align-items: center;
 }
 
 .socialButton {
@@ -490,8 +563,13 @@
 
 @media (max-width: 640px) {
   .relatedPostsHeader {
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
+  }
+
+  .socialLinks {
+    display: none;
+ 
   }
 }
 
@@ -682,7 +760,8 @@
 
 .icon {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
 }
+
 

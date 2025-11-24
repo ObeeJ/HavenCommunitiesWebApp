@@ -1,28 +1,17 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import svgPaths from "./svg-1y04fh47kq";
 import imgImage from "../assets/b2a4d4d2696958d3a420b3897c4c42bf3d9c784f.png";
 import imgImage1 from "../assets/7cea1cc7a63d49724f662dc4ca77ec22ed421454.png";
 import imgImage2 from "../assets/9f4ea61beb99ae8c2da093d59eccf06f640e117f.png";
 import imgImage3 from "../assets/0f4f2fcb6049962790ac0a2810925489622b792c.png";
 import Logo from "../components/Logo";
-import { MobileHeader } from "../components/MobileHeader";
+import SlideOutMenu from "./SlideOutMenu-34-4923";
+import type { NavigationPage } from "../types/navigation";
 import styles from "./Desktop-47-17873.module.css";
 
-type NavigateTarget =
-  | "home"
-  | "about"
-  | "contact"
-  | "projects"
-  | "projectDetail"
-  | "blog"
-  | "blogDetail"
-  | "privacyPolicy"
-  | "termsOfService"
-  | "cookiesPolicy";
+type NavigateHandler = (page: NavigationPage) => void;
 
-type NavigateHandler = (page: NavigateTarget) => void;
-
-const NAV_ITEMS: { label: string; route: NavigateTarget }[] = [
+const NAV_ITEMS: { label: string; route: NavigationPage }[] = [
   { label: "About Us", route: "about" },
   { label: "Projects", route: "projects" },
   { label: "Contact", route: "contact" },
@@ -80,6 +69,76 @@ function ArrowUpRight() {
         <path d={svgPaths.p32dd8280} stroke="var(--stroke-0, #00359E)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
       </g>
     </svg>
+  );
+}
+
+function HamburgerMenuIcon() {
+  return (
+    <svg className={styles.hamburgerIcon} fill="none" viewBox="0 0 24 24">
+      <g id="menu-01">
+        <path d="M3 12H21M3 6H21M3 18H21" id="Icon" stroke="#717680" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      </g>
+    </svg>
+  );
+}
+
+function MobileHeader({ onNavigate }: { onNavigate?: NavigateHandler }) {
+  const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showMenu]);
+
+  const handleToggleMenu = () => {
+    setShowMenu(true);
+  };
+
+  const handleCloseMenu = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    const isBackdrop = target.getAttribute("data-name") === "Slide out menu";
+    const isCloseButton = target.closest('[data-name="Button close X"]');
+
+    if (isBackdrop || isCloseButton) {
+      setShowMenu(false);
+    }
+  };
+
+  const handleNavigate = (page: NavigationPage) => {
+    setShowMenu(false);
+    onNavigate?.(page);
+  };
+
+  return (
+    <>
+      <div className={styles.mobileHeaderContainer}>
+        <div className={styles.mobileHeaderContent}>
+          <Logo onClick={() => onNavigate?.("home")} variant="blue" useBlueLogo={true} />
+          <button
+            type="button"
+            className={styles.hamburgerButton}
+            onClick={handleToggleMenu}
+            aria-label="Open navigation menu"
+          >
+            <HamburgerMenuIcon />
+          </button>
+        </div>
+      </div>
+      {showMenu && (
+        <div className={styles.menuOverlay} onClick={handleCloseMenu} data-name="Slide out menu">
+          <div className={styles.menuSlideIn}>
+            <SlideOutMenu onNavigate={handleNavigate} />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -141,21 +200,6 @@ function HeroSection({ onNavigate }: { onNavigate?: NavigateHandler }) {
           <div className={styles.heroMetaItem}>
             <p className={styles.heroMetaLabel}>Published on</p>
             <p className={styles.heroMetaValue}>17 Jan 2025</p>
-          </div>
-          <div className={styles.socialLinks}>
-            <button type="button" className={styles.copyButton} onClick={handleCopy}>
-              <CopyIcon />
-              Copy link
-            </button>
-            <button type="button" className={styles.socialButton} aria-label="Share on social media">
-              <SocialIcon path={svgPaths.p32584700} />
-            </button>
-            <button type="button" className={styles.socialButton} aria-label="Share on social media">
-              <SocialIcon path={svgPaths.p24dd3180} clipPathId="clip0_47_18124" />
-            </button>
-            <button type="button" className={styles.socialButton} aria-label="Share on social media">
-              <SocialIcon path={svgPaths.p3fb91680} />
-            </button>
           </div>
         </div>
       </div>
