@@ -15,6 +15,7 @@ function ButtonsButton8({ onClick }: { onClick?: () => void }) {
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
       <p className={styles.footerButtonText}>About Us</p>
+      <p className={styles.footerButtonText}>Contact</p>
     </div>
   );
 }
@@ -31,6 +32,7 @@ function ButtonsButton9({ onClick }: { onClick?: () => void }) {
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
       <p className={styles.footerButtonText}>Projects</p>
+      <p className={styles.footerButtonText}>Blog</p>
     </div>
   );
 }
@@ -46,7 +48,7 @@ function FooterLink1({ onClick }: { onClick?: () => void }) {
 function ButtonsButton10({ onClick }: { onClick?: () => void }) {
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
-      <p className={styles.footerButtonText}>Contact</p>
+      {/* <p className={styles.footerButtonText}>Contact</p> */}
     </div>
   );
 }
@@ -62,7 +64,7 @@ function FooterLink2({ onClick }: { onClick?: () => void }) {
 function ButtonsButton11({ onClick }: { onClick?: () => void }) {
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
-      <p className={styles.footerButtonText}>Blog</p>
+      {/* <p className={styles.footerButtonText}>Blog</p> */}
     </div>
   );
 }
@@ -321,7 +323,7 @@ function Frame1000003769({ email, onEmailChange, onSubmit }: { email: string; on
   return (
     <div className={styles.newsletterFrame}>
       <Newsletter value={email} onChange={onEmailChange} onSubmit={onSubmit} />
-      <SocialIcons />
+      {/* <SocialIcons /> */}
     </div>
   );
 }
@@ -361,6 +363,7 @@ function Content16({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'con
   return (
     <div className={styles.contentBottom} data-name="Content">
       <div aria-hidden="true" className={styles.contentDivider} />
+      <SocialIcons />
       <p className={styles.copyrightText}>© 2025 Pishon Communities. All rights reserved.</p>
       <FooterLinks1 onNavigate={onNavigate} />
     </div>

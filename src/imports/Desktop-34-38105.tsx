@@ -2,6 +2,8 @@ import svgPaths from "./svg-dbvk7wn66u";
 import imgHeroHeaderSection from "../assets/c9b700eb89f009ae9d6e97eb3600221d82209851.png";
 import imgImage from "../assets/1df45d321d94faf7238fbcae0c4f616df9019203.png";
 import Logo from "../components/Logo";
+import style from "./Project.module.css"
+import { MobileHeader } from "../components/MobileHeader";
 
 function Group1000003696() {
   return (
@@ -178,13 +180,13 @@ function Frame3() {
 
 function HeroHeaderSection({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects') => void }) {
   return (
-    <div className="content-stretch flex flex-col h-[476px] md:h-[683px] isolate items-center overflow-clip relative shrink-0 w-full" data-name="Hero header section">
+    <div className="content-stretch flex flex-col h-[476px] md:h-[683px] isolate items-center overflow-clip relative shrink-0 w-full" data-name="Hero header section" >
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute bg-white inset-0" />
         <img alt="" className="absolute max-w-none object-50%-50% object-cover size-full" src={imgHeroHeaderSection} />
       </div>
       <Frame4 onNavigate={onNavigate} />
-      <Frame3 />
+      <Frame3  />
     </div>
   );
 }
@@ -584,7 +586,10 @@ function Section({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'conta
 function BlogPageHeader({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail') => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col items-center overflow-clip relative shrink-0 w-full z-[6]" data-name="Blog page header">
-      <HeroHeaderSection onNavigate={onNavigate} />
+      {/* <divclassName={style.blogheader}> */}
+        <HeroHeaderSection onNavigate={onNavigate}  />
+      {/* </div> */}
+      
       <Section onNavigate={onNavigate} />
     </div>
   );
@@ -1026,7 +1031,12 @@ function Footer({ onNavigate, email, onEmailChange, onSubmit }: { onNavigate?: (
 export default function Desktop({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
   return (
     <div className="bg-white content-stretch flex flex-col isolate items-center relative size-full" data-name="Desktop">
-      <BlogPageHeader onNavigate={onNavigate} />
+      {/* Mobile Header */}
+      <div className="md:hidden absolute top-0 left-0 right-0 z-[20]">
+        <MobileHeader onNavigate={onNavigate} />
+      </div>
+      {/* Desktop Header */}
+        <BlogPageHeader onNavigate={onNavigate}  />
       <SectionDivider />
       <SectionDivider1 />
     </div>
