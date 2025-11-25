@@ -13,8 +13,8 @@
   left: 0;
   right: 0;
   z-index: 9999;
-  background: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
 }
 
 @media (min-width: 768px) {
@@ -108,9 +108,9 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  /* background: #ffffff; */
   z-index: 5;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
 }
 
 @media (min-width: 768px) {
@@ -172,6 +172,7 @@
   width: 100%;
   max-width: 1280px;
   padding: 0 32px;
+  margin-top: 96px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -188,6 +189,14 @@
   flex-direction: column;
   gap: 32px;
   max-width: 768px;
+}
+
+@media (max-width: 992px) {
+ .heroContainer {
+ 
+  margin-top: 0px;
+ 
+}
 }
 
 .heroBadgeGroup {

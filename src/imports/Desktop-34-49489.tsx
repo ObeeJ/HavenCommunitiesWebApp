@@ -121,29 +121,35 @@ function HeroHeaderSection({
       </div>
       <DesktopHeader onNavigate={onNavigate} />
       <div className={styles.heroContent}>
-        <h1 className={styles.heroHeading}>Resource library</h1>
-        <div className={styles.heroNewsletter}>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => onEmailChange(e.target.value)}
-            placeholder="Enter your email"
-            className={styles.heroNewsletterInput}
-          />
-          <button type="button" className={styles.heroNewsletterButton} onClick={onSubmit}>
-            Get started
-          </button>
+        <div>
+          <h1 className={styles.heroHeading}>Resource library</h1>
+          <div className={styles.heroNewsletter}>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => onEmailChange(e.target.value)}
+              placeholder="Enter your email"
+              className={styles.heroNewsletterInput}
+            />
+            <button type="button" className={styles.heroNewsletterButton} onClick={onSubmit}>
+              Get started
+            </button>
+          </div>
+          <p className={styles.heroPrivacy}>
+            We care about your data in our{" "}
+            <button type="button" className={styles.heroPrivacyLink} onClick={() => onNavigate?.("privacyPolicy")}>
+              privacy policy
+            </button>
+            .
+          </p>
         </div>
-        <p className={styles.heroDescription}>
-          Subscribe to learn about new product features, the latest in technology, solutions, and updates.
-        </p>
-        <p className={styles.heroPrivacy}>
-          We care about your data in our{" "}
-          <button type="button" className={styles.heroPrivacyLink} onClick={() => onNavigate?.("privacyPolicy")}>
-            privacy policy
-          </button>
-          .
-        </p>
+
+        <div className={styles.heroDescriptionWrapper}>
+          <p className={styles.heroDescription}>
+            Subscribe to learn about new product features, the latest in technology, solutions, and updates.
+          </p>
+        </div>
+
       </div>
     </section>
   );

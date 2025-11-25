@@ -11,6 +11,8 @@ import Logo from "./Logo";
 import { CoreValues } from "./CoreValues";
 import { PageHeaderWithOverlay } from "./Header";
 import { MobileHeader } from "./MobileHeader";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { useResponsive } from '../hooks/useMediaQuery';
 import styles from "./About.module.css";
 

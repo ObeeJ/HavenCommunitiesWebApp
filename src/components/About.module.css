@@ -13,7 +13,7 @@
 }
 
 .heroHeaderSection {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   height: 683px;
   align-items: center;

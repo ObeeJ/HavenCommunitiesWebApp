@@ -67,8 +67,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  z-index: 10;
 }
 
 @media (min-width: 768px) {
@@ -140,7 +139,7 @@
   font-family: "Avenir", "Segoe UI", system-ui, sans-serif;
   font-weight: 800;
   line-height: 1.25;
-  margin: 0;
+  margin-bottom: 32px;
   letter-spacing: -0.96px;
 }
 
@@ -297,6 +296,25 @@
   }
 }
 
+
+@media (max-width: 992px) {
+  .pagination {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid #e9eaeb;
+  position: relative;
+}
+
+.heroContent {
+  margin-top: 0px  !important;
+  
+}
+
+}
 .blogCard {
   display: flex;
   flex-direction: column;
@@ -409,7 +427,7 @@
 
 .pagination {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 20px;
   align-items: center;
   justify-content: center;
@@ -492,5 +510,30 @@
   display: block;
   width: 20px;
   height: 20px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column; /* Default for mobile view */
+  gap: 1rem;
+  margin-top: 151px;
+  
+}
+
+.heroDescriptionWrapper {
+  display: block; /* Default for mobile view */
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    flex-direction: row; /* For web view, align items horizontally */
+    align-items: center;
+  }
+
+  .heroDescriptionWrapper {
+    display: flex; /* Separate the description to the right */
+    flex: 1;
+    justify-content: flex-end;
+  }
 }
 

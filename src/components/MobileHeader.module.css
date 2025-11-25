@@ -34,6 +34,11 @@
   position: relative;
   border-radius: 8px;
   flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .menuIcon {
@@ -76,6 +81,50 @@
   to {
     transform: translateX(0);
   }
+}
+
+.mobileHeader {
+  position: relative;
+  background-color: #00359e;
+  color: #ffffff;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileNavigation {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.navigationList {
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+}
+
+.navigationList li {
+  margin-bottom: 8px;
+}
+
+.navigationList li button {
+  background: none;
+  border: none;
+  color: #00359e;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.navigationList li button:hover {
+  text-decoration: underline;
 }
 
 
