@@ -1,0 +1,234 @@
+/* root class applied to the TSX top-level container */
+.root {
+	box-sizing: border-box;
+}
+
+/* Mobile header (hidden by default, shown on small screens) */
+.mobileHeader {
+	display: none;
+}
+.logo { cursor: pointer; display: flex; align-items: center; }
+.nav { display: flex; gap: 12px; align-items: center; }
+.nav button {
+	background: transparent;
+	border: none;
+	color: #fff;
+	font-family: Avenir, sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	padding: 6px 8px;
+	cursor: pointer;
+}
+.nav button:focus { outline: 2px solid rgba(255,255,255,0.16); border-radius: 4px; }
+
+/* Desktop-first: keep things as-is above 992px */
+
+/* Mobile responsive overrides: max-width 992px */
+@media (max-width: 992px) {
+	/* show mobile header and fix it to top */
+	.mobileHeader {
+		background: #155eef;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 12px 16px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		box-sizing: border-box;
+	}
+
+    .mobileviewbdy {
+        /* align-items: center !important; */
+    }
+
+	/* ensure top-level content is not hidden behind header */
+	.root {
+		padding-top: 64px;
+	}
+
+	/* Hide desktop navigation/header areas that clutter mobile */
+	[data-name="Navigation"],
+	[data-name="Header"],
+	[data-name="Dropdown header navigation"] {
+		display: none !important;
+	}
+
+	/* Make fixed width elements fluid */
+	[class*="w-[1152px]"],
+	[class*="w-[1440px]"],
+	[class*="w-[1280px]"],
+	[class*="w-[861px]"],
+	[class*="w-[545px]"],
+	[class*="w-[400px]"],
+	[class*="w-[846px]"],
+	[class*="w-[359px]"],
+	[class*="w-[343px]"],
+	[class*="w-[273px]"],
+	[class*="w-[224px]"],
+	[class*="w-[360px]"],
+	[class*="w-[274px]"],
+	[class*="w-[320px]"] {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	/* Make fixed heights flexible */
+	[class*="h-[476px]"],
+	[class*="h-[683px]"],
+	[class*="h-[579px]"],
+	[class*="h-[360px]"],
+	[class*="h-[208px]"],
+	[class*="h-[274px]"],
+	[class*="h-[202.72px]"],
+	[class*="h-[112px]"] {
+		height: auto !important;
+		min-height: 0 !important;
+	}
+
+	/* Stack content vertically */
+	.content-stretch,
+	.box-border,
+	[data-name="Content"] {
+		flex-direction: column !important;
+		align-items: stretch !important;
+		padding-left: 16px !important;
+		padding-right: 16px !important;
+		gap: 16px !important;
+	}
+
+	/* Responsive images */
+	img {
+		max-width: 100% !important;
+		height: auto !important;
+		object-fit: cover !important;
+		display: block;
+	}
+
+	/* Full-width buttons on mobile */
+	[class*="w-[224px]"],
+	[class*="w-[360px]"],
+	[class*="w-[359px]"] {
+		width: 100% !important;
+	}
+
+	/* Reduce font sizes */
+	[class*="text-[36px]"] { font-size: 24px !important; line-height: 1.2 !important; }
+	[class*="text-[28px]"] { font-size: 20px !important; line-height: 1.2 !important; }
+	[class*="text-[18px]"] { font-size: 16px !important; }
+	[class*="text-[16px]"] { font-size: 14px !important; }
+
+	/* Reduce spacing */
+	[class*="py-[96px]"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+	[class*="py-[64px]"] { padding-top: 32px !important; padding-bottom: 32px !important; }
+	[class*="gap-[64px]"] { gap: 24px !important; }
+	[class*="gap-[48px]"] { gap: 24px !important; }
+	[class*="gap-[32px]"] { gap: 16px !important; }
+
+	/* Rounded corners */
+	.rounded-\[16px\] { border-radius: 12px !important; }
+	.rounded-\[8px\] { border-radius: 8px !important; }
+
+	/* Container width */
+	.size-full {
+		width: 100% !important;
+		height: auto !important;
+	}
+
+	/* Mobile nav buttons */
+	.nav {
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.containerCentered {
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+}
+
+/* Extra small screens: up to 480px */
+@media (max-width: 480px) {
+	.root {
+		padding-top: 56px;
+	}
+
+	.mobileHeader {
+		padding: 10px 12px;
+	}
+
+	.nav {
+		gap: 4px;
+	}
+
+	.nav button {
+		font-size: 13px;
+		padding: 4px 6px;
+	}
+
+	/* Aggressive padding reduction on tiny screens */
+	.content-stretch,
+	.box-border,
+	[data-name="Content"] {
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+		gap: 12px !important;
+	}
+
+	/* Even smaller fonts on tiny screens */
+	[class*="text-[36px]"] { font-size: 20px !important; }
+	[class*="text-[28px]"] { font-size: 18px !important; }
+	[class*="text-[18px]"] { font-size: 15px !important; }
+	[class*="text-[16px]"] { font-size: 13px !important; }
+	[class*="text-[14px]"] { font-size: 12px !important; }
+
+	/* Reduce spacing dramatically */
+	[class*="py-[96px]"] { padding-top: 24px !important; padding-bottom: 24px !important; }
+	[class*="py-[64px]"] { padding-top: 16px !important; padding-bottom: 16px !important; }
+	[class*="gap-[64px]"] { gap: 16px !important; }
+	[class*="gap-[48px]"] { gap: 16px !important; }
+	[class*="gap-[32px]"] { gap: 12px !important; }
+	[class*="gap-[24px]"] { gap: 12px !important; }
+
+	/* Smaller border radius */
+	.rounded-\[16px\] { border-radius: 8px !important; }
+	.rounded-\[8px\] { border-radius: 6px !important; }
+
+	/* Reduce badge/overlay padding */
+	[data-name="Badge"] {
+		left: 4px !important;
+		bottom: 4px !important;
+		padding-left: 4px !important;
+	}
+
+	/* Card/button padding reduction */
+	[class*="p-[16px]"] { padding: 12px !important; }
+}
+
+/* Tablet screens: 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+	.root {
+		padding-top: 60px;
+	}
+
+	/* Moderate padding on tablets */
+	.content-stretch,
+	.box-border,
+	[data-name="Content"] {
+		padding-left: 16px !important;
+		padding-right: 16px !important;
+	}
+
+	/* Slightly larger fonts on tablets */
+	[class*="text-[36px]"] { font-size: 26px !important; }
+	[class*="text-[28px]"] { font-size: 22px !important; }
+	[class*="text-[18px]"] { font-size: 16px !important; }
+
+	/* Moderate spacing */
+	[class*="py-[96px]"] { padding-top: 40px !important; padding-bottom: 40px !important; }
+	[class*="gap-[64px]"] { gap: 20px !important; }
+	[class*="gap-[48px]"] { gap: 20px !important; }
+}
