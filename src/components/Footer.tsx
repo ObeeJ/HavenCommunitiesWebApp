@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import svgPaths from '../imports/svg-nfww7tfte7';
 import styles from './Footer.module.css';
@@ -12,10 +12,19 @@ interface FooterProps {
 
 // Footer Link Components
 function ButtonsButton8({ onClick }: { onClick?: () => void }) {
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
       <p className={styles.footerButtonText}>About Us</p>
-      <p className={styles.footerButtonText}>Contact</p>
+      {isMobileView && <p className={styles.footerButtonText}>Contact</p>}
     </div>
   );
 }
@@ -29,10 +38,19 @@ function FooterLink({ onClick }: { onClick?: () => void }) {
 }
 
 function ButtonsButton9({ onClick }: { onClick?: () => void }) {
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
       <p className={styles.footerButtonText}>Projects</p>
-      <p className={styles.footerButtonText}>Blog</p>
+      {isMobileView && <p className={styles.footerButtonText}>Blog</p>}
     </div>
   );
 }
@@ -46,9 +64,23 @@ function FooterLink1({ onClick }: { onClick?: () => void }) {
 }
 
 function ButtonsButton10({ onClick }: { onClick?: () => void }) {
+  const [isWebView, setIsWebView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsWebView(window.innerWidth > 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
-      {/* <p className={styles.footerButtonText}>Contact</p> */}
+      {isWebView ? (
+        <p className={styles.footerButtonText}>Contact</p>
+      ) : (
+        // ...existing code for mobile view...
+        <></>
+      )}
     </div>
   );
 }
@@ -62,9 +94,23 @@ function FooterLink2({ onClick }: { onClick?: () => void }) {
 }
 
 function ButtonsButton11({ onClick }: { onClick?: () => void }) {
+  const [isWebView, setIsWebView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsWebView(window.innerWidth > 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.footerButton} data-name="Buttons/Button" onClick={onClick}>
-      {/* <p className={styles.footerButtonText}>Blog</p> */}
+      {isWebView ? (
+        <p className={styles.footerButtonText}>Blog</p>
+      ) : (
+        // ...existing code for mobile view...
+        <></>
+      )}
     </div>
   );
 }
@@ -320,10 +366,19 @@ function SocialIcons() {
 }
 
 function Frame1000003769({ email, onEmailChange, onSubmit }: { email: string; onEmailChange: (value: string) => void; onSubmit: () => void }) {
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.newsletterFrame}>
       <Newsletter value={email} onChange={onEmailChange} onSubmit={onSubmit} />
-      {/* <SocialIcons /> */}
+      {!isMobileView && <SocialIcons />}
     </div>
   );
 }
@@ -360,10 +415,24 @@ function FooterLinks1({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | '
 }
 
 function Content16({ onNavigate }: { onNavigate?: (page: 'home' | 'about' | 'contact' | 'projects' | 'projectDetail' | 'blog' | 'blogDetail' | 'privacyPolicy' | 'termsOfService' | 'cookiesPolicy') => void }) {
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className={styles.contentBottom} data-name="Content">
       <div aria-hidden="true" className={styles.contentDivider} />
-      <SocialIcons />
+      {isMobileView ? (
+        <SocialIcons />
+      ) : (
+        // Web view content can be added here if needed
+        <></>
+      )}
       <p className={styles.copyrightText}>© 2025 Pishon Communities. All rights reserved.</p>
       <FooterLinks1 onNavigate={onNavigate} />
     </div>
