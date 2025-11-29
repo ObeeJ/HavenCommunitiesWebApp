@@ -112,7 +112,7 @@ function ButtonsButton({ onClick }: { onClick?: () => void }) {
       data-name="Buttons/Button"
       onClick={onClick}
     >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">About Us</p>
+      <p className="font-['Avenir:Normal',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">About Us</p>
     </div>
   );
 }
@@ -148,7 +148,7 @@ function ButtonsButton2({ onClick }: { onClick?: () => void }) {
       data-name="Buttons/Button"
       onClick={onClick}
     >
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Contact</p>
+      <p className="font-['Avenir:Normal',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">Contact</p>
     </div>
   );
 }

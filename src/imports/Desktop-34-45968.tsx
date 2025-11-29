@@ -28,7 +28,7 @@ function Frame1000003793({ onClick }: { onClick?: () => void }) {
 function ButtonsButton2({ onClick }: { onClick?: () => void }) {
   return (
     <div className="content-stretch flex gap-[4px] items-center justify-center overflow-clip relative shrink-0 cursor-pointer hover:opacity-80 transition-opacity" data-name="Buttons/Button" onClick={onClick}>
-      <p className="font-['Avenir:Heavy',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#717680] text-[16px] text-nowrap whitespace-pre">About Us</p>
+      <p className="font-['Avenir:Normal',_sans-serif] leading-[24px] not-italic relative shrink-0 text-[#717680] text-[16px] text-nowrap whitespace-pre">About Us</p>
     </div>
   );
 }

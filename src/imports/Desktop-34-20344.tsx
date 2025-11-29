@@ -3,6 +3,7 @@ import imgHeroHeaderSection from "../assets/d3527a8bfa4f11abe21e46cce52b7399cd66
 import imgPegmanOffscreen2X from "../assets/747a27fe416ebfaf57b25beae190a98036e77d0e.png";
 import imgMap from "../assets/c2430bbeaa73c25f6f67e194305a665dd478e3a7.png";
 import Logo from "../components/Logo";
+import locationIcon from "../assets/Featured icon.png"
 import { MobileHeader } from "../components/MobileHeader";
 import styles from "./Desktop-34-20344.module.css";
 
@@ -199,8 +200,8 @@ function LocationSection() {
         <p className={styles.sectionSubtitle}>{LOCATION_CONTENT.description}</p>
       </div>
       <div className={styles.locationCard}>
-        <div className={styles.locationIcon} aria-hidden="true" />
-        <div>
+        <div className={styles.locationIcon} aria-hidden="true"> <img src={locationIcon} /> </div>
+        <div className="">
           <p className={styles.locationCity}>{LOCATION_CONTENT.city}</p>
           <p className={styles.locationAddress}>{LOCATION_CONTENT.address}</p>
         </div>
